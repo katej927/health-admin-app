@@ -24,7 +24,7 @@ const DatePicker = () => {
       {/* {BTN_OPTIONS.map((option) => (
         <Button key={option} text={option} />
       ))} */}
-      <Month assignedDay={getTime} onMonthBtnClick={onMonthBtnClick} isCurrentMonth today={fixedToday} />
+      <Month assignedDay={getTime} onMonthBtnClick={onMonthBtnClick} isCurrentMonth />
       <Month assignedDay={nextMonth} onMonthBtnClick={onMonthBtnClick} isCurrentMonth={false} />
     </div>
   );
