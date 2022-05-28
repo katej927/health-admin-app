@@ -1,0 +1,767 @@
+[
+	{
+		"seq" : 278194,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 23:51:29"
+	},
+	{
+		"seq" : 278193,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 23:41:30"
+	},
+	{
+		"seq" : 278191,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 23:31:49"
+	},
+	{
+		"seq" : 278188,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 23:21:29"
+	},
+	{
+		"seq" : 278187,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 23:11:47"
+	},
+	{
+		"seq" : 278185,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 23:01:41"
+	},
+	{
+		"seq" : 278183,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 22:51:51"
+	},
+	{
+		"seq" : 278182,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 22:41:29"
+	},
+	{
+		"seq" : 278181,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 22:31:29"
+	},
+	{
+		"seq" : 278180,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 22:11:29"
+	},
+	{
+		"seq" : 278178,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 22:01:29"
+	},
+	{
+		"seq" : 278177,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 21:51:29"
+	},
+	{
+		"seq" : 278176,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 21:41:29"
+	},
+	{
+		"seq" : 278175,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 21:31:29"
+	},
+	{
+		"seq" : 278174,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 21:21:29"
+	},
+	{
+		"seq" : 278173,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 21:11:29"
+	},
+	{
+		"seq" : 278172,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 21:01:29"
+	},
+	{
+		"seq" : 278171,
+		"member_seq" : 380,
+		"steps" : 5713,
+		"minutes" : 76,
+		"distance" : 3.9935600000,
+		"calorie" : 189.7085100000,
+		"crt_ymdt" : "2022-04-18 20:51:29"
+	},
+	{
+		"seq" : 278170,
+		"member_seq" : 380,
+		"steps" : 5538,
+		"minutes" : 74,
+		"distance" : 3.8715057000,
+		"calorie" : 183.9404100000,
+		"crt_ymdt" : "2022-04-18 20:41:30"
+	},
+	{
+		"seq" : 278169,
+		"member_seq" : 380,
+		"steps" : 5526,
+		"minutes" : 74,
+		"distance" : 3.8631363000,
+		"calorie" : 183.5448900000,
+		"crt_ymdt" : "2022-04-18 20:31:49"
+	},
+	{
+		"seq" : 278167,
+		"member_seq" : 380,
+		"steps" : 5512,
+		"minutes" : 73,
+		"distance" : 3.8533720000,
+		"calorie" : 183.0834500000,
+		"crt_ymdt" : "2022-04-18 20:21:29"
+	},
+	{
+		"seq" : 278166,
+		"member_seq" : 380,
+		"steps" : 5512,
+		"minutes" : 73,
+		"distance" : 3.8533720000,
+		"calorie" : 183.0834500000,
+		"crt_ymdt" : "2022-04-18 20:12:30"
+	},
+	{
+		"seq" : 278165,
+		"member_seq" : 380,
+		"steps" : 5512,
+		"minutes" : 73,
+		"distance" : 3.8533720000,
+		"calorie" : 183.0834500000,
+		"crt_ymdt" : "2022-04-18 20:01:38"
+	},
+	{
+		"seq" : 278164,
+		"member_seq" : 380,
+		"steps" : 5512,
+		"minutes" : 73,
+		"distance" : 3.8533720000,
+		"calorie" : 183.0834500000,
+		"crt_ymdt" : "2022-04-18 19:51:34"
+	},
+	{
+		"seq" : 278162,
+		"member_seq" : 380,
+		"steps" : 4624,
+		"minutes" : 61,
+		"distance" : 3.2340329000,
+		"calorie" : 153.8145000000,
+		"crt_ymdt" : "2022-04-18 19:41:40"
+	},
+	{
+		"seq" : 278155,
+		"member_seq" : 380,
+		"steps" : 4022,
+		"minutes" : 53,
+		"distance" : 2.8141658000,
+		"calorie" : 133.9722400000,
+		"crt_ymdt" : "2022-04-18 18:41:29"
+	},
+	{
+		"seq" : 278154,
+		"member_seq" : 380,
+		"steps" : 4022,
+		"minutes" : 53,
+		"distance" : 2.8141658000,
+		"calorie" : 133.9722400000,
+		"crt_ymdt" : "2022-04-18 18:31:39"
+	},
+	{
+		"seq" : 278153,
+		"member_seq" : 380,
+		"steps" : 3983,
+		"minutes" : 53,
+		"distance" : 0.4668042400,
+		"calorie" : 22.4622000000,
+		"crt_ymdt" : "2022-04-18 18:22:09"
+	},
+	{
+		"seq" : 278151,
+		"member_seq" : 380,
+		"steps" : 3970,
+		"minutes" : 53,
+		"distance" : 2.7778980000,
+		"calorie" : 132.2583000000,
+		"crt_ymdt" : "2022-04-18 18:11:40"
+	},
+	{
+		"seq" : 278150,
+		"member_seq" : 380,
+		"steps" : 3730,
+		"minutes" : 49,
+		"distance" : 2.6105092000,
+		"calorie" : 124.3477860000,
+		"crt_ymdt" : "2022-04-18 18:02:00"
+	},
+	{
+		"seq" : 278148,
+		"member_seq" : 380,
+		"steps" : 3704,
+		"minutes" : 49,
+		"distance" : 2.5923753000,
+		"calorie" : 123.4908100000,
+		"crt_ymdt" : "2022-04-18 17:51:29"
+	},
+	{
+		"seq" : 278145,
+		"member_seq" : 380,
+		"steps" : 3704,
+		"minutes" : 49,
+		"distance" : 2.5923753000,
+		"calorie" : 123.4908100000,
+		"crt_ymdt" : "2022-04-18 17:41:29"
+	},
+	{
+		"seq" : 278144,
+		"member_seq" : 380,
+		"steps" : 3693,
+		"minutes" : 49,
+		"distance" : 2.5847032000,
+		"calorie" : 123.1282400000,
+		"crt_ymdt" : "2022-04-18 17:31:42"
+	},
+	{
+		"seq" : 278141,
+		"member_seq" : 380,
+		"steps" : 3598,
+		"minutes" : 48,
+		"distance" : 2.5184453000,
+		"calorie" : 119.9969940000,
+		"crt_ymdt" : "2022-04-18 17:11:29"
+	},
+	{
+		"seq" : 278139,
+		"member_seq" : 380,
+		"steps" : 3554,
+		"minutes" : 47,
+		"distance" : 2.4877572000,
+		"calorie" : 118.5467300000,
+		"crt_ymdt" : "2022-04-18 17:01:29"
+	},
+	{
+		"seq" : 278136,
+		"member_seq" : 380,
+		"steps" : 3415,
+		"minutes" : 45,
+		"distance" : 2.3908112000,
+		"calorie" : 113.9652200000,
+		"crt_ymdt" : "2022-04-18 16:51:29"
+	},
+	{
+		"seq" : 278133,
+		"member_seq" : 380,
+		"steps" : 3379,
+		"minutes" : 45,
+		"distance" : 2.3657029000,
+		"calorie" : 112.7786300000,
+		"crt_ymdt" : "2022-04-18 16:41:29"
+	},
+	{
+		"seq" : 278131,
+		"member_seq" : 380,
+		"steps" : 3330,
+		"minutes" : 44,
+		"distance" : 2.3315275000,
+		"calorie" : 111.1635700000,
+		"crt_ymdt" : "2022-04-18 16:31:29"
+	},
+	{
+		"seq" : 278129,
+		"member_seq" : 380,
+		"steps" : 3303,
+		"minutes" : 44,
+		"distance" : 2.3126962000,
+		"calorie" : 110.2736360000,
+		"crt_ymdt" : "2022-04-18 16:21:29"
+	},
+	{
+		"seq" : 278127,
+		"member_seq" : 380,
+		"steps" : 3279,
+		"minutes" : 43,
+		"distance" : 2.1801800000,
+		"calorie" : 104.0111300000,
+		"crt_ymdt" : "2022-04-18 16:11:29"
+	},
+	{
+		"seq" : 278125,
+		"member_seq" : 380,
+		"steps" : 2929,
+		"minutes" : 39,
+		"distance" : 2.0518486000,
+		"calorie" : 97.9463960000,
+		"crt_ymdt" : "2022-04-18 16:01:29"
+	},
+	{
+		"seq" : 278124,
+		"member_seq" : 380,
+		"steps" : 2841,
+		"minutes" : 38,
+		"distance" : 1.9904728000,
+		"calorie" : 95.0458700000,
+		"crt_ymdt" : "2022-04-18 15:51:29"
+	},
+	{
+		"seq" : 278123,
+		"member_seq" : 380,
+		"steps" : 2819,
+		"minutes" : 37,
+		"distance" : 1.9751288000,
+		"calorie" : 94.3207400000,
+		"crt_ymdt" : "2022-04-18 15:41:29"
+	},
+	{
+		"seq" : 278122,
+		"member_seq" : 380,
+		"steps" : 2808,
+		"minutes" : 37,
+		"distance" : 1.9674567000,
+		"calorie" : 93.9581700000,
+		"crt_ymdt" : "2022-04-18 15:32:29"
+	},
+	{
+		"seq" : 278119,
+		"member_seq" : 380,
+		"steps" : 2731,
+		"minutes" : 36,
+		"distance" : 1.9137528000,
+		"calorie" : 91.4202100000,
+		"crt_ymdt" : "2022-04-18 15:21:29"
+	},
+	{
+		"seq" : 278117,
+		"member_seq" : 380,
+		"steps" : 2718,
+		"minutes" : 36,
+		"distance" : 1.9046859000,
+		"calorie" : 90.9917200000,
+		"crt_ymdt" : "2022-04-18 15:11:29"
+	},
+	{
+		"seq" : 278116,
+		"member_seq" : 380,
+		"steps" : 2708,
+		"minutes" : 36,
+		"distance" : 1.8907368000,
+		"calorie" : 90.3325100000,
+		"crt_ymdt" : "2022-04-18 15:01:29"
+	},
+	{
+		"seq" : 278114,
+		"member_seq" : 380,
+		"steps" : 2698,
+		"minutes" : 36,
+		"distance" : 1.8907368000,
+		"calorie" : 90.3325100000,
+		"crt_ymdt" : "2022-04-18 14:51:29"
+	},
+	{
+		"seq" : 278112,
+		"member_seq" : 380,
+		"steps" : 2698,
+		"minutes" : 36,
+		"distance" : 1.8907368000,
+		"calorie" : 90.3325100000,
+		"crt_ymdt" : "2022-04-18 14:41:53"
+	},
+	{
+		"seq" : 278110,
+		"member_seq" : 380,
+		"steps" : 2671,
+		"minutes" : 35,
+		"distance" : 1.8719056000,
+		"calorie" : 89.4425800000,
+		"crt_ymdt" : "2022-04-18 14:31:29"
+	},
+	{
+		"seq" : 278109,
+		"member_seq" : 380,
+		"steps" : 2584,
+		"minutes" : 34,
+		"distance" : 1.8022210000,
+		"calorie" : 85.1700200000,
+		"crt_ymdt" : "2022-04-18 14:23:07"
+	},
+	{
+		"seq" : 278107,
+		"member_seq" : 380,
+		"steps" : 2468,
+		"minutes" : 33,
+		"distance" : 1.7303225000,
+		"calorie" : 82.7515900000,
+		"crt_ymdt" : "2022-04-18 13:51:29"
+	},
+	{
+		"seq" : 278106,
+		"member_seq" : 380,
+		"steps" : 2468,
+		"minutes" : 33,
+		"distance" : 1.7303225000,
+		"calorie" : 82.7515900000,
+		"crt_ymdt" : "2022-04-18 13:41:29"
+	},
+	{
+		"seq" : 278105,
+		"member_seq" : 380,
+		"steps" : 2361,
+		"minutes" : 31,
+		"distance" : 1.1877639000,
+		"calorie" : 56.1317900000,
+		"crt_ymdt" : "2022-04-18 13:21:38"
+	},
+	{
+		"seq" : 278104,
+		"member_seq" : 380,
+		"steps" : 2250,
+		"minutes" : 30,
+		"distance" : 1.5692712000,
+		"calorie" : 74.1612000000,
+		"crt_ymdt" : "2022-04-18 13:11:29"
+	},
+	{
+		"seq" : 278102,
+		"member_seq" : 380,
+		"steps" : 2190,
+		"minutes" : 29,
+		"distance" : 1.5364302000,
+		"calorie" : 73.5885600000,
+		"crt_ymdt" : "2022-04-18 13:01:29"
+	},
+	{
+		"seq" : 278100,
+		"member_seq" : 380,
+		"steps" : 2113,
+		"minutes" : 28,
+		"distance" : 1.4827262000,
+		"calorie" : 71.0506000000,
+		"crt_ymdt" : "2022-04-18 12:51:59"
+	},
+	{
+		"seq" : 278098,
+		"member_seq" : 380,
+		"steps" : 2003,
+		"minutes" : 26,
+		"distance" : 1.4060063000,
+		"calorie" : 67.4249400000,
+		"crt_ymdt" : "2022-04-18 12:31:41"
+	},
+	{
+		"seq" : 278097,
+		"member_seq" : 380,
+		"steps" : 2003,
+		"minutes" : 26,
+		"distance" : 1.4060063000,
+		"calorie" : 67.4249400000,
+		"crt_ymdt" : "2022-04-18 12:22:44"
+	},
+	{
+		"seq" : 278095,
+		"member_seq" : 380,
+		"steps" : 2003,
+		"minutes" : 26,
+		"distance" : 1.4060063000,
+		"calorie" : 67.4249400000,
+		"crt_ymdt" : "2022-04-18 12:11:29"
+	},
+	{
+		"seq" : 278093,
+		"member_seq" : 380,
+		"steps" : 1921,
+		"minutes" : 25,
+		"distance" : 1.3488151000,
+		"calorie" : 64.7221760000,
+		"crt_ymdt" : "2022-04-18 11:52:41"
+	},
+	{
+		"seq" : 278091,
+		"member_seq" : 380,
+		"steps" : 1921,
+		"minutes" : 25,
+		"distance" : 1.3488151000,
+		"calorie" : 64.7221760000,
+		"crt_ymdt" : "2022-04-18 11:41:29"
+	},
+	{
+		"seq" : 278090,
+		"member_seq" : 380,
+		"steps" : 1843,
+		"minutes" : 24,
+		"distance" : 1.2944137000,
+		"calorie" : 62.1512530000,
+		"crt_ymdt" : "2022-04-18 11:32:50"
+	},
+	{
+		"seq" : 278088,
+		"member_seq" : 380,
+		"steps" : 1685,
+		"minutes" : 22,
+		"distance" : 1.1842160000,
+		"calorie" : 56.9434900000,
+		"crt_ymdt" : "2022-04-18 11:21:29"
+	},
+	{
+		"seq" : 278086,
+		"member_seq" : 380,
+		"steps" : 1547,
+		"minutes" : 20,
+		"distance" : 1.0879674000,
+		"calorie" : 52.3949360000,
+		"crt_ymdt" : "2022-04-18 11:11:29"
+	},
+	{
+		"seq" : 278085,
+		"member_seq" : 380,
+		"steps" : 1532,
+		"minutes" : 20,
+		"distance" : 1.0775055000,
+		"calorie" : 51.9005280000,
+		"crt_ymdt" : "2022-04-18 11:01:29"
+	},
+	{
+		"seq" : 278084,
+		"member_seq" : 380,
+		"steps" : 1532,
+		"minutes" : 20,
+		"distance" : 1.0775055000,
+		"calorie" : 51.9005280000,
+		"crt_ymdt" : "2022-04-18 10:51:29"
+	},
+	{
+		"seq" : 278083,
+		"member_seq" : 380,
+		"steps" : 1478,
+		"minutes" : 19,
+		"distance" : 1.0398430000,
+		"calorie" : 50.1206600000,
+		"crt_ymdt" : "2022-04-18 10:41:29"
+	},
+	{
+		"seq" : 278081,
+		"member_seq" : 380,
+		"steps" : 1458,
+		"minutes" : 19,
+		"distance" : 1.0258939000,
+		"calorie" : 49.4614500000,
+		"crt_ymdt" : "2022-04-18 10:31:29"
+	},
+	{
+		"seq" : 278080,
+		"member_seq" : 380,
+		"steps" : 1383,
+		"minutes" : 18,
+		"distance" : 0.9735848300,
+		"calorie" : 46.9894100000,
+		"crt_ymdt" : "2022-04-18 10:21:31"
+	},
+	{
+		"seq" : 278078,
+		"member_seq" : 380,
+		"steps" : 1023,
+		"minutes" : 13,
+		"distance" : 0.6316249000,
+		"calorie" : 30.4271430000,
+		"crt_ymdt" : "2022-04-18 10:11:29"
+	},
+	{
+		"seq" : 278077,
+		"member_seq" : 380,
+		"steps" : 1003,
+		"minutes" : 13,
+		"distance" : 0.6176758000,
+		"calorie" : 29.7679330000,
+		"crt_ymdt" : "2022-04-18 10:01:29"
+	},
+	{
+		"seq" : 278075,
+		"member_seq" : 380,
+		"steps" : 991,
+		"minutes" : 13,
+		"distance" : 0.6093064000,
+		"calorie" : 29.3724060000,
+		"crt_ymdt" : "2022-04-18 09:52:09"
+	},
+	{
+		"seq" : 278073,
+		"member_seq" : 380,
+		"steps" : 990,
+		"minutes" : 13,
+		"distance" : 0.6086089000,
+		"calorie" : 29.3394450000,
+		"crt_ymdt" : "2022-04-18 09:41:29"
+	},
+	{
+		"seq" : 278071,
+		"member_seq" : 380,
+		"steps" : 936,
+		"minutes" : 12,
+		"distance" : 0.5709464000,
+		"calorie" : 27.5595760000,
+		"crt_ymdt" : "2022-04-18 09:31:51"
+	},
+	{
+		"seq" : 278069,
+		"member_seq" : 380,
+		"steps" : 606,
+		"minutes" : 8,
+		"distance" : 0.3407866400,
+		"calorie" : 16.6826000000,
+		"crt_ymdt" : "2022-04-18 09:11:57"
+	},
+	{
+		"seq" : 278067,
+		"member_seq" : 380,
+		"steps" : 595,
+		"minutes" : 7,
+		"distance" : 0.4239911400,
+		"calorie" : 21.0165080000,
+		"crt_ymdt" : "2022-04-18 09:01:58"
+	},
+	{
+		"seq" : 278062,
+		"member_seq" : 380,
+		"steps" : 470,
+		"minutes" : 6,
+		"distance" : 0.3331146200,
+		"calorie" : 16.3200340000,
+		"crt_ymdt" : "2022-04-18 08:22:12"
+	},
+	{
+		"seq" : 278061,
+		"member_seq" : 380,
+		"steps" : 270,
+		"minutes" : 3,
+		"distance" : 0.1936238400,
+		"calorie" : 9.7279280000,
+		"crt_ymdt" : "2022-04-18 08:02:04"
+	},
+	{
+		"seq" : 278059,
+		"member_seq" : 380,
+		"steps" : 212,
+		"minutes" : 2,
+		"distance" : 0.1531715100,
+		"calorie" : 7.8162170000,
+		"crt_ymdt" : "2022-04-18 07:52:30"
+	},
+	{
+		"seq" : 278058,
+		"member_seq" : 380,
+		"steps" : 212,
+		"minutes" : 2,
+		"distance" : 0.1531715100,
+		"calorie" : 7.8162170000,
+		"crt_ymdt" : "2022-04-18 07:42:20"
+	},
+	{
+		"seq" : 278057,
+		"member_seq" : 380,
+		"steps" : 184,
+		"minutes" : 2,
+		"distance" : 0.1336428100,
+		"calorie" : 6.8933220000,
+		"crt_ymdt" : "2022-04-18 07:22:07"
+	},
+	{
+		"seq" : 278056,
+		"member_seq" : 380,
+		"steps" : 184,
+		"minutes" : 2,
+		"distance" : 0.1336428100,
+		"calorie" : 6.8933220000,
+		"crt_ymdt" : "2022-04-18 07:11:29"
+	},
+	{
+		"seq" : 278055,
+		"member_seq" : 380,
+		"steps" : 184,
+		"minutes" : 2,
+		"distance" : 0.1336428100,
+		"calorie" : 6.8933220000,
+		"crt_ymdt" : "2022-04-18 07:01:29"
+	},
+	{
+		"seq" : 278054,
+		"member_seq" : 380,
+		"steps" : 41,
+		"minutes" : 0,
+		"distance" : 0.0339068960,
+		"calorie" : 2.1799657000,
+		"crt_ymdt" : "2022-04-18 06:41:29"
+	}
+]

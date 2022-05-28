@@ -1,0 +1,15 @@
+@use '/src/styles/constants/colors';
+
+.layoutWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.mainWrapper {
+  flex-grow: 1;
+  height: 100vh;
+  padding: 0 4rem 4rem;
+  overflow: auto;
+  background-color: colors.$BG_G;
+}

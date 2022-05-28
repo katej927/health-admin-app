@@ -1,0 +1,10 @@
+@use '/src/styles/constants/colors';
+
+.dashboardWrapper {
+  h1 {
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 8rem;
+    color: colors.$GREY_800;
+  }
+}

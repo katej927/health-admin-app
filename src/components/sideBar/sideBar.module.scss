@@ -1,0 +1,111 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+
+.sideBarWrapper {
+  @include flexbox.flexbox('between', 'stretch');
+  flex-direction: column;
+  width: 32rem;
+  min-width: 30rem;
+  height: 100vh;
+  padding: 6rem 4rem;
+  box-shadow: 4px 0 10px 0 #0000000a;
+
+  > img {
+    width: 13rem;
+  }
+
+  .underLine {
+    margin: 5.5rem 0;
+    border-bottom: 1px solid colors.$GREY_50;
+  }
+
+  .title {
+    margin: 0 1.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: colors.$GREY_300;
+  }
+
+  .serviceWrapper {
+    @include flexbox.flexbox('start', 'stretch');
+    flex-direction: column;
+
+    > div {
+      position: relative;
+      margin-bottom: 5.3rem;
+    }
+
+    .dropDown {
+      padding: 2rem;
+      margin-bottom: 5.3rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: colors.$GREY_800;
+      border: 1px solid colors.$GREY_100;
+      border-radius: 10px;
+    }
+  }
+
+  .adCenterWrapper {
+    @include flexbox.flexbox('start', 'stretch');
+    flex-direction: column;
+
+    .categoryBtn {
+      display: flex;
+      padding: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: colors.$GREY_800;
+      border-radius: 10px;
+
+      > p {
+        margin: 0 1.2rem;
+      }
+    }
+
+    .isClicked {
+      color: colors.$PRIMARY;
+      background-color: colors.$GREY_50;
+    }
+  }
+
+  .useGuideWrapper {
+    @include flexbox.flexbox('start', 'center');
+    padding: 3rem 2rem;
+    margin-bottom: 4rem;
+    background-color: colors.$SECONDARY_01;
+    border-radius: 10px;
+
+    > div {
+      margin: 0 0.8rem;
+    }
+
+    .guideTitle {
+      margin-bottom: 0.7rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: colors.$GREY_800;
+    }
+
+    .guideText {
+      font-size: 1.2rem;
+      color: colors.$GREY_300;
+    }
+  }
+
+  .footerWrapper {
+    padding: 0 2rem;
+
+    > p {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: colors.$GREY_300;
+    }
+
+    .underLineText {
+      display: inline;
+      border-bottom: 1px solid colors.$GREY_300;
+    }
+  }
+}
