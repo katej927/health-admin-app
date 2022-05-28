@@ -4,8 +4,6 @@ import SideBar from 'components/sideBar';
 import styles from './layout.module.scss';
 
 const Layout = () => {
-  
-
   return (
     <div className={styles.layoutWrapper}>
       <SideBar />

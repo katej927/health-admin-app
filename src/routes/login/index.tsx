@@ -1,9 +1,7 @@
-import styles from './login.module.scss'
+import styles from './login.module.scss';
 
 const Login = () => {
-  return (
-    <div className={styles.wrapper}>Login</div>
-  )
-}
+  return <div className={styles.wrapper}>Login</div>;
+};
 
-export default Login
+export default Login;
