@@ -1,9 +1,7 @@
-import {MainLogo} from "assets/svgs"
+import { MainLogo } from 'assets/svgs';
 import styles from './sideBar.module.scss';
 
 const SideBar = () => {
-  
-
   // TODO: isClicked 부분 리팩토링
   return (
     <aside className={styles.sideBarWrapper}>
@@ -50,7 +48,7 @@ const SideBar = () => {
           <p className={styles.underLineText}>이용약관</p>
         </div>
        */}
-        </section>
+      </section>
     </aside>
   );
 };

@@ -1,0 +1,7 @@
+@use '/src/styles/constants/colors';
+
+.btn {
+  padding: 5px;
+  color: colors.$WHITE;
+  background-color: colors.$PRIMARY;
+}

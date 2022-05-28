@@ -3,20 +3,20 @@ import { atom } from 'recoil';
 interface ILoginState {
   isLoggedIn: boolean;
   payload: {
-    id: number | null,
-  }
+    id: number | null;
+  };
 }
 
-const LOGIN_ID = "loginId"
+const LOGIN_ID = 'loginId';
 
-const currentId = localStorage.getItem(LOGIN_ID)
+const currentId = localStorage.getItem(LOGIN_ID);
 
 export const loginState = atom<ILoginState>({
-  key: "#loginState",
+  key: '#loginState',
   default: {
     isLoggedIn: Boolean(currentId),
     payload: {
-        id: currentId ? Number(currentId): null
-      }
-  }
-})
+      id: currentId ? Number(currentId) : null,
+    },
+  },
+});
