@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { IStep } from './type/type.d';
+import { IStep } from './type.d';
 
 interface IFormatGraphData {
   graphData: IGraphData[];
