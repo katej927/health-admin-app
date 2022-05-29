@@ -82,4 +82,14 @@
       fill: colors.$ERROR;
     }
   }
+
+  &.info {
+    .tagContainer {
+      background-color: colors.$INFO;
+    }
+
+    svg {
+      fill: colors.$INFO;
+    }
+  }
 }

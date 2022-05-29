@@ -1,5 +1,5 @@
 import { AnimatePresence, Variants, motion } from 'framer-motion';
-import { CircleCheckIcon, CircleInfoIcon } from 'assets/svgs';
+import { CircleCheckIcon, CircleExclamtionIcon, CircleInfoIcon } from 'assets/svgs';
 
 import { cx } from 'styles';
 import styles from './popup.module.scss';
@@ -13,7 +13,7 @@ interface IProps {
   speed?: number;
   remainTime?: number;
   position?: 'top right' | 'top left' | 'bottom right' | 'bottom left';
-  status: 'success' | 'error';
+  status: 'success' | 'error' | 'info';
 }
 
 const variants: Variants = {
@@ -43,7 +43,8 @@ const Popup = ({
 }: IProps) => {
   const symbolIcon = {
     success: <CircleCheckIcon />,
-    error: <CircleInfoIcon />,
+    error: <CircleExclamtionIcon />,
+    info: <CircleInfoIcon />,
   }[status];
 
   const xPosition = position.split(' ')[1];
@@ -76,6 +77,7 @@ const Popup = ({
             [styles.bottomLeft]: position === 'bottom left',
             [styles.success]: status === 'success',
             [styles.error]: status === 'error',
+            [styles.info]: status === 'info',
           })}
         >
           <div className={styles.tagContainer} />
