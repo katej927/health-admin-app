@@ -1,0 +1,11 @@
+@use 'src/styles/mixins/flexbox';
+
+.wrapper {
+  .dateInput {
+    border: 0.1rem solid black;
+  }
+
+  .monthsWrapper {
+    @include flexbox.flexbox('evenly', 'center');
+  }
+}
