@@ -13,7 +13,7 @@ const HeartRateDataGraph = () => {
   const date = { startDate: '2022-02-26', endDate: '2022-02-26' };
   const rawJson = heartRateData.find((el) => el.id === userId);
   const userHeartRateData = rawJson?.heartRateData ?? [];
-  let array: IHeartRate[] = [];
+  const array: IHeartRate[] = [];
 
   const selectedDateArray = getDatesFromStartToLast(date.startDate, date.endDate).map((dateEl) =>
     userHeartRateData?.filter((el) => el.crt_ymdt.substr(0, 10) === dateEl && dateEl)
