@@ -8,3 +8,5 @@ export { ReactComponent as DotIcon } from './dot.svg';
 export { ReactComponent as AlarmIcon } from './alarm.svg';
 export { ReactComponent as ArrowIcon } from './arrow.svg';
 export { ReactComponent as IconDown } from './icon_down.svg';
+export { ReactComponent as ArrowLeft } from './icon-arrow-left.svg';
+export { ReactComponent as ArrowRight } from './icon-arrow-right.svg';

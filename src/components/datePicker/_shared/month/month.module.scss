@@ -1,11 +1,77 @@
-.otherMonth {
-  background-color: gray;
-}
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
+@use '/src/styles/mixins/flexbox';
 
-.selectedDate {
-  background-color: red;
-}
+.wrapper {
+  margin: 1rem;
 
-.betweenDate {
-  background-color: yellow;
+  .calendarHead {
+    @include flexbox.flexbox(center, center);
+    position: relative;
+    margin-bottom: 3rem;
+
+    .arrowBtn {
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      background-color: colors.$GREY_100;
+      border-radius: 50%;
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+
+      .arrow {
+        width: 2.4rem;
+      }
+    }
+
+    .monthOfCalendar {
+      color: colors.$GREY_100;
+    }
+  }
+
+  .weekdaysRow {
+    margin-top: 0.1rem;
+
+    .weekday {
+      width: 3rem;
+      height: 3rem;
+      margin: 0.5rem;
+      color: colors.$GREY_300;
+    }
+  }
+
+  .allDatesOfAMonth {
+    margin: 0.4rem;
+    text-align: center;
+
+    .day {
+      .otherMonth {
+        background-color: gray;
+      }
+
+      .selectedDate {
+        color: colors.$WHITE;
+        background-color: colors.$PRIMARY;
+      }
+
+      .betweenDate {
+        background-color: colors.$GREY_50;
+      }
+
+      .dateBtn {
+        @include flexbox.flexbox(center, center);
+        width: 3rem;
+        height: 3rem;
+        margin: 0.5rem;
+        color: colors.$GREY_800;
+        border-radius: 50%;
+      }
+    }
+  }
 }

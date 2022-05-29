@@ -1,3 +1,4 @@
+import { SyntheticEvent } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { useRecoilState } from 'recoil';
 import { inquiryPeriodState } from 'states';
@@ -8,6 +9,7 @@ import localeData from 'dayjs/plugin/localeData';
 import 'dayjs/locale/ko';
 
 import { converteDate } from '../utils';
+import { ArrowLeft, ArrowRight } from 'assets/svgs';
 
 import styles from './month.module.scss';
 import cn from 'classnames';
@@ -19,7 +21,7 @@ dayjs.locale('ko');
 
 interface Props {
   assignedDay: Dayjs;
-  onMonthBtnClick: (isAddMonth: boolean) => void;
+  onMonthBtnClick: (e: SyntheticEvent<EventTarget>) => void;
   isCurrentMonth: boolean;
 }
 
@@ -49,46 +51,57 @@ const Month = ({ assignedDay, onMonthBtnClick, isCurrentMonth }: Props) => {
   };
 
   return (
-    <div>
-      <div className={styles.control}>
+    <div className={styles.wrapper}>
+      <div className={styles.calendarHead}>
         {isCurrentMonth && (
-          <button type='button' onClick={() => onMonthBtnClick(false)}>
-            이전 달
+          <button
+            className={cn(styles.arrowBtn, styles.left)}
+            type='button'
+            onClick={onMonthBtnClick}
+            data-name='prevMonth'
+          >
+            <ArrowLeft className={styles.arrow} />
           </button>
         )}
-        <time>{assignedDay.format('YYYY년 MM월')}</time>
+        <time className={styles.monthOfCalendar} dateTime={assignedDay.format('YYYY-MM-DD')}>
+          {assignedDay.format('YYYY년 MM월')}
+        </time>
         {!isCurrentMonth && (
-          <button type='button' onClick={() => onMonthBtnClick(true)}>
-            다음 달
+          <button
+            className={cn(styles.arrowBtn, styles.right)}
+            type='button'
+            onClick={onMonthBtnClick}
+            data-name='nextMonth'
+          >
+            <ArrowRight className={styles.arrow} />
           </button>
         )}
       </div>
       <table>
         <thead>
-          <tr>
+          <tr className={styles.weekdaysRow}>
             {dayjs.weekdaysMin().map((weekday) => (
-              <th key={weekday}>{weekday}</th>
+              <th key={weekday} className={styles.weekday}>
+                {weekday}
+              </th>
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.allDatesOfAMonth}>
           {convertedDate.map((eachWeek: Dayjs[], idx: number) => (
             <tr key={`week-${idx + 1}st`}>
               {eachWeek.map((date, index) => {
-                const isOtherMonth = assignedDay.format('MM') !== date.format('MM');
-                const isSelectedDate = startDate === date.format('YYYY-MM-DD') || endDate === date.format('YYYY-MM-DD');
-                const isBetweenDate = dayjs(date).isBetween(startDate, endDate, 'day', '()');
-
                 return (
-                  <td
-                    key={`date-${index + 1}`}
-                    className={cn(styles.day, {
-                      [styles.otherMonth]: isOtherMonth,
-                      [styles.selectedDate]: isSelectedDate,
-                      [styles.betweenDate]: isBetweenDate,
-                    })}
-                  >
-                    <button type='button' onClick={() => onDayClick(date)}>
+                  <td key={`date-${index + 1}`} className={styles.day}>
+                    <button
+                      className={cn(styles.dateBtn, {
+                        [styles.otherMonth]: assignedDay.format('MM') !== date.format('MM'),
+                        [styles.selectedDate]: date.isSame(dayjs(startDate)) || date.isSame(dayjs(endDate)),
+                        [styles.betweenDate]: dayjs(date).isBetween(startDate, endDate, 'day', '()'),
+                      })}
+                      type='button'
+                      onClick={() => onDayClick(date)}
+                    >
                       {date.format('D')}
                     </button>
                   </td>

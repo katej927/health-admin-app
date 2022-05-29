@@ -1,13 +1,30 @@
 @use 'src/styles/mixins/flexbox';
-@use '/src/styles/constants/colors';
+@use 'src/styles/constants/colors';
+@use 'src/styles/constants/sizes';
 
 .wrapper {
   .dateInput {
     border: 0.1rem solid black;
+
+    &::before {
+      width: 100%;
+      content: attr(data-placeholder);
+    }
+
+    &:focus::before,
+    &:valid::before {
+      display: none;
+    }
   }
 
   .monthsWrapper {
     @include flexbox.flexbox('evenly', 'center');
+    width: fit-content;
+    padding: 3rem;
+    font-size: sizes.$FONT_SIZE_REGULAR;
+    background-color: colors.$WHITE;
+    border-radius: sizes.$BORDER_RADIUS;
+    box-shadow: colors.$SHADOW;
   }
 
   .btn {

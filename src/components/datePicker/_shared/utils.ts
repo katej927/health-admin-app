@@ -3,8 +3,9 @@ import { Dayjs } from 'dayjs';
 export const converteDate = (assignedDay: Dayjs) => {
   const firstWeek = assignedDay.startOf('month').week();
 
-  const dates = Array.from({ length: assignedDay.daysInMonth() + assignedDay.startOf('month').day() }, (v, index) =>
-    assignedDay.startOf('year').week(firstWeek).startOf('week').add(index, 'day')
+  const dates: Dayjs[] = Array.from(
+    { length: assignedDay.daysInMonth() + assignedDay.startOf('month').day() },
+    (v, index) => assignedDay.startOf('year').week(firstWeek).startOf('week').add(index, 'day')
   );
 
   const init: Dayjs[][] = [];
