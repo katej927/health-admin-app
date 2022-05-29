@@ -5,7 +5,7 @@ import Layout from './layout';
 import Login from './login';
 import { loginState } from 'states/login';
 import { useRecoilValue } from 'recoil';
-import Detail from './detail';
+import DetailMember from './detailMember';
 
 const App = () => {
   // const { isLoggedIn } = useRecoilValue(loginState);
@@ -17,7 +17,7 @@ const App = () => {
       <Route element={<Layout />}>
         <Route index element={isLoggedIn ? <Dashboard /> : <Navigate to='/login' />} />
         {/* <Route path=':id' element={isLoggedIn ? <Login /> : <Detail />} /> */}
-        <Route path='/detail' element={<Detail />} />
+        <Route path='/detail' element={<DetailMember />} />
       </Route>
     </Routes>
   );
