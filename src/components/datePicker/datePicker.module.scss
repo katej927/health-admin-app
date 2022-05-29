@@ -1,4 +1,5 @@
 @use 'src/styles/mixins/flexbox';
+@use '/src/styles/constants/colors';
 
 .wrapper {
   .dateInput {
@@ -7,5 +8,11 @@
 
   .monthsWrapper {
     @include flexbox.flexbox('evenly', 'center');
+  }
+
+  .btn {
+    padding: 0.5rem;
+    color: colors.$WHITE;
+    background-color: colors.$PRIMARY;
   }
 }

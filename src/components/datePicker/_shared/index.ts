@@ -1,6 +1,6 @@
-import Button from './button';
 import Month from './month';
 
-export { BTN_OPTIONS } from './constants';
+export { Month };
 
-export { Button, Month };
+export { BTN_OPTIONS } from './constants';
+export { converteDate } from './utils';

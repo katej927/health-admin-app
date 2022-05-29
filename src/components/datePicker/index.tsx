@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil';
 import { inquiryPeriodState } from 'states';
 import dayjs from 'dayjs';
 
-import { Button, BTN_OPTIONS, Month } from './_shared';
+import { BTN_OPTIONS, Month } from './_shared';
 import styles from './datePicker.module.scss';
 
 const DatePicker = () => {
@@ -42,9 +42,11 @@ const DatePicker = () => {
         <Month assignedDay={getTime} onMonthBtnClick={onMonthBtnClick} isCurrentMonth />
         <Month assignedDay={nextMonth} onMonthBtnClick={onMonthBtnClick} isCurrentMonth={false} />
       </div>
-      {/* {BTN_OPTIONS.map((option) => (
-        <Button key={option} text={option} />
-      ))} */}
+      {BTN_OPTIONS.map((option) => (
+        <button key={option} type='button' className={styles.btn}>
+          {option}
+        </button>
+      ))}
     </fieldset>
   );
 };
