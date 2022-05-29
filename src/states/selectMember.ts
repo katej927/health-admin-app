@@ -1,9 +1,9 @@
 import { atom } from 'recoil';
 
 export interface IMember {
-  id: Number;
-  username: String;
-  crt_ymdt: String;
+  id: number;
+  username: string;
+  crt_ymdt: string;
 }
 
 export const selectMemberState = atom<IMember>({
