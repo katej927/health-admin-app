@@ -16,18 +16,19 @@ const GRAPH_STYLE = {
   },
   axis: {
     style: {
+      axis: { stroke: 'gray' },
       tickLabels: {
         fontFamily: 'inherit',
         fontWeight: 100,
         letterSpacing: '1px',
         stroke: 'gray',
-        fontSize: 8,
+        fontSize: 10,
         marginBlock: '20px',
       },
     },
   },
   bar: {
-    style: { data: { fill: '#3169c4' } },
+    style: { data: { fill: '#4FADF7' } },
   },
 };
 
