@@ -1,9 +1,20 @@
 import { MainLogo } from 'assets/svgs';
 import { ChangeEvent, useState } from 'react';
+
+import { useLogin } from '../../hooks/useLogin';
 import styles from './login.module.scss';
 import { Checkbox } from './Checkbox';
 
 const Login = () => {
+        
+  const onLogin = useLogin();
+        
+  const onFailHandler = (message: string) => {
+  // TODO: 여기서 로그인 실패 했을 때, 처리 하면 될 것 같아요!
+  // TODO: 실패 내역은 메세지로 출력됩니다. 상세 내역은 PR 확인!
+    console.log(message);
+  };
+
   // 변수
   const [checkValue, setCheckValue] = useState(false);
 
@@ -55,7 +66,7 @@ const Login = () => {
               <label htmlFor='rememberInfo'>아이디 저장하기</label>
               <input type='checkbox' id='rememberInfo' onChange={handleCheckbox} checked={checkValue} />
             </fieldset>
-            <button type='submit' className={styles.loginButton}>
+            <button type='submit' className={styles.loginButton} onClick={() => onLogin('solchan', '1', onFailHandler)}>
               로그인하기
             </button>
           </form>
