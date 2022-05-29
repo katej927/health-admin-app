@@ -3,7 +3,7 @@ import isBetween from 'dayjs/plugin/isBetween';
 import { VictoryAxis, VictoryBar, VictoryChart, VictoryTheme } from 'victory';
 
 import formatGraphData from './formatGraphData';
-import { GraphType, IStepData } from './type/type.d';
+import { GraphType, IStepData } from './type.d';
 
 import GRAPH_STYLE from './GRAPH_STYLE';
 import styles from './stepDataGraph.module.scss';
@@ -12,13 +12,14 @@ import stepData from '../../../data/step_data/step_data.json';
 
 dayjs.extend(isBetween);
 
-const StepDataGraph = () => {
-  const { stepData: userData } = stepData.filter((data: IStepData) => data.id === 1)[0];
+const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
   const date = {
     startDate: '2022-02-26',
     // endDate: '2022-04-19',
     endDate: '2022-02-26',
   };
+
+  const { stepData: userData } = stepData.filter((data: IStepData) => data.id === selectedID)[0];
   const graphType: GraphType = date.startDate === date.endDate ? 'dayGraph' : 'weeklyGraph';
   const { graphData, totalStep, isThereUserData } = formatGraphData(userData, date);
 
