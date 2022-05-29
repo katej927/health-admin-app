@@ -92,10 +92,14 @@
         height: 60px;
         font-size: 18px;
         font-weight: bold;
-        color: rgb(148, 162, 173);
-        background-color: rgb(237, 239, 241);
+        color: colors.$BUTTON_COLOR;
+        background-color: colors.$BUTTON_OPACITY;
         border: none;
         border-radius: 50px;
+
+        &.buttonValid {
+          background-color: colors.$BUTTON;
+        }
       }
     }
   }

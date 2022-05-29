@@ -1,5 +1,6 @@
-import { Dispatch, useState } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
+
+import { Dispatch } from 'react';
 
 interface IProps {
   isChecked: boolean;
