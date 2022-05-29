@@ -1,63 +1,44 @@
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
-import { VictoryAxis, VictoryBar, VictoryChart, VictoryLabel, VictoryTheme } from 'victory';
+import { VictoryAxis, VictoryBar, VictoryChart, VictoryTheme } from 'victory';
 import stepData from '../../../data/step_data/step_data.json';
-import formatDayGraphData from './formatDayGraphData';
-import formatDayGraphDataTickValues from './formatDayGraphTickValues';
-import formatWeekGraphData from './formatWeekGraphData';
+import formatGraphData from './formatGraphData';
+import GRAPH_STYLE from './GRAPH_STYLE';
+import { IStepData, GraphType } from './type/type.d';
 
 dayjs.extend(isBetween);
 
 const StepDataGraph = () => {
-  const userData = stepData.filter((data) => data.id === 1)[0].stepData;
-
-  // 1일 그래프
-  const today = '2022-02-26';
-  const { oneDayGraphData, totalStep } = formatDayGraphData(userData, today);
-
-  // 일주일 그래프 (기간)
+  const { stepData: userData } = stepData.filter((data: IStepData) => data.id === 1)[0];
   const date = {
-    startDate: '2022-03-08',
-    endDate: '2022-04-19',
+    startDate: '2022-02-26',
+    // endDate: '2022-04-19',
+    endDate: '2022-02-26',
   };
+  const graphType: GraphType = date.startDate === date.endDate ? 'dayGraph' : 'weeklyGraph';
 
-  const { weeklyGraphData, totalStep2 } = formatWeekGraphData(userData, date);
+  const { graphData, totalStep, isThereUserData } = formatGraphData(userData, date);
 
   return (
-    <>
-      <div>
-        오늘 그래프
-        <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 15 }}>
-          <VictoryAxis tickFormat={(x) => ''} />
-          <VictoryAxis dependentAxis />
-          <VictoryBar
-            style={{}}
-            data={oneDayGraphData}
-            x='time'
-            y='steps'
-            labels={(datum) => formatDayGraphDataTickValues(datum)}
-            labelComponent={<VictoryLabel y={270} verticalAnchor='start' />}
-          />
-        </VictoryChart>
-        <div>{today}</div>
+    <div>
+      {isThereUserData && (
         <div>
-          <span>총 {totalStep.toLocaleString()} 걸음</span>
+          <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 10 }}>
+            <VictoryAxis
+              {...GRAPH_STYLE.axis}
+              {...(graphType === 'dayGraph' && GRAPH_STYLE.dayGraphAxis)}
+              scale={{ x: 'time' }}
+            />
+            <VictoryAxis dependentAxis {...GRAPH_STYLE.axis} />
+            <VictoryBar data={graphData} {...GRAPH_STYLE.bar} {...GRAPH_STYLE[`${graphType}Bar`]} />
+          </VictoryChart>
+          <div>{`${date.startDate} ~ ${date.endDate}`}</div>
+          <div>
+            <span>총 {totalStep.toLocaleString()} 걸음</span>
+          </div>
         </div>
-      </div>
-      <hr />
-      <div>
-        일주일 + 전체 그래프
-        <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 40 }}>
-          <VictoryAxis />
-          <VictoryAxis dependentAxis style={{ tickLabels: { fontSize: '10' } }} />
-          <VictoryBar style={{}} data={weeklyGraphData} x='date' y='steps' />
-        </VictoryChart>
-        <div>{`${date.startDate} ~ ${date.endDate}`}</div>
-        <div>
-          <span>총 {totalStep2.toLocaleString()} 걸음</span>
-        </div>
-      </div>
-    </>
+      )}
+    </div>
   );
 };
 
