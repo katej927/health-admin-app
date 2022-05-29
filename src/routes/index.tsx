@@ -8,6 +8,7 @@ import { loginState } from 'states/login';
 
 const App = () => {
   const { isLoggedIn } = useRecoilValue(loginState);
+  //   const isLoggedIn = true;
   return (
     <Routes>
       <Route path='/login' element={!isLoggedIn ? <Login /> : <Navigate to='/' />} />

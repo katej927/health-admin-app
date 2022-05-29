@@ -1,3 +1,102 @@
-.wrapper {
-  background-color: red;
+@use 'src/styles/mixins/flexbox';
+@use 'src/styles/constants/colors';
+
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  width: 1024px;
+  height: 100vh;
+
+  .header {
+    width: 100%;
+    padding-top: 38px;
+
+    svg {
+      width: 100px;
+      height: 25px;
+    }
+  }
+
+  .mainWrapper {
+    @include flexbox.flexbox(center, center);
+    width: 100%;
+    height: 100%;
+
+    .contentWrapper {
+      @include flexbox.flexbox(center, center);
+      flex-direction: column;
+      max-width: 428px;
+      padding: 56px 54px;
+      margin-top: 40px;
+      background-color: #f6f7f8;
+      border-radius: 20px;
+
+      .loginTitle {
+        margin-bottom: 42px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .inputWrapper {
+        width: 320px;
+        margin-bottom: 22px;
+
+        label {
+          display: block;
+          align-self: flex-start;
+          padding-bottom: 16px;
+          font-size: 12px;
+          font-weight: bold;
+          color: #94a2ad;
+        }
+
+        input {
+          width: 100%;
+          height: 40px;
+          padding: 12px 20px;
+          font-size: 14px;
+          font-weight: bold;
+          color: #3a474e;
+          background-color: colors.$WHITE;
+          border: 1px solid #d1d8dc;
+          border-radius: 10px;
+        }
+
+        input::placeholder {
+          color: #bfbfbf;
+        }
+      }
+
+      .checkWrapper {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        margin-bottom: 32px;
+        font-size: 14px;
+        font-weight: normal;
+        color: rgb(58, 71, 78);
+
+        input[type='checkbox'] {
+          display: none;
+        }
+
+        label {
+          display: inline-block;
+          margin-left: 8px;
+        }
+      }
+
+      .loginButton {
+        width: 100%;
+        height: 60px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(148, 162, 173);
+        background-color: rgb(237, 239, 241);
+        border: none;
+        border-radius: 50px;
+      }
+    }
+  }
 }
