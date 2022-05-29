@@ -1,0 +1,20 @@
+.stepDataWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepData {
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-around;
+}
+
+.stepDataGraph {
+  width: 100%;
+  height: 500px;
+}
+
+.totalStep {
+  font-size: 1.5rem;
+  font-weight: 700;
+}

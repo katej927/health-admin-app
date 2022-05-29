@@ -1,10 +1,14 @@
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
 import { VictoryAxis, VictoryBar, VictoryChart, VictoryTheme } from 'victory';
-import stepData from '../../../data/step_data/step_data.json';
+
 import formatGraphData from './formatGraphData';
+import { GraphType, IStepData } from './type/type.d';
+
 import GRAPH_STYLE from './GRAPH_STYLE';
-import { IStepData, GraphType } from './type/type.d';
+import styles from './stepDataGraph.module.scss';
+
+import stepData from '../../../data/step_data/step_data.json';
 
 dayjs.extend(isBetween);
 
@@ -16,13 +20,16 @@ const StepDataGraph = () => {
     endDate: '2022-02-26',
   };
   const graphType: GraphType = date.startDate === date.endDate ? 'dayGraph' : 'weeklyGraph';
-
   const { graphData, totalStep, isThereUserData } = formatGraphData(userData, date);
 
   return (
-    <div>
+    <div className={styles.stepDataWrapper}>
+      <div className={styles.stepData}>
+        <div>{`${date.startDate} ~ ${date.endDate}`}</div>
+        <div className={styles.totalStep}>총 {totalStep.toLocaleString() ?? 0} 걸음</div>
+      </div>
       {isThereUserData && (
-        <div>
+        <div className={styles.stepDataGraph}>
           <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 10 }}>
             <VictoryAxis
               {...GRAPH_STYLE.axis}
@@ -32,10 +39,6 @@ const StepDataGraph = () => {
             <VictoryAxis dependentAxis {...GRAPH_STYLE.axis} />
             <VictoryBar data={graphData} {...GRAPH_STYLE.bar} {...GRAPH_STYLE[`${graphType}Bar`]} />
           </VictoryChart>
-          <div>{`${date.startDate} ~ ${date.endDate}`}</div>
-          <div>
-            <span>총 {totalStep.toLocaleString()} 걸음</span>
-          </div>
         </div>
       )}
     </div>
