@@ -1,24 +1,40 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FocusEvent, FormEvent, useEffect, useState } from 'react';
+import { cx } from 'styles';
+import { getCookie, setCookie } from 'react-use-cookie';
 
 import { Checkbox } from './Checkbox';
-import { MainLogo } from 'assets/svgs';
-import Popup from 'components/popup';
-import { cx } from 'styles';
-import styles from './login.module.scss';
 import { useLogin } from '../../hooks/useLogin';
+
+import Popup from 'components/popup';
+import { MainLogo, HidePasswordIcon, ShowPasswordIcon } from 'assets/svgs';
+import styles from './login.module.scss';
 
 const Login = () => {
   const onLogin = useLogin();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassWord, setShowPassword] = useState(false);
+  const [usernameAlert, setUsernameAlert] = useState(false);
+  const [passwordAlert, setPasswordAlert] = useState(false);
   const [checkValue, setCheckValue] = useState(false);
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [popupMessage, setPopupMessage] = useState<string>('');
-  const [popupOpen, setPopupOpen] = useState<boolean>(false);
+  const [popupMessage, setPopupMessage] = useState('');
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  useEffect(() => {
+    const usernameCookie = getCookie('usernameCookie');
+    if (usernameCookie) {
+      setCheckValue(true);
+      setUsername(usernameCookie);
+    }
+  }, []);
 
   const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {
       currentTarget: { value },
     } = e;
+    if (value !== '') {
+      setUsernameAlert(false);
+    }
     setUsername(value);
   };
 
@@ -26,7 +42,30 @@ const Login = () => {
     const {
       currentTarget: { value },
     } = e;
+    if (value !== '') {
+      setPasswordAlert(false);
+    }
     setPassword(value);
+  };
+
+  const handleOnBlur = (e: FocusEvent<HTMLInputElement>) => {
+    const {
+      currentTarget: { id },
+    } = e;
+    if (!username && id === 'username') {
+      setUsernameAlert(true);
+    }
+    if (!password && id === 'password') {
+      setPasswordAlert(true);
+    }
+  };
+
+  const handleShowPassword = () => {
+    setShowPassword((pre) => !pre);
+  };
+
+  const handleCheckbox = () => {
+    setCheckValue((pre) => !pre);
   };
 
   const onFailHandler = (message: string) => {
@@ -34,13 +73,28 @@ const Login = () => {
     setPopupOpen(true);
   };
 
-  const handleCheckbox = () => {
-    setCheckValue((pre) => !pre);
+  const rememberIdHandler = (rememberId: string, isRemember: boolean) => {
+    if (isRemember) {
+      setCookie('usernameCookie', rememberId, {
+        days: 7,
+      });
+    } else {
+      setCookie('usernameCookie', '', { days: 0 });
+    }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onLogin(username, password, onFailHandler);
+    if (username === '') {
+      setUsernameAlert(true);
+    }
+    if (password === '') {
+      setPasswordAlert(true);
+    }
+    if (password === '' || username === '') {
+      return;
+    }
+    onLogin(username, password, checkValue, onFailHandler, rememberIdHandler);
   };
 
   return (
@@ -54,39 +108,56 @@ const Login = () => {
           <h1 className={styles.loginTitle}>로그인</h1>
           <form onSubmit={handleSubmit} className={styles.loginContent}>
             <fieldset className={styles.inputWrapper}>
-              <label htmlFor='email'>아이디</label>
+              <label htmlFor='username'>아이디</label>
               <input
                 type='text'
-                id='email'
+                id='username'
                 placeholder='아이디를 입력해주세요'
                 value={username}
                 onChange={handleUsernameChange}
+                onBlur={handleOnBlur}
                 autoCapitalize='off'
                 autoCorrect='off'
                 autoComplete='off'
                 spellCheck='false'
               />
             </fieldset>
+            {usernameAlert && <p className={styles.alertMessage}>아이디를 입력해주세요.</p>}
+
             <fieldset className={styles.inputWrapper}>
               <label htmlFor='password'>비밀번호</label>
               <input
-                type='password'
+                type={showPassWord ? 'text' : 'password'}
                 id='password'
                 placeholder='비밀번호를 입력해주세요'
                 value={password}
                 onChange={handlePasswordChange}
+                onBlur={handleOnBlur}
                 autoCapitalize='off'
                 autoCorrect='off'
                 autoComplete='off'
                 spellCheck='false'
               />
+              <button type='button' onClick={handleShowPassword}>
+                {showPassWord ? <ShowPasswordIcon /> : <HidePasswordIcon />}
+              </button>
             </fieldset>
+            {passwordAlert && <p className={styles.alertMessage}>비밀번호를 입력해주세요.</p>}
+
             <fieldset className={styles.checkWrapper}>
               <Checkbox isChecked={checkValue} setIsChecked={setCheckValue} />
               <label htmlFor='rememberInfo'>아이디 저장하기</label>
               <input type='checkbox' id='rememberInfo' onChange={handleCheckbox} checked={checkValue} />
             </fieldset>
-            <button type='submit' className={cx(styles.loginButton, { [styles.buttonValid]: username && password })}>
+
+            <button
+              type='submit'
+              className={cx(
+                styles.loginButton,
+                { [styles.buttonValid]: username && password },
+                { [styles.buttonDisabled]: !username || !password }
+              )}
+            >
               로그인
             </button>
           </form>

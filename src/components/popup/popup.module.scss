@@ -1,8 +1,8 @@
-@use '/src/styles/constants/colors';
-@use '/src/styles/mixins/flexbox';
+@use 'src/styles/constants/colors';
+@use 'src/styles/mixins/flexbox';
 
 .wrapper {
-  @include flexbox.flexbox(start,center);
+  @include flexbox.flexbox(start, center);
   position: fixed;
   min-width: 280px;
   padding: 12px 15px;
@@ -24,7 +24,7 @@
   }
 
   .messageContainer {
-    @include flexbox.flexbox(start,start);
+    @include flexbox.flexbox(start, start);
     flex-direction: column;
 
     span {
