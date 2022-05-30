@@ -1,7 +1,6 @@
 import { SyntheticEvent } from 'react';
 import { SetterOrUpdater } from 'recoil';
 import { IInquiryPeriodState } from 'states';
-import { selectMemberState } from 'states/selectMember';
 import dayjs, { Dayjs } from 'dayjs';
 import memberData from 'data/step_data/member_data.json';
 
