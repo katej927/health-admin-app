@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { IInquiryPeriodState } from 'states';
 import { IStep } from './type.d';
 
 interface IFormatGraphData {
@@ -12,8 +13,7 @@ interface IGraphData {
   date?: string;
 }
 
-// date 타입 바꿔주기
-const formatGraphData = (userData: IStep[], date: any): IFormatGraphData => {
+const formatGraphData = (userData: IStep[], date: IInquiryPeriodState): IFormatGraphData => {
   const { startDate, endDate } = date;
   const isDayGraph = startDate === endDate;
 
