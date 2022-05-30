@@ -23,7 +23,7 @@ const GRAPH_STYLE = {
         fontWeight: 100,
         letterSpacing: '1px',
         stroke: 'gray',
-        fontSize: 10,
+        fontSize: 8,
         marginBlock: '20px',
       },
     },

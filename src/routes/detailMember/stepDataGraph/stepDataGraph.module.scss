@@ -3,6 +3,7 @@
 .stepDataWrapper {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .totalStep {
@@ -11,7 +12,21 @@
   color: colors.$GRAPH_TEXT_GRAY;
 
   span {
-    margin-left: 25px;
+    // margin-left: 25px;
     color: colors.$GRAPH_TEXT;
   }
+}
+
+.stepData {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 150px;
+  margin-left: 25px;
+}
+
+.datePicker {
+  width: 100%;
+  overflow-x: scroll;
 }

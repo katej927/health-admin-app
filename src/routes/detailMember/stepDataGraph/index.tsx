@@ -10,16 +10,14 @@ import styles from './stepDataGraph.module.scss';
 import WhiteSection from 'components/whiteSection';
 
 import rawData from '../../../data/step_data/step_data.json';
+import { DatePicker } from 'components';
+import { useRecoilValue } from 'recoil';
+import { inquiryPeriodState } from 'states';
 
 dayjs.extend(isBetween);
 
 const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
-  const date = {
-    startDate: '2022-02-26',
-    // endDate: '2022-04-19',
-    endDate: '2022-02-26',
-  };
-
+  const date = useRecoilValue(inquiryPeriodState);
   const { stepData: userData } = rawData.filter((data: IStepData) => data.id === selectedID)[0];
   const graphType: GraphType = date.startDate === date.endDate ? 'dayGraph' : 'weeklyGraph';
   const { graphData, totalStep } = formatGraphData(userData, date);
@@ -27,8 +25,13 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
   return (
     <WhiteSection>
       <div className={styles.stepDataWrapper}>
-        <div className={styles.totalStep}>
-          <span>걸음 수</span> 총 {totalStep.toLocaleString() ?? 0} 걸음
+        <div className={styles.stepData}>
+          <div className={styles.datePicker}>
+            <DatePicker page='회원 상세 정보' />
+          </div>
+          <div className={styles.totalStep}>
+            <span>걸음 수</span> 총 {totalStep.toLocaleString() ?? 0} 걸음
+          </div>
         </div>
         <div className={styles.stepDataGraph}>
           <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 10 }} width={900}>
