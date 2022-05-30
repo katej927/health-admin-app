@@ -1,4 +1,5 @@
 import { Dayjs } from 'dayjs';
+import memberData from 'data/step_data/member_data.json';
 
 export const converteDate = (assignedDay: Dayjs) => {
   const firstWeek = assignedDay.startOf('month').week();
@@ -20,4 +21,20 @@ export const converteDate = (assignedDay: Dayjs) => {
     }
     return acc;
   }, init);
+};
+
+export type TPage = '회원 관리' | '회원 상세 정보';
+
+export interface IMemberData {
+  id: number;
+  username: string;
+  crt_ymdt: string;
+}
+
+const init: IMemberData = memberData[0];
+
+export const findRegistrationDate = (page: TPage) => {
+  if (page === '회원 관리')
+    return memberData.reduce((c, n) => (Date.parse(n.crt_ymdt) < Date.parse(c.crt_ymdt) ? n : c), init).crt_ymdt;
+  return 'tmp'; // 수정하기
 };

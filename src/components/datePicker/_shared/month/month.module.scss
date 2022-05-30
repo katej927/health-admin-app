@@ -31,7 +31,8 @@
     }
 
     .monthOfCalendar {
-      color: colors.$GREY_100;
+      font-size: sizes.$FONT_SIZE_MEDIUM;
+      color: colors.$GREY_300;
     }
   }
 
@@ -51,19 +52,6 @@
     text-align: center;
 
     .day {
-      .otherMonth {
-        background-color: gray;
-      }
-
-      .selectedDate {
-        color: colors.$WHITE;
-        background-color: colors.$PRIMARY;
-      }
-
-      .betweenDate {
-        background-color: colors.$GREY_50;
-      }
-
       .dateBtn {
         @include flexbox.flexbox(center, center);
         width: 3rem;
@@ -71,6 +59,21 @@
         margin: 0.5rem;
         color: colors.$GREY_800;
         border-radius: 50%;
+
+        &.otherMonth {
+          color: colors.$WHITE !important;
+          pointer-events: none !important;
+          background: colors.$WHITE !important;
+        }
+
+        &.selectedDate {
+          color: colors.$WHITE;
+          background-color: colors.$PRIMARY;
+        }
+
+        &.betweenDate {
+          background-color: colors.$GREY_50;
+        }
       }
     }
   }

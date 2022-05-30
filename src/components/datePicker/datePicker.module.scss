@@ -3,33 +3,54 @@
 @use 'src/styles/constants/sizes';
 
 .wrapper {
-  .dateInput {
-    border: 0.1rem solid black;
+  position: relative;
 
-    &::before {
-      width: 100%;
-      content: attr(data-placeholder);
+  .optionsWrapper {
+    @include flexbox.flexbox('center', 'center');
+    width: fit-content;
+
+    .dateInputWrapper {
+      @include flexbox.flexbox('center', 'center');
+      margin-right: 1.5rem;
+      background-color: colors.$WHITE;
+      border: 0.1rem solid colors.$GREY_100;
+      border-radius: sizes.$BORDER_RADIUS;
+
+      .dateInput {
+        padding: 0.5rem 1rem;
+        color: colors.$GREY_800;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .arrowDown {
+        width: 2.4rem;
+      }
+
+      &.invalidated {
+        border: 1px solid colors.$TRIANGLE_UP;
+      }
     }
 
-    &:focus::before,
-    &:valid::before {
-      display: none;
+    .btn {
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      color: colors.$GREY_800;
+      background-color: colors.$WHITE;
+      border: 0.1rem solid colors.$GREY_100;
+      border-radius: sizes.$BORDER_RADIUS;
     }
   }
 
   .monthsWrapper {
     @include flexbox.flexbox('evenly', 'center');
+    position: absolute;
     width: fit-content;
     padding: 3rem;
-    font-size: sizes.$FONT_SIZE_REGULAR;
+    margin-top: 1rem;
+    font-size: sizes.$FONT_SIZE_MEDIUM;
     background-color: colors.$WHITE;
     border-radius: sizes.$BORDER_RADIUS;
     box-shadow: colors.$SHADOW;
-  }
-
-  .btn {
-    padding: 0.5rem;
-    color: colors.$WHITE;
-    background-color: colors.$PRIMARY;
   }
 }

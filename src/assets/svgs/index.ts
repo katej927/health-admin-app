@@ -10,3 +10,4 @@ export { ReactComponent as ArrowIcon } from './arrow.svg';
 export { ReactComponent as IconDown } from './icon_down.svg';
 export { ReactComponent as ArrowLeft } from './icon-arrow-left.svg';
 export { ReactComponent as ArrowRight } from './icon-arrow-right.svg';
+export { ReactComponent as ArrowDown } from './icon-arrow-down.svg';

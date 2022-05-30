@@ -3,4 +3,5 @@ import Month from './month';
 export { Month };
 
 export { BTN_OPTIONS } from './constants';
-export { converteDate } from './utils';
+export { converteDate, findRegistrationDate } from './utils';
+export type { TPage } from './utils';
