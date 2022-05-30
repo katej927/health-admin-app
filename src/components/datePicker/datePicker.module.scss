@@ -4,6 +4,7 @@
 
 .wrapper {
   position: relative;
+  width: max-content;
 
   .optionsWrapper {
     @include flexbox.flexbox('center', 'center');
@@ -45,6 +46,7 @@
   .monthsWrapper {
     @include flexbox.flexbox('evenly', 'center');
     position: absolute;
+    z-index: 1;
     width: 66rem;
     height: 38rem;
     padding: 3rem;
