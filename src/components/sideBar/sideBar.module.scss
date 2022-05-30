@@ -34,6 +34,7 @@
         p:first-of-type {
           color: colors.$GREY_800;
           text-transform: uppercase;
+          letter-spacing: sizes.$LETTER_SPACING;
         }
 
         p:last-of-type {
@@ -59,6 +60,7 @@
         font-size: sizes.$REGULAR;
         font-weight: sizes.$BOLD;
         color: colors.$GREY_800;
+        letter-spacing: sizes.$LETTER_SPACING;
         border-radius: sizes.$BORDER_RADIUS;
         transition: 200ms;
 
@@ -86,6 +88,7 @@
     font-size: sizes.$REGULAR;
     font-weight: sizes.$BOLD;
     color: colors.$GREY_300;
+    letter-spacing: sizes.$LETTER_SPACING;
     border-radius: 1rem;
     transition: 200ms;
 
