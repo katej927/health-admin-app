@@ -6,11 +6,9 @@ import { IHeartRate } from 'types/heartRate';
 import styles from './heartRateDataGraph.module.scss';
 import GRAPH_STYLE from './GRAPH_STYLE';
 
-const HeartRateDataGraph = () => {
-  // TODO: userId prop 값으로 변경
-  const userId = 1;
-  // TODO: date recoilValue로 변경
-  const date = { startDate: '2022-02-26', endDate: '2022-02-26' };
+const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
+  const userId = selectedID;
+  const date = { startDate: '2022-02-26', endDate: '2022-02-26' }; // TODO: date recoilValue로 변경
   const rawJson = heartRateData.find((el) => el.id === userId);
   const userHeartRateData = rawJson?.heartRateData ?? [];
   const array: IHeartRate[] = [];
@@ -28,6 +26,8 @@ const HeartRateDataGraph = () => {
     }
     return array;
   });
+
+  const averageHeartBeat = array.reduce((acc: number, curr: IHeartRate) => acc + curr.avg_beat, 0) / array.length;
 
   const data = array?.map((el: IHeartRate) => {
     return { x: el.crt_ymdt, y: el.avg_beat };
@@ -48,7 +48,7 @@ const HeartRateDataGraph = () => {
     <div className={styles.heartRateWrapper}>
       <div>
         <div className={styles.dataAverage}>
-          <span>심박수</span> 평균 95
+          <span>심박수</span> 평균 {Math.floor(averageHeartBeat)} bpm
         </div>
         <VictoryChart minDomain={{ y: 50 }} maxDomain={{ y: 160 }} width={1080}>
           <VictoryLine

@@ -17,7 +17,7 @@ const DetailMember = () => {
   return (
     <WhiteSection>
       <div className={styles.graphWrapper}>
-        <HeartRateDataGraph />
+        <HeartRateDataGraph selectedID={selectedID} />
         <StepDataGraph selectedID={selectedID} />
       </div>
     </WhiteSection>
