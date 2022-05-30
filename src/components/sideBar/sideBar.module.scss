@@ -3,11 +3,12 @@
 @use '/src/styles/mixins/flexbox';
 
 .sideBarWrapper {
-  flex: 0;
+  @include flexbox.flexbox(between, around, col);
+  width: 320px;
   min-width: 320px;
-  height: 100%;
-  padding: 6rem 4rem;
-  background-color: colors.$WHITE;
+  max-width: 320px;
+  min-height: 100vh;
+  padding: 6rem 40px;
   box-shadow: colors.$SHADOW;
 
   svg {
@@ -15,91 +16,88 @@
     top: -1px;
   }
 
-  .userInfo {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 90px;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    font-weight: 700;
-    border-bottom: 1px solid colors.$GREY_50;
-
-    .userName {
-      margin: 1px 0 0 15px;
-      line-height: 1.2;
-
-      p:first-of-type {
-        color: colors.$GREY_800;
-        text-transform: uppercase;
-      }
-
-      p:last-of-type {
-        font-size: sizes.$SMALL;
-        color: colors.$GREY_100;
-      }
-    }
-  }
-
-  .underLine {
-    margin: 5.5rem 0;
-    border-bottom: 0.1rem solid colors.$GREY_50;
-  }
-
-  .box {
-    @include flexbox.columnFlexbox(1.3rem);
-
-    a {
-      @include flexbox.flexbox(start, center);
-      gap: 1.2rem;
-      height: 6rem;
-      padding: 2rem;
-      font-size: sizes.$REGULAR;
-      font-weight: sizes.$BOLD;
-      color: colors.$GREY_800;
-      border-radius: sizes.$BORDER_RADIUS;
-      transition: 200ms;
-
-      svg {
-        fill: colors.$GREY_800;
-      }
-    }
-
-    .isActive {
-      color: colors.$PRIMARY;
-      background-color: colors.$GREY_50;
-
-      svg {
-        fill: colors.$PRIMARY;
-      }
-    }
-  }
-
-  .logoutContainer {
-    position: absolute;
-    bottom: 5rem;
-
-    .logout {
+  .upperWrapper {
+    .userInfo {
       display: flex;
-      gap: 1.2rem;
-      height: 6rem;
-      padding: 2rem;
-      font-size: sizes.$REGULAR;
-      font-weight: sizes.$BOLD;
-      color: colors.$GREY_300;
-      border-radius: 1rem;
-      transition: 200ms;
+      align-items: center;
+      width: 100%;
+      padding-bottom: 40px;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 700;
+      border-bottom: 1px solid colors.$GREY_50;
 
-      svg {
-        fill: colors.$GREY_300;
+      .userName {
+        margin: 1px 0 0 15px;
+        line-height: 1.2;
+
+        p:first-of-type {
+          color: colors.$GREY_800;
+          text-transform: uppercase;
+        }
+
+        p:last-of-type {
+          font-size: sizes.$SMALL;
+          color: colors.$GREY_100;
+        }
       }
+    }
 
-      &:hover {
-        color: colors.$ACTIVATED_BTN;
+    .underLine {
+      margin: 5.5rem 0;
+      border-bottom: 0.1rem solid colors.$GREY_50;
+    }
+
+    .box {
+      @include flexbox.columnFlexbox(1.3rem);
+
+      a {
+        @include flexbox.flexbox(start, center);
+        gap: 1.2rem;
+        height: 6rem;
+        padding: 2rem;
+        font-size: sizes.$REGULAR;
+        font-weight: sizes.$BOLD;
+        color: colors.$GREY_800;
+        border-radius: sizes.$BORDER_RADIUS;
+        transition: 200ms;
 
         svg {
-          fill: colors.$ACTIVATED_BTN;
+          fill: colors.$GREY_800;
         }
+      }
+
+      .isActive {
+        color: colors.$PRIMARY;
+        background-color: colors.$GREY_50;
+
+        svg {
+          fill: colors.$PRIMARY;
+        }
+      }
+    }
+  }
+
+  .logout {
+    display: flex;
+    gap: 1.2rem;
+    height: 6rem;
+    padding: 2rem;
+    font-size: sizes.$REGULAR;
+    font-weight: sizes.$BOLD;
+    color: colors.$GREY_300;
+    border-radius: 1rem;
+    transition: 200ms;
+
+    svg {
+      fill: colors.$GREY_300;
+    }
+
+    &:hover {
+      color: colors.$ACTIVATED_BTN;
+
+      svg {
+        fill: colors.$ACTIVATED_BTN;
       }
     }
   }

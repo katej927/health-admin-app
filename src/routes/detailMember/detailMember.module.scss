@@ -5,7 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 
   h2 {
     font-size: sizes.$LARGE;
@@ -34,8 +35,6 @@
 }
 
 .tableWrapper {
-  margin-bottom: 4rem;
-
   table {
     width: 100%;
     font-size: 1.4rem;
@@ -61,6 +60,6 @@
   flex-direction: column;
 
   > :first-child {
-    margin-bottom: 4rem;
+    margin: 2rem 0 0;
   }
 }

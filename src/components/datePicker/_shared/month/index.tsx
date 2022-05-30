@@ -52,7 +52,7 @@ const Month = ({
             onClick={onMonthBtnClick}
             data-name='prevMonth'
           >
-            <ArrowLeft className={styles.arrow} />
+            <ArrowLeft className={styles.arrowLeft} />
           </button>
         )}
         <time className={styles.monthOfCalendar} dateTime={assignedDay.format('YYYY-MM-DD')}>
@@ -65,7 +65,7 @@ const Month = ({
             onClick={onMonthBtnClick}
             data-name='nextMonth'
           >
-            <ArrowRight className={styles.arrow} />
+            <ArrowRight className={styles.arrowRight} />
           </button>
         )}
       </div>

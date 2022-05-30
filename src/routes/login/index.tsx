@@ -6,7 +6,7 @@ import { useLogin } from '../../hooks/useLogin';
 
 import Popup from 'components/popup';
 import StoreID from './StoreID';
-import { MainLogo, HidePasswordIcon, ShowPasswordIcon } from 'assets/svgs';
+import { HidePasswordIcon, ShowPasswordIcon } from 'assets/svgs';
 import styles from './login.module.scss';
 
 const Login = () => {
@@ -96,9 +96,6 @@ const Login = () => {
   return (
     <div className={styles.loginWrapper}>
       <Popup message={popupMessage} open={popupOpen} setOpen={setPopupOpen} status='error' />
-      <header className={styles.header}>
-        <MainLogo />
-      </header>
       <main className={styles.mainWrapper}>
         <section className={styles.contentWrapper}>
           <h1 className={styles.loginTitle}>로그인</h1>

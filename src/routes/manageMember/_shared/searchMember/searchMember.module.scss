@@ -1,10 +1,9 @@
-@use 'src/styles/constants/colors';
-@use 'src/styles/constants/sizes';
-@use 'src/styles/mixins/visual';
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
+@use '/src/styles/mixins/visual';
 
 .searchForm {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 
@@ -17,6 +16,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 1.5rem;
+    white-space: nowrap;
 
     > p {
       margin-right: 1rem;
@@ -34,10 +34,6 @@
       background-color: colors.$WHITE;
       border: 1px solid colors.$GREY_100;
       border-radius: 10px;
-
-      &::placeholder {
-        color: colors.$RED; // 왜안바껴
-      }
     }
   }
 
@@ -47,6 +43,14 @@
     .submitBtn {
       @include visual.btnActive;
       margin-left: 0.5rem;
+      color: colors.$WHITE;
+      background-color: colors.$ACTIVATED_BTN;
+      border-color: colors.$ACTIVATED_BTN;
+
+      &:hover {
+        background-color: colors.$PRIMARY;
+        border-color: colors.$PRIMARY;
+      }
     }
   }
 }

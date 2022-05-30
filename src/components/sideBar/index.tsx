@@ -15,35 +15,35 @@ const SideBar = () => {
   const onLogout = useLogout();
   return (
     <aside className={styles.sideBarWrapper}>
-      <div className={styles.userInfo}>
-        <UserInfoIcon />
-        <div className={styles.userName}>
-          <p>{loginUser.isLoggedIn && loginUser.payload.name} 님</p>
-          <p>MOADATA Company</p>
+      <div className={styles.upperWrapper}>
+        <div className={styles.userInfo}>
+          <UserInfoIcon />
+          <div className={styles.userName}>
+            <p>{loginUser.isLoggedIn && loginUser.payload.name} 님</p>
+            <p>MOADATA Company</p>
+          </div>
+        </div>
+        <div className={styles.box}>
+          <ul>
+            <li>
+              <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+                <FaHome />
+                백오피스 홈
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+                <BsPersonFill />
+                회원 관리
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className={styles.box}>
-        <ul>
-          <li>
-            <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-              <FaHome />
-              백오피스 홈
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-              <BsPersonFill />
-              회원 관리
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-      <div className={styles.logoutContainer}>
-        <button type='button' className={styles.logout} onClick={onLogout}>
-          <LogoutIcon />
-          로그아웃
-        </button>
-      </div>
+      <button type='button' className={styles.logout} onClick={onLogout}>
+        <LogoutIcon />
+        로그아웃
+      </button>
     </aside>
   );
 };
