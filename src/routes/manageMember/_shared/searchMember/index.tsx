@@ -68,20 +68,24 @@ const SearchMember = () => {
             value={searchKeyword.username}
           />
         </div>
-        <div className={styles.btnWrapper}>
-          <DatePicker isSubmit={isSubmit} page='회원 관리' state={inquiryPeriodMemberState} />
-          <div>
-            <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
-              검색
-            </button>
-          </div>
+        <div className={styles.inputSubWrapper}>
+          <p>회원 번호</p>
+          <input
+            name='id'
+            onBlur={setDefaultInputValue}
+            onFocus={resetInputValue}
+            onChange={onInputChange}
+            value={searchKeyword.id}
+          />
         </div>
       </div>
       <div className={styles.btnWrapper}>
         <DatePicker isSubmit={isSubmit} page='회원 관리' state={inquiryPeriodMemberState} />
-        <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
-          검색
-        </button>
+        <div>
+          <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
+            검색
+          </button>
+        </div>
       </div>
     </form>
   );
