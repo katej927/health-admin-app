@@ -1,8 +1,58 @@
+@use 'src/styles/constants/colors';
+
+.navWrapper {
+  margin-top: 2rem;
+
+  .menu {
+    display: inline;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: colors.$BLACK;
+  }
+}
+
+.titleWrapper {
+  margin-top: 4rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: colors.$BLACK;
+  }
+}
+
+.mainWrapper {
+  padding: 4rem;
+  margin-top: 3rem;
+  background-color: colors.$WHITE;
+  border-radius: 2rem;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 4%);
+
+  .inputWrapper {
+    margin-bottom: 1.5rem;
+
+    label {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: colors.$BLACK;
+    }
+
+    input {
+      height: 3rem;
+      margin-left: 1rem;
+      font-size: 1.4rem;
+      font-weight: 200;
+      color: colors.$BLACK;
+      text-indent: 1rem;
+      border: 0.1rem solid colors.$GRAYA;
+      border-radius: 0.7rem;
+    }
+  }
+}
+
 .graphWrapper {
   display: flex;
   flex-direction: column;
 
   > :first-child {
     margin-bottom: 4rem;
-  }
-}
