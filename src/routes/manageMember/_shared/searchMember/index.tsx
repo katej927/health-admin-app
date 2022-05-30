@@ -5,6 +5,7 @@ import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { searchMemberList } from '../../../../states/searchMemberList';
 import DatePicker from '../../../../components/datePicker';
 import { inquiryPeriodState } from '../../../../states/inquiryPeriod';
+import WhiteSection from '../../../../components/whiteSection';
 
 interface IKeywordObj {
   [key: string]: string | number;
@@ -81,13 +82,13 @@ const SearchMember = () => {
               />
             </div>
           </div>
-
-          <DatePicker isSubmit={isSubmit} page='회원 관리' />
         </div>
-
-        <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
-          검색
-        </button>
+        <div className={styles.btnWrapper}>
+          <DatePicker isSubmit={isSubmit} page='회원 관리' />
+          <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
+            검색
+          </button>
+        </div>
       </form>
     </div>
   );
