@@ -15,9 +15,9 @@ dayjs.extend(isBetween);
 
 const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
   const date = {
-    startDate: '2022-02-25',
+    startDate: '2022-02-26',
     // endDate: '2022-04-19',
-    endDate: '2022-02-25',
+    endDate: '2022-02-26',
   };
 
   const { stepData: userData } = stepData.filter((data: IStepData) => data.id === selectedID)[0];
