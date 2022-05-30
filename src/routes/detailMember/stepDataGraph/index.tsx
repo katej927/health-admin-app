@@ -26,9 +26,7 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
     <WhiteSection>
       <div className={styles.stepDataWrapper}>
         <div className={styles.stepData}>
-          <div className={styles.datePicker}>
-            <DatePicker page='회원 상세 정보' />
-          </div>
+          <DatePicker page='회원 상세 정보' />
           <div className={styles.totalStep}>
             <span>걸음 수</span> 총 {totalStep.toLocaleString() ?? 0} 걸음
           </div>
