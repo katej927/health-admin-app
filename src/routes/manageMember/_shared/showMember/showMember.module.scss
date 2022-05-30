@@ -1,11 +1,7 @@
 @use 'src/styles/constants/colors';
 @use 'src/styles/constants/sizes';
 
-.boxWrapper {
-  padding: 4rem 4rem 3rem;
-  background-color: colors.$WHITE;
-  border-radius: 2rem;
-
+.wrapper {
   p {
     margin-bottom: 3rem;
     font-size: sizes.$REGULAR;
