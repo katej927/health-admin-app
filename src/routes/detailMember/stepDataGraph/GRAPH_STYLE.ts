@@ -9,6 +9,7 @@ const GRAPH_STYLE = {
   dayGraphBar: {
     x: 'time',
     y: 'steps',
+    barWidth: 10,
   },
   dayGraphAxis: {
     tickFormat: (x: string) => dayjs(x, 'HH:mm:ss').get('hour'),
