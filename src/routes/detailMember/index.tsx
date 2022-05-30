@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { selectMemberState } from 'states/selectMember';
 import styles from './detailMember.module.scss';
 
 const DetailMember = () => {
-  const [selectMember, _] = useRecoilState(selectMemberState);
+  const selectMember = useRecoilValue(selectMemberState);
 
   return (
     <section>
