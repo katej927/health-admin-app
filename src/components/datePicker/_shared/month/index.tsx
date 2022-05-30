@@ -8,7 +8,7 @@ import isBetween from 'dayjs/plugin/isBetween';
 import localeData from 'dayjs/plugin/localeData';
 import 'dayjs/locale/ko';
 
-import { converteDate } from '../utils';
+import { converteDate, updatePeriod } from '../utils';
 import { ArrowLeft, ArrowRight } from 'assets/svgs';
 
 import styles from './month.module.scss';
@@ -32,27 +32,7 @@ const Month = ({ assignedDay, onMonthBtnClick, isCurrentMonth, setIsOpenCalendar
 
   const convertedDate = converteDate(assignedDay);
 
-  const onDayClick = (date: Dayjs) => {
-    if (!startDate && !endDate)
-      setInquiryPeriod((prev) => ({
-        ...prev,
-        startDate: date.format('YYYY-MM-DD'),
-      }));
-    else if (startDate && !endDate) {
-      if (dayjs(startDate).isAfter(dayjs(date))) {
-        setInquiryPeriod((prev) => ({
-          ...prev,
-          startDate: date.format('YYYY-MM-DD'),
-        }));
-      } else {
-        setInquiryPeriod((prev) => ({
-          ...prev,
-          endDate: date.format('YYYY-MM-DD'),
-        }));
-        setIsOpenCalendar(false);
-      }
-    } else if (startDate && endDate) setInquiryPeriod({ startDate: date.format('YYYY-MM-DD'), endDate: '' });
-  };
+  const onDayClick = (date: Dayjs) => updatePeriod(date, startDate, endDate, setInquiryPeriod, setIsOpenCalendar);
 
   return (
     <div className={cn(styles.wrapper, isCurrentMonth ? styles.left : styles.right)}>

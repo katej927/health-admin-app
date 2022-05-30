@@ -40,6 +40,9 @@ const DatePicker = ({ isSubmit, page }: Props) => {
     name === 'nextMonth' ? setTime(getTime.add(1, 'month')) : setTime(getTime.subtract(1, 'month'));
   };
 
+  const onClick3TypesOfQuickBtn = (e: SyntheticEvent<EventTarget>) =>
+    onClickQuickBtn(e, setInquiryPeriod, fixedToday, registrationDate);
+
   return (
     <fieldset className={styles.wrapper}>
       <div className={styles.optionsWrapper}>
@@ -59,7 +62,7 @@ const DatePicker = ({ isSubmit, page }: Props) => {
                 required
                 aria-required='true'
                 pattern='\d{4}-\d{2}-\d{2}'
-                placeholder={idx ? '끝' : '시작'}
+                placeholder={idx ? '종료일' : '시작일'}
               />
             );
           })}
@@ -70,7 +73,7 @@ const DatePicker = ({ isSubmit, page }: Props) => {
             key={option}
             type='button'
             className={styles.btn}
-            onClick={(e) => onClickQuickBtn(e, setInquiryPeriod, fixedToday, registrationDate)}
+            onClick={onClick3TypesOfQuickBtn}
             data-name={option}
           >
             {option}

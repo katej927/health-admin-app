@@ -1,12 +1,5 @@
-import DatePicker from 'components/datePicker';
-
 const ManageMember = () => {
-  return (
-    <div>
-      ManageMember
-      <DatePicker page='회원 관리' isSubmit />
-    </div>
-  );
+  return <div>ManageMember</div>;
 };
 
 export default ManageMember;

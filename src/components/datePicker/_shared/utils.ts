@@ -1,4 +1,4 @@
-import { SyntheticEvent } from 'react';
+import { SyntheticEvent, Dispatch } from 'react';
 import { SetterOrUpdater } from 'recoil';
 import { IInquiryPeriodState } from 'states';
 import dayjs, { Dayjs } from 'dayjs';
@@ -71,4 +71,32 @@ export const onClickQuickBtn = (
     });
   if (name === '전체')
     setInquiryPeriod({ startDate: registrationDate, endDate: dayjs(fixedToday).format('YYYY-MM-DD') });
+};
+
+export const updatePeriod = (
+  date: Dayjs,
+  startDate: string,
+  endDate: string,
+  setInquiryPeriod: SetterOrUpdater<IInquiryPeriodState>,
+  setIsOpenCalendar: Dispatch<React.SetStateAction<boolean>>
+) => {
+  if (!startDate && !endDate)
+    setInquiryPeriod((prev) => ({
+      ...prev,
+      startDate: date.format('YYYY-MM-DD'),
+    }));
+  else if (startDate && !endDate) {
+    if (dayjs(startDate).isAfter(dayjs(date))) {
+      setInquiryPeriod((prev) => ({
+        ...prev,
+        startDate: date.format('YYYY-MM-DD'),
+      }));
+    } else {
+      setInquiryPeriod((prev) => ({
+        ...prev,
+        endDate: date.format('YYYY-MM-DD'),
+      }));
+      setIsOpenCalendar(false);
+    }
+  } else if (startDate && endDate) setInquiryPeriod({ startDate: date.format('YYYY-MM-DD'), endDate: '' });
 };

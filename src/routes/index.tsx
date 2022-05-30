@@ -10,15 +10,14 @@ import { useRecoilValue } from 'recoil';
 
 const App = () => {
   const { isLoggedIn } = useRecoilValue(loginState);
-  const tmpLogin = true;
 
   return (
     <Routes>
-      <Route path='login' element={!tmpLogin ? <Login /> : <Navigate to='/' />} />
+      <Route path='login' element={!isLoggedIn ? <Login /> : <Navigate to='/' />} />
       <Route element={<Layout />}>
-        <Route index element={tmpLogin ? <Dashboard /> : <Navigate to='/login' />} />
-        <Route path='manageMember' element={tmpLogin && <ManageMember />} />
-        <Route path='detailMember' element={tmpLogin && <DetailMember />} />
+        <Route index element={isLoggedIn ? <Dashboard /> : <Navigate to='/login' />} />
+        <Route path='manageMember' element={isLoggedIn && <ManageMember />} />
+        <Route path='detailMember' element={isLoggedIn && <DetailMember />} />
       </Route>
     </Routes>
   );
