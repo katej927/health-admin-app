@@ -5,8 +5,18 @@ export interface IInquiryPeriodState {
   endDate: string;
 }
 
-export const inquiryPeriodState = atom<IInquiryPeriodState>({
-  key: '#inquiryPeriodState',
+export const inquiryPeriodMemberState = atom<IInquiryPeriodState>({
+  key: '#inquiryPeriodMemberState',
+  default: { startDate: '', endDate: '' },
+});
+
+export const inquiryPeriodHeartState = atom<IInquiryPeriodState>({
+  key: '#inquiryPeriodHeartState',
+  default: { startDate: '', endDate: '' },
+});
+
+export const inquiryPeriodStepState = atom<IInquiryPeriodState>({
+  key: '#inquiryPeriodStepState',
   default: { startDate: '', endDate: '' },
 });
 

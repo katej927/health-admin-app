@@ -1,7 +1,6 @@
 import { SyntheticEvent, Dispatch } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
-import { useRecoilState } from 'recoil';
-import { inquiryPeriodState } from 'states';
+import { SetterOrUpdater } from 'recoil';
 
 import week from 'dayjs/plugin/weekOfYear';
 import isBetween from 'dayjs/plugin/isBetween';
@@ -9,6 +8,7 @@ import localeData from 'dayjs/plugin/localeData';
 import 'dayjs/locale/ko';
 
 import { converteDate, updatePeriod, convertToColorDate } from '../utils';
+import { IInquiryPeriodState } from 'states';
 import { ArrowLeft, ArrowRight } from 'assets/svgs';
 
 import styles from './month.module.scss';
@@ -24,10 +24,18 @@ interface Props {
   onMonthBtnClick: (e: SyntheticEvent<EventTarget>) => void;
   isCurrentMonth: boolean;
   setIsOpenCalendar: Dispatch<React.SetStateAction<boolean>>;
+  setInquiryPeriod: SetterOrUpdater<IInquiryPeriodState>;
+  inquiryPeriod: IInquiryPeriodState;
 }
 
-const Month = ({ assignedDay, onMonthBtnClick, isCurrentMonth, setIsOpenCalendar }: Props) => {
-  const [inquiryPeriod, setInquiryPeriod] = useRecoilState(inquiryPeriodState);
+const Month = ({
+  assignedDay,
+  onMonthBtnClick,
+  isCurrentMonth,
+  setIsOpenCalendar,
+  inquiryPeriod,
+  setInquiryPeriod,
+}: Props) => {
   const { startDate, endDate } = inquiryPeriod;
 
   const convertedDate = converteDate(assignedDay);

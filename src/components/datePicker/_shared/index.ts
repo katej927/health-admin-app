@@ -11,4 +11,5 @@ export {
   updatePeriod,
   convertToColorDate,
 } from './utils';
-export type { TPage } from './utils';
+
+export type { TStates, TPage, IMemberData } from './types.d';
