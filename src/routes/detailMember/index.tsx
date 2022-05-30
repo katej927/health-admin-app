@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { selectMemberState } from 'states/selectMember';
+import cx from 'classnames';
 import styles from './detailMember.module.scss';
 
 const DetailMember = () => {
@@ -9,31 +10,38 @@ const DetailMember = () => {
   return (
     <section>
       <nav className={styles.navWrapper}>
-        <Link to='/' className={styles.menu}>
+        <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
           홈
-        </Link>
-        <p className={styles.menu}> &gt; </p>
-        <Link to='/manageMember' className={styles.menu}>
+        </NavLink>
+        <p className={styles.menu}>&gt;</p>
+        <NavLink to='/manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
           회원 관리
-        </Link>
-        <p className={styles.menu}> &gt; 회원 상세</p>
+        </NavLink>
+        <p className={styles.menu}>&gt;</p>
+        <NavLink to='/detailMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+          회원 상세
+        </NavLink>
       </nav>
       <article className={styles.titleWrapper}>
         <h2>회원 상세 정보</h2>
       </article>
       <main className={styles.mainWrapper}>
-        <div className={styles.inputWrapper}>
-          <label htmlFor='loginId'>로그인 ID</label>
-          <input type='text' value={selectMember.id} id='loginId' name='loginId' disabled />
-        </div>
-        <div className={styles.inputWrapper}>
-          <label htmlFor='memberNum'>회원 번호</label>
-          <input type='text' value={selectMember.username} id='memberNum' name='memberNum' disabled />
-        </div>
-        <div className={styles.inputWrapper}>
-          <label htmlFor='joinDate'>가입 일시</label>
-          <input type='text' value={selectMember.crt_ymdt} id='joinDate' name='joinDate' disabled />
-        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>회원번호</th>
+              <th>가입일</th>
+              <th>로그인ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{selectMember.id}</td>
+              <td>{selectMember.username}</td>
+              <td>{selectMember.crt_ymdt}</td>
+            </tr>
+          </tbody>
+        </table>
       </main>
     </section>
   );
