@@ -5,6 +5,7 @@ import getDatesFromStartToLast from '../../../utils/getDatesFromStartToLast';
 import { IHeartRate } from 'types/heartRate';
 import styles from './heartRateDataGraph.module.scss';
 import GRAPH_STYLE from './GRAPH_STYLE';
+import WhiteSection from 'components/whiteSection';
 
 const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
   const userId = selectedID;
@@ -45,30 +46,32 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
   };
 
   return (
-    <div className={styles.heartRateWrapper}>
-      <div>
-        <div className={styles.dataAverage}>
-          <span>심박수</span> 평균 {Math.floor(averageHeartBeat)} bpm
+    <WhiteSection>
+      <div className={styles.heartRateWrapper}>
+        <div>
+          <div className={styles.dataAverage}>
+            <span>심박수</span> 평균 {Math.floor(averageHeartBeat)} bpm
+          </div>
+          <VictoryChart minDomain={{ y: 50 }} maxDomain={{ y: 160 }} width={1080}>
+            <VictoryLine
+              style={{
+                data: { stroke: '#c43a31' },
+              }}
+              sortOrder='descending'
+              data={data}
+              animate={GRAPH_STYLE.animate}
+            />
+            <VictoryAxis dependentAxis style={GRAPH_STYLE.styleAxisY} />
+            <VictoryAxis
+              tickFormat={(tick) => setTickFormat(tick)}
+              fixLabelOverlap
+              tickLabelComponent={<VictoryLabel renderInPortal dx={30} />}
+              style={GRAPH_STYLE.styleAxisX}
+            />
+          </VictoryChart>
         </div>
-        <VictoryChart minDomain={{ y: 50 }} maxDomain={{ y: 160 }} width={1080}>
-          <VictoryLine
-            style={{
-              data: { stroke: '#c43a31' },
-            }}
-            sortOrder='descending'
-            data={data}
-            animate={GRAPH_STYLE.animate}
-          />
-          <VictoryAxis dependentAxis style={GRAPH_STYLE.styleAxisY} />
-          <VictoryAxis
-            tickFormat={(tick) => setTickFormat(tick)}
-            fixLabelOverlap
-            tickLabelComponent={<VictoryLabel renderInPortal dx={30} />}
-            style={GRAPH_STYLE.styleAxisX}
-          />
-        </VictoryChart>
       </div>
-    </div>
+    </WhiteSection>
   );
 };
 
