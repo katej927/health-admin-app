@@ -1,7 +1,12 @@
 import { atom } from 'recoil';
-import { IMember } from 'types/member';
 
-export const searchMemberList = atom<IMember[]>({
+interface IMemberInfo {
+  id: number | string;
+  username: string;
+  crt_ymdt: object | string;
+}
+
+export const searchMemberList = atom<IMemberInfo[]>({
   key: '#searchMemberList',
   default: [],
 });

@@ -1,17 +1,17 @@
+@use 'src/styles/constants/colors';
+
 .searchWrapper {
-  padding: 20px;
+  margin-bottom: 1rem;
 
   > h1 {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
   }
 }
 
 .searchForm {
   display: flex;
-
   justify-content: space-between;
-  padding: 30px;
 }
 
 .inputWrapper {
@@ -22,24 +22,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 30px;
+  margin-right: 1rem;
 
   > p {
-    margin-right: 20px;
-    font-size: 14px;
+    margin-right: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
   }
 
   > input {
-    width: 130px;
-    padding: 10px 20px;
-    font-size: 12px;
-    border: 1px solid #d1d8dc;
+    width: 10rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background-color: colors.$WHITE;
+    border: 1px solid colors.$GREY_100;
     border-radius: 10px;
   }
 }
 
+.btnWrapper {
+  display: flex;
+}
+
 .submitBtn {
-  padding: 10px 20px;
+  padding: 1rem 2rem;
+  margin-left: 1rem;
+  font-weight: 700;
   border: 1px solid #d1d8dc;
   border-radius: 10px;
 }
