@@ -70,7 +70,10 @@ export const onClickQuickBtn = (
       endDate: dayjs(fixedToday).format('YYYY-MM-DD'),
     });
   if (name === '전체')
-    setInquiryPeriod({ startDate: registrationDate, endDate: dayjs(fixedToday).format('YYYY-MM-DD') });
+    setInquiryPeriod({
+      startDate: dayjs(registrationDate).format('YYYY-MM-DD'),
+      endDate: dayjs(fixedToday).format('YYYY-MM-DD'),
+    });
 };
 
 export const updatePeriod = (
