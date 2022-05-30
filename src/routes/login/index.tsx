@@ -2,10 +2,10 @@ import { ChangeEvent, FocusEvent, FormEvent, useEffect, useState } from 'react';
 import { cx } from 'styles';
 import { getCookie, setCookie } from 'react-use-cookie';
 
-import { Checkbox } from './Checkbox';
 import { useLogin } from '../../hooks/useLogin';
 
 import Popup from 'components/popup';
+import StoreID from './StoreID';
 import { MainLogo, HidePasswordIcon, ShowPasswordIcon } from 'assets/svgs';
 import styles from './login.module.scss';
 
@@ -62,10 +62,6 @@ const Login = () => {
 
   const handleShowPassword = () => {
     setShowPassword((pre) => !pre);
-  };
-
-  const handleCheckbox = () => {
-    setCheckValue((pre) => !pre);
   };
 
   const onFailHandler = (message: string) => {
@@ -144,11 +140,7 @@ const Login = () => {
             </fieldset>
             {passwordAlert && <p className={styles.alertMessage}>비밀번호를 입력해주세요.</p>}
 
-            <fieldset className={styles.checkWrapper}>
-              <Checkbox isChecked={checkValue} setIsChecked={setCheckValue} />
-              <label htmlFor='rememberInfo'>아이디 저장하기</label>
-              <input type='checkbox' id='rememberInfo' onChange={handleCheckbox} checked={checkValue} />
-            </fieldset>
+            <StoreID checkValue={checkValue} setCheckValue={setCheckValue} />
 
             <button
               type='submit'
