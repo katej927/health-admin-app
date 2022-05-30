@@ -100,3 +100,11 @@ export const updatePeriod = (
     }
   } else if (startDate && endDate) setInquiryPeriod({ startDate: date.format('YYYY-MM-DD'), endDate: '' });
 };
+
+export const convertToColorDate = (date: Dayjs, assignedDay: Dayjs, startDate: string, endDate: string) => {
+  const isOtherMonth = assignedDay.format('MM') !== date.format('MM');
+  const isSelectedDate = date.isSame(dayjs(startDate), 'date') || date.isSame(dayjs(endDate), 'date');
+  const betweenDate = dayjs(date).isBetween(startDate, endDate, 'day', '()');
+
+  return { isOtherMonth, isSelectedDate, betweenDate };
+};
