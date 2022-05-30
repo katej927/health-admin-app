@@ -1,10 +1,10 @@
 import { useState, SyntheticEvent, useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { inquiryPeriodState, selectMemberState, todayState } from 'states';
+import { selectMemberState, todayState, IInquiryPeriodState } from 'states';
 import dayjs from 'dayjs';
 import { useClickAway } from 'react-use';
 
-import { BTN_OPTIONS, Month, TPage, findRegistrationDate, dateInputValue, onClickQuickBtn } from './_shared';
+import { BTN_OPTIONS, Month, TPage, findRegistrationDate, dateInputValue, onClickQuickBtn, TStates } from './_shared';
 import { ArrowDown } from 'assets/svgs';
 import styles from './datePicker.module.scss';
 import cn from 'classnames';
@@ -12,16 +12,17 @@ import cn from 'classnames';
 interface Props {
   isSubmit?: boolean;
   page: TPage;
+  state: TStates;
 }
 
-const DatePicker = ({ isSubmit, page }: Props) => {
+const DatePicker = ({ isSubmit, page, state }: Props) => {
   const selectedMember = useRecoilValue(selectMemberState);
   const fixedToday = useRecoilValue(todayState);
   const registrationDate = findRegistrationDate(page, selectedMember.crt_ymdt);
 
   const [getTime, setTime] = useState(dayjs(fixedToday));
   const [isOpenCalendar, setIsOpenCalendar] = useState(false);
-  const [inquiryPeriod, setInquiryPeriod] = useRecoilState(inquiryPeriodState);
+  const [inquiryPeriod, setInquiryPeriod] = useRecoilState<IInquiryPeriodState>(state);
   const { startDate, endDate } = inquiryPeriod;
   const ref = useRef(null);
   useClickAway(ref, () => {
@@ -30,9 +31,12 @@ const DatePicker = ({ isSubmit, page }: Props) => {
 
   const nextMonth = getTime.add(1, 'month');
 
-  const onClickDateRange = () => {
-    setIsOpenCalendar(!isOpenCalendar);
-  };
+  const MONTHS = [
+    { isCurrentMonth: true, assignedDay: getTime },
+    { isCurrentMonth: false, assignedDay: nextMonth },
+  ];
+
+  const onClickDateRange = () => setIsOpenCalendar(!isOpenCalendar);
 
   const onMonthBtnClick = ({ currentTarget }: SyntheticEvent<EventTarget>) => {
     if (!(currentTarget instanceof HTMLButtonElement)) return;
@@ -82,18 +86,17 @@ const DatePicker = ({ isSubmit, page }: Props) => {
       </div>
       {isOpenCalendar && (
         <div className={styles.monthsWrapper} ref={ref}>
-          <Month
-            assignedDay={getTime}
-            onMonthBtnClick={onMonthBtnClick}
-            isCurrentMonth
-            setIsOpenCalendar={setIsOpenCalendar}
-          />
-          <Month
-            assignedDay={nextMonth}
-            onMonthBtnClick={onMonthBtnClick}
-            isCurrentMonth={false}
-            setIsOpenCalendar={setIsOpenCalendar}
-          />
+          {MONTHS.map((month, idx) => (
+            <Month
+              key={`monthCalendar-${idx + 1}`}
+              assignedDay={month.assignedDay}
+              onMonthBtnClick={onMonthBtnClick}
+              isCurrentMonth={month.isCurrentMonth}
+              setIsOpenCalendar={setIsOpenCalendar}
+              inquiryPeriod={inquiryPeriod}
+              setInquiryPeriod={setInquiryPeriod}
+            />
+          ))}
         </div>
       )}
     </fieldset>

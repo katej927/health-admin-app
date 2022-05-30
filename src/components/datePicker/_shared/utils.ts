@@ -3,6 +3,7 @@ import { SetterOrUpdater } from 'recoil';
 import { IInquiryPeriodState } from 'states';
 import dayjs, { Dayjs } from 'dayjs';
 import memberData from 'data/step_data/member_data.json';
+import { TPage, IMemberData } from './types.d';
 
 export const converteDate = (assignedDay: Dayjs) => {
   const firstWeek = assignedDay.startOf('month').week();
@@ -25,14 +26,6 @@ export const converteDate = (assignedDay: Dayjs) => {
     return acc;
   }, init);
 };
-
-export type TPage = '회원 관리' | '회원 상세 정보';
-
-export interface IMemberData {
-  id: number;
-  username: string;
-  crt_ymdt: string;
-}
 
 const init: IMemberData = memberData[0];
 
@@ -70,7 +63,10 @@ export const onClickQuickBtn = (
       endDate: dayjs(fixedToday).format('YYYY-MM-DD'),
     });
   if (name === '전체')
-    setInquiryPeriod({ startDate: registrationDate, endDate: dayjs(fixedToday).format('YYYY-MM-DD') });
+    setInquiryPeriod({
+      startDate: dayjs(registrationDate).format('YYYY-MM-DD'),
+      endDate: dayjs(fixedToday).format('YYYY-MM-DD'),
+    });
 };
 
 export const updatePeriod = (
@@ -99,4 +95,12 @@ export const updatePeriod = (
       setIsOpenCalendar(false);
     }
   } else if (startDate && endDate) setInquiryPeriod({ startDate: date.format('YYYY-MM-DD'), endDate: '' });
+};
+
+export const convertToColorDate = (date: Dayjs, assignedDay: Dayjs, startDate: string, endDate: string) => {
+  const isOtherMonth = assignedDay.format('MM') !== date.format('MM');
+  const isSelectedDate = date.isSame(dayjs(startDate), 'date') || date.isSame(dayjs(endDate), 'date');
+  const betweenDate = dayjs(date).isBetween(startDate, endDate, 'day', '()');
+
+  return { isOtherMonth, isSelectedDate, betweenDate };
 };

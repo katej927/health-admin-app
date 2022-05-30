@@ -16,8 +16,8 @@ const App = () => {
       <Route path='login' element={!isLoggedIn ? <Login /> : <Navigate to='/' />} />
       <Route element={<Layout />}>
         <Route index element={isLoggedIn ? <Dashboard /> : <Navigate to='/login' />} />
-        <Route path='manageMember' element={isLoggedIn && <ManageMember />} />
-        <Route path='detailMember' element={isLoggedIn && <DetailMember />} />
+        <Route path='manageMember' element={isLoggedIn ? <ManageMember /> : <Navigate to='/login' />} />
+        <Route path='detailMember' element={isLoggedIn ? <DetailMember /> : <Navigate to='/login' />} />
       </Route>
     </Routes>
   );

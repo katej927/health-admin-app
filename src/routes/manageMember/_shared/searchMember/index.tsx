@@ -4,7 +4,7 @@ import styles from './searchMember.module.scss';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 import { searchMemberList } from '../../../../states/searchMemberList';
 import DatePicker from '../../../../components/datePicker';
-import { inquiryPeriodState } from '../../../../states/inquiryPeriod';
+import { inquiryPeriodMemberState } from '../../../../states/inquiryPeriod';
 
 interface IKeywordObj {
   [key: string]: string | number;
@@ -18,7 +18,7 @@ const SearchMember = () => {
   const [isSubmit, setIsSubmit] = useState(false);
   const setMemberListState = useSetRecoilState(searchMemberList);
 
-  const date = useRecoilValue(inquiryPeriodState);
+  const date = useRecoilValue(inquiryPeriodMemberState);
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -58,36 +58,34 @@ const SearchMember = () => {
   return (
     <div className={styles.searchWrapper}>
       <form className={styles.searchForm} onSubmit={onSubmitForm}>
-        <div>
-          <div className={styles.inputWrapper}>
-            <div className={styles.inputSubWrapper}>
-              <p>로그인 ID</p>
-              <input
-                name='username'
-                onBlur={setDefaultInputValue}
-                onFocus={resetInputValue}
-                onChange={onInputChange}
-                value={searchKeyword.username}
-              />
-            </div>
-            <div className={styles.inputSubWrapper}>
-              <p>회원 번호</p>
-              <input
-                name='id'
-                onBlur={setDefaultInputValue}
-                onFocus={resetInputValue}
-                onChange={onInputChange}
-                value={searchKeyword.id}
-              />
-            </div>
+        <div className={styles.inputWrapper}>
+          <div className={styles.inputSubWrapper}>
+            <p>로그인 ID</p>
+            <input
+              name='username'
+              onBlur={setDefaultInputValue}
+              onFocus={resetInputValue}
+              onChange={onInputChange}
+              value={searchKeyword.username}
+            />
           </div>
-
-          <DatePicker isSubmit={isSubmit} page='회원 관리' />
+          <div className={styles.inputSubWrapper}>
+            <p>회원 번호</p>
+            <input
+              name='id'
+              onBlur={setDefaultInputValue}
+              onFocus={resetInputValue}
+              onChange={onInputChange}
+              value={searchKeyword.id}
+            />
+          </div>
         </div>
-
-        <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
-          검색
-        </button>
+        <div className={styles.btnWrapper}>
+          <DatePicker isSubmit={isSubmit} page='회원 관리' state={inquiryPeriodMemberState} />
+          <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
+            검색
+          </button>
+        </div>
       </form>
     </div>
   );

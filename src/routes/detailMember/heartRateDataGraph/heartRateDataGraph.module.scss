@@ -1,12 +1,22 @@
 @use '/src/styles/constants/colors';
 
-.dataAverage {
-  font-size: 2rem;
-  font-weight: 700;
-  color: colors.$GRAPH_TEXT_GRAY;
+.heartRateWrapper {
+  .dataAverage {
+    font-size: 2rem;
+    font-weight: 700;
+    color: colors.$GRAPH_TEXT_GRAY;
 
-  span {
+    span {
+      color: colors.$GRAPH_TEXT;
+    }
+  }
+
+  .heartRate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 150px;
     margin-left: 25px;
-    color: colors.$GRAPH_TEXT;
   }
 }

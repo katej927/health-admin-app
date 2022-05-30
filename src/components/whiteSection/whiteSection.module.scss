@@ -2,6 +2,7 @@
 
 .whiteBoxWrapper {
   width: 100%;
+  min-width: fit-content;
   padding: 4rem;
   background-color: colors.$WHITE;
   border-radius: 20px;
