@@ -3,6 +3,7 @@ import { VictoryChart, VictoryLine, VictoryAxis, VictoryLabel } from 'victory';
 import heartRateData from '../../../data/heartrate_data/heartrate_data_total.json';
 import getDatesFromStartToLast from '../../../utils/getDatesFromStartToLast';
 import { IHeartRate } from 'types/heartRate';
+
 import styles from './heartRateDataGraph.module.scss';
 import GRAPH_STYLE from './GRAPH_STYLE';
 import WhiteSection from 'components/whiteSection';

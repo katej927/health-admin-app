@@ -8,7 +8,6 @@ import styles from './detailMember.module.scss';
 const DetailMember = () => {
   const [selectMember, _] = useRecoilState(selectMemberState);
   const { id } = selectMember;
-  console.log({ id });
 
   return (
     <section>
@@ -40,8 +39,12 @@ const DetailMember = () => {
         </div>
       </main>
       <div className={styles.graphWrapper}>
-        <HeartRateDataGraph selectedID={id} />
-        <StepDataGraph selectedID={id} />
+        {id !== 0 && (
+          <>
+            <HeartRateDataGraph selectedID={id} />
+            <StepDataGraph selectedID={id} />
+          </>
+        )}
       </div>
     </section>
   );
