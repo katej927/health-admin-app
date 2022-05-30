@@ -1,0 +1,12 @@
+@use '/src/styles/constants/colors';
+
+.dataAverage {
+  font-size: 2rem;
+  font-weight: 700;
+  color: colors.$GRAPH_TEXT_GRAY;
+
+  span {
+    margin-left: 25px;
+    color: colors.$GRAPH_TEXT;
+  }
+}
