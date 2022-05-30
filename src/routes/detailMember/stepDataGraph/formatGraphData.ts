@@ -4,7 +4,6 @@ import { IStep } from './type.d';
 interface IFormatGraphData {
   graphData: IGraphData[];
   totalStep: number;
-  isThereUserData: boolean;
 }
 
 interface IGraphData {
@@ -28,9 +27,8 @@ const formatGraphData = (userData: IStep[], date: any): IFormatGraphData => {
     });
 
     const totalStep = graphData.reduce((acc: number, curr: IGraphData) => acc + curr.steps, 0);
-    const isThereUserData = oneDayData.length > 0;
 
-    return { graphData, totalStep, isThereUserData };
+    return { graphData, totalStep };
   }
 
   const weeklyData = userData.filter((data: IStep) =>
@@ -51,9 +49,8 @@ const formatGraphData = (userData: IStep[], date: any): IFormatGraphData => {
   });
 
   const totalStep = graphData.reduce((acc: number, curr: IGraphData) => acc + curr.steps, 0);
-  const isThereUserData = weeklyData.length > 0;
 
-  return { graphData, totalStep, isThereUserData };
+  return { graphData, totalStep };
 };
 
 export default formatGraphData;

@@ -15,14 +15,14 @@ dayjs.extend(isBetween);
 
 const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
   const date = {
-    startDate: '2022-02-26',
-    endDate: '2022-04-19',
-    // endDate: '2022-02-26',
+    startDate: '2022-02-25',
+    // endDate: '2022-04-19',
+    endDate: '2022-02-25',
   };
 
   const { stepData: userData } = stepData.filter((data: IStepData) => data.id === selectedID)[0];
   const graphType: GraphType = date.startDate === date.endDate ? 'dayGraph' : 'weeklyGraph';
-  const { graphData, totalStep, isThereUserData } = formatGraphData(userData, date);
+  const { graphData, totalStep } = formatGraphData(userData, date);
 
   return (
     <WhiteSection>
@@ -31,17 +31,15 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
           <span>걸음 수</span> 총 {totalStep.toLocaleString() ?? 0} 걸음
         </div>
         <div className={styles.stepDataGraph}>
-          {isThereUserData && (
-            <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 10 }} width={900}>
-              <VictoryAxis
-                {...GRAPH_STYLE.axis}
-                {...(graphType === 'dayGraph' && GRAPH_STYLE.dayGraphAxis)}
-                scale={{ x: 'time' }}
-              />
-              <VictoryAxis dependentAxis {...GRAPH_STYLE.axis} />
-              <VictoryBar data={graphData} {...GRAPH_STYLE.bar} {...GRAPH_STYLE[`${graphType}Bar`]} />
-            </VictoryChart>
-          )}
+          <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 10 }} width={900}>
+            <VictoryAxis
+              {...GRAPH_STYLE.axis}
+              {...(graphType === 'dayGraph' && GRAPH_STYLE.dayGraphAxis)}
+              scale={{ x: 'time' }}
+            />
+            <VictoryAxis dependentAxis {...GRAPH_STYLE.axis} />
+            <VictoryBar data={graphData} {...GRAPH_STYLE.bar} {...GRAPH_STYLE[`${graphType}Bar`]} />
+          </VictoryChart>
         </div>
       </div>
     </WhiteSection>
