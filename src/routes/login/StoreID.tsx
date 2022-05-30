@@ -14,7 +14,7 @@ const StoreID = ({ checkValue, setCheckValue }: IProps) => {
 
   return (
     <fieldset className={styles.checkWrapper}>
-      <Checkbox isChecked={checkValue} setIsChecked={setCheckValue} />
+      <Checkbox checkValue={checkValue} setCheckValue={setCheckValue} />
       <label htmlFor='rememberInfo'>아이디 저장하기</label>
       <input type='checkbox' id='rememberInfo' onChange={handleCheckbox} checked={checkValue} />
     </fieldset>
