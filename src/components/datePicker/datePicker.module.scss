@@ -45,7 +45,8 @@
   .monthsWrapper {
     @include flexbox.flexbox('evenly', 'center');
     position: absolute;
-    width: fit-content;
+    width: 66rem;
+    height: 38rem;
     padding: 3rem;
     margin-top: 1rem;
     font-size: sizes.$FONT_SIZE_MEDIUM;

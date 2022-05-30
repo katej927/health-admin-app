@@ -5,9 +5,12 @@ export interface IInquiryPeriodState {
   endDate: string;
 }
 
-const inquiryPeriodState = atom<IInquiryPeriodState>({
+export const inquiryPeriodState = atom<IInquiryPeriodState>({
   key: '#inquiryPeriodState',
   default: { startDate: '', endDate: '' },
 });
 
-export default inquiryPeriodState;
+export const todayState = atom({
+  key: '#todayState',
+  default: '2022-04-20',
+});

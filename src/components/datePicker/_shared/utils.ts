@@ -1,4 +1,8 @@
-import { Dayjs } from 'dayjs';
+import { SyntheticEvent } from 'react';
+import { SetterOrUpdater } from 'recoil';
+import { IInquiryPeriodState } from 'states';
+import { selectMemberState } from 'states/selectMember';
+import dayjs, { Dayjs } from 'dayjs';
 import memberData from 'data/step_data/member_data.json';
 
 export const converteDate = (assignedDay: Dayjs) => {
@@ -33,8 +37,39 @@ export interface IMemberData {
 
 const init: IMemberData = memberData[0];
 
-export const findRegistrationDate = (page: TPage) => {
+export const findRegistrationDate = (page: TPage, selectMemberStartDate: string) => {
   if (page === '회원 관리')
     return memberData.reduce((c, n) => (Date.parse(n.crt_ymdt) < Date.parse(c.crt_ymdt) ? n : c), init).crt_ymdt;
-  return 'tmp'; // 수정하기
+  return selectMemberStartDate;
+};
+
+export const dateInputValue = (date: string, idx: number) => {
+  if (date)
+    return idx
+      ? dayjs(date).add(1, 'day').subtract(1, 's').format('YY-MM-DD HH:mm:ss')
+      : dayjs(date).format('YY-MM-DD HH:mm:ss');
+  return date;
+};
+
+export const onClickQuickBtn = (
+  { currentTarget }: SyntheticEvent<EventTarget>,
+  setInquiryPeriod: SetterOrUpdater<IInquiryPeriodState>,
+  fixedToday: string,
+  registrationDate: string
+) => {
+  if (!(currentTarget instanceof HTMLButtonElement)) return;
+
+  const { name } = currentTarget.dataset;
+  if (name === '오늘')
+    setInquiryPeriod({
+      startDate: dayjs(fixedToday).format('YYYY-MM-DD'),
+      endDate: dayjs(fixedToday).format('YYYY-MM-DD'),
+    });
+  if (name === '일주일')
+    setInquiryPeriod({
+      startDate: dayjs(fixedToday).subtract(6, 'day').format('YYYY-MM-DD'),
+      endDate: dayjs(fixedToday).format('YYYY-MM-DD'),
+    });
+  if (name === '전체')
+    setInquiryPeriod({ startDate: registrationDate, endDate: dayjs(fixedToday).format('YYYY-MM-DD') });
 };

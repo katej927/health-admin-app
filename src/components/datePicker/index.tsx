@@ -1,10 +1,10 @@
 import { useState, SyntheticEvent, useRef } from 'react';
-import { useRecoilState } from 'recoil';
-import { inquiryPeriodState } from 'states';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { inquiryPeriodState, selectMemberState, todayState } from 'states';
 import dayjs from 'dayjs';
 import { useClickAway } from 'react-use';
 
-import { BTN_OPTIONS, Month, TPage, findRegistrationDate } from './_shared';
+import { BTN_OPTIONS, Month, TPage, findRegistrationDate, dateInputValue, onClickQuickBtn } from './_shared';
 import { ArrowDown } from 'assets/svgs';
 import styles from './datePicker.module.scss';
 import cn from 'classnames';
@@ -15,10 +15,9 @@ interface Props {
 }
 
 const DatePicker = ({ isSubmit, page }: Props) => {
-  const fixedToday = '2022-04-20';
-  const registrationDate2 = findRegistrationDate(page); // 회원 가입일 받아오기
-
-  const registrationDate = '2022-02-01'; // 회원 가입일 받아오기
+  const selectedMember = useRecoilValue(selectMemberState);
+  const fixedToday = useRecoilValue(todayState);
+  const registrationDate = findRegistrationDate(page, selectedMember.crt_ymdt);
 
   const [getTime, setTime] = useState(dayjs(fixedToday));
   const [isOpenCalendar, setIsOpenCalendar] = useState(false);
@@ -33,16 +32,6 @@ const DatePicker = ({ isSubmit, page }: Props) => {
 
   const onClickDateRange = () => {
     setIsOpenCalendar(!isOpenCalendar);
-  };
-
-  const onClickQuickBtn = ({ currentTarget }: SyntheticEvent<EventTarget>) => {
-    if (!(currentTarget instanceof HTMLButtonElement)) return;
-
-    const { name } = currentTarget.dataset;
-    if (name === '오늘') setInquiryPeriod({ startDate: fixedToday, endDate: fixedToday });
-    if (name === '일주일')
-      setInquiryPeriod({ startDate: dayjs(fixedToday).subtract(6, 'day').format('YYYY-MM-DD'), endDate: fixedToday });
-    if (name === '전체') setInquiryPeriod({ startDate: registrationDate, endDate: fixedToday });
   };
 
   const onMonthBtnClick = ({ currentTarget }: SyntheticEvent<EventTarget>) => {
@@ -66,26 +55,42 @@ const DatePicker = ({ isSubmit, page }: Props) => {
                 className={styles.dateInput}
                 type='text'
                 readOnly
-                value={date}
+                value={dateInputValue(date, idx)}
                 required
                 aria-required='true'
                 pattern='\d{4}-\d{2}-\d{2}'
-                placeholder={idx ? '전체' : '전체'}
+                placeholder={idx ? '끝' : '시작'}
               />
             );
           })}
           <ArrowDown className={styles.arrowDown} />
         </button>
         {BTN_OPTIONS.map((option) => (
-          <button key={option} type='button' className={styles.btn} onClick={onClickQuickBtn} data-name={option}>
+          <button
+            key={option}
+            type='button'
+            className={styles.btn}
+            onClick={(e) => onClickQuickBtn(e, setInquiryPeriod, fixedToday, registrationDate)}
+            data-name={option}
+          >
             {option}
           </button>
         ))}
       </div>
       {isOpenCalendar && (
         <div className={styles.monthsWrapper} ref={ref}>
-          <Month assignedDay={getTime} onMonthBtnClick={onMonthBtnClick} isCurrentMonth />
-          <Month assignedDay={nextMonth} onMonthBtnClick={onMonthBtnClick} isCurrentMonth={false} />
+          <Month
+            assignedDay={getTime}
+            onMonthBtnClick={onMonthBtnClick}
+            isCurrentMonth
+            setIsOpenCalendar={setIsOpenCalendar}
+          />
+          <Month
+            assignedDay={nextMonth}
+            onMonthBtnClick={onMonthBtnClick}
+            isCurrentMonth={false}
+            setIsOpenCalendar={setIsOpenCalendar}
+          />
         </div>
       )}
     </fieldset>

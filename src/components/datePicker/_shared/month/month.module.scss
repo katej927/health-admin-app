@@ -3,7 +3,17 @@
 @use '/src/styles/mixins/flexbox';
 
 .wrapper {
+  position: absolute;
+  top: 3rem;
   margin: 1rem;
+
+  &.left {
+    left: 3rem;
+  }
+
+  &.right {
+    right: 3rem;
+  }
 
   .calendarHead {
     @include flexbox.flexbox(center, center);

@@ -1,4 +1,4 @@
-import { SyntheticEvent } from 'react';
+import { SyntheticEvent, Dispatch } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { useRecoilState } from 'recoil';
 import { inquiryPeriodState } from 'states';
@@ -23,9 +23,10 @@ interface Props {
   assignedDay: Dayjs;
   onMonthBtnClick: (e: SyntheticEvent<EventTarget>) => void;
   isCurrentMonth: boolean;
+  setIsOpenCalendar: Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Month = ({ assignedDay, onMonthBtnClick, isCurrentMonth }: Props) => {
+const Month = ({ assignedDay, onMonthBtnClick, isCurrentMonth, setIsOpenCalendar }: Props) => {
   const [inquiryPeriod, setInquiryPeriod] = useRecoilState(inquiryPeriodState);
   const { startDate, endDate } = inquiryPeriod;
 
@@ -38,20 +39,23 @@ const Month = ({ assignedDay, onMonthBtnClick, isCurrentMonth }: Props) => {
         startDate: date.format('YYYY-MM-DD'),
       }));
     else if (startDate && !endDate) {
-      dayjs(startDate).isAfter(dayjs(date))
-        ? setInquiryPeriod((prev) => ({
-            ...prev,
-            startDate: date.format('YYYY-MM-DD'),
-          }))
-        : setInquiryPeriod((prev) => ({
-            ...prev,
-            endDate: date.format('YYYY-MM-DD'),
-          }));
+      if (dayjs(startDate).isAfter(dayjs(date))) {
+        setInquiryPeriod((prev) => ({
+          ...prev,
+          startDate: date.format('YYYY-MM-DD'),
+        }));
+      } else {
+        setInquiryPeriod((prev) => ({
+          ...prev,
+          endDate: date.format('YYYY-MM-DD'),
+        }));
+        setIsOpenCalendar(false);
+      }
     } else if (startDate && endDate) setInquiryPeriod({ startDate: date.format('YYYY-MM-DD'), endDate: '' });
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={cn(styles.wrapper, isCurrentMonth ? styles.left : styles.right)}>
       <div className={styles.calendarHead}>
         {isCurrentMonth && (
           <button

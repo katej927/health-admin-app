@@ -1,3 +1,4 @@
-import inquiryPeriodState from './inquiryPeriod';
+export { inquiryPeriodState, todayState } from './inquiryPeriod';
+export { selectMemberState } from './selectMember';
 
-export { inquiryPeriodState };
+export type { IInquiryPeriodState } from './inquiryPeriod';
