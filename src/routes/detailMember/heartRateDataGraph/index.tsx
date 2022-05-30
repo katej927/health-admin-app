@@ -1,16 +1,18 @@
 import { VictoryChart, VictoryLine, VictoryAxis, VictoryLabel } from 'victory';
-
 import heartRateData from '../../../data/heartrate_data/heartrate_data_total.json';
 import getDatesFromStartToLast from '../../../utils/getDatesFromStartToLast';
 import { IHeartRate } from 'types/heartRate';
 
 import styles from './heartRateDataGraph.module.scss';
 import GRAPH_STYLE from './GRAPH_STYLE';
+import { DatePicker } from 'components';
 import WhiteSection from 'components/whiteSection';
+import { useRecoilValue } from 'recoil';
+import { inquiryPeriodState } from 'states';
 
 const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
   const userId = selectedID;
-  const date = { startDate: '2022-02-26', endDate: '2022-02-26' }; // TODO: date recoilValue로 변경
+  const date = useRecoilValue(inquiryPeriodState);
   const rawJson = heartRateData.find((el) => el.id === userId);
   const userHeartRateData = rawJson?.heartRateData ?? [];
   const array: IHeartRate[] = [];
@@ -53,6 +55,7 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
           <div className={styles.dataAverage}>
             <span>심박수</span> 평균 {Math.floor(averageHeartBeat) ?? 0} bpm
           </div>
+          <DatePicker page='회원 상세 정보' />
           <VictoryChart minDomain={{ y: 50 }} maxDomain={{ y: 160 }} width={900}>
             <VictoryLine
               style={{
