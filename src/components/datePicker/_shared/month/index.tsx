@@ -8,7 +8,7 @@ import isBetween from 'dayjs/plugin/isBetween';
 import localeData from 'dayjs/plugin/localeData';
 import 'dayjs/locale/ko';
 
-import { converteDate, updatePeriod } from '../utils';
+import { converteDate, updatePeriod, convertToColorDate } from '../utils';
 import { ArrowLeft, ArrowRight } from 'assets/svgs';
 
 import styles from './month.module.scss';
@@ -75,13 +75,19 @@ const Month = ({ assignedDay, onMonthBtnClick, isCurrentMonth, setIsOpenCalendar
           {convertedDate.map((eachWeek: Dayjs[], idx: number) => (
             <tr key={`week-${idx + 1}`}>
               {eachWeek.map((date, index) => {
+                const { isOtherMonth, isSelectedDate, betweenDate } = convertToColorDate(
+                  date,
+                  assignedDay,
+                  startDate,
+                  endDate
+                );
                 return (
                   <td key={`date-${index + 1}`} className={styles.day}>
                     <button
                       className={cn(styles.dateBtn, {
-                        [styles.otherMonth]: assignedDay.format('MM') !== date.format('MM'),
-                        [styles.selectedDate]: date.isSame(dayjs(startDate)) || date.isSame(dayjs(endDate)),
-                        [styles.betweenDate]: dayjs(date).isBetween(startDate, endDate, 'day', '()'),
+                        [styles.otherMonth]: isOtherMonth,
+                        [styles.selectedDate]: isSelectedDate,
+                        [styles.betweenDate]: betweenDate,
                       })}
                       type='button'
                       onClick={() => onDayClick(date)}

@@ -19,7 +19,6 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
     // endDate: '2022-04-19',
     endDate: '2022-02-26',
   };
-  console.log({ selectedID });
 
   const { stepData: userData } = rawData.filter((data: IStepData) => data.id === selectedID)[0];
   const graphType: GraphType = date.startDate === date.endDate ? 'dayGraph' : 'weeklyGraph';

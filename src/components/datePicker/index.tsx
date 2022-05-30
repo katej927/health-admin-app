@@ -30,9 +30,12 @@ const DatePicker = ({ isSubmit, page }: Props) => {
 
   const nextMonth = getTime.add(1, 'month');
 
-  const onClickDateRange = () => {
-    setIsOpenCalendar(!isOpenCalendar);
-  };
+  const MONTHS = [
+    { isCurrentMonth: true, assignedDay: getTime },
+    { isCurrentMonth: false, assignedDay: nextMonth },
+  ];
+
+  const onClickDateRange = () => setIsOpenCalendar(!isOpenCalendar);
 
   const onMonthBtnClick = ({ currentTarget }: SyntheticEvent<EventTarget>) => {
     if (!(currentTarget instanceof HTMLButtonElement)) return;
@@ -82,18 +85,15 @@ const DatePicker = ({ isSubmit, page }: Props) => {
       </div>
       {isOpenCalendar && (
         <div className={styles.monthsWrapper} ref={ref}>
-          <Month
-            assignedDay={getTime}
-            onMonthBtnClick={onMonthBtnClick}
-            isCurrentMonth
-            setIsOpenCalendar={setIsOpenCalendar}
-          />
-          <Month
-            assignedDay={nextMonth}
-            onMonthBtnClick={onMonthBtnClick}
-            isCurrentMonth={false}
-            setIsOpenCalendar={setIsOpenCalendar}
-          />
+          {MONTHS.map((month, idx) => (
+            <Month
+              key={`monthCalendar-${idx + 1}`}
+              assignedDay={month.assignedDay}
+              onMonthBtnClick={onMonthBtnClick}
+              isCurrentMonth={month.isCurrentMonth}
+              setIsOpenCalendar={setIsOpenCalendar}
+            />
+          ))}
         </div>
       )}
     </fieldset>
