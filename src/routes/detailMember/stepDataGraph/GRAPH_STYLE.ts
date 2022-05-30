@@ -28,6 +28,10 @@ const GRAPH_STYLE = {
     },
   },
   bar: {
+    animate: {
+      duration: 1000,
+      onLoad: { duration: 500 },
+    },
     style: { data: { fill: '#4FADF7' } },
   },
 };

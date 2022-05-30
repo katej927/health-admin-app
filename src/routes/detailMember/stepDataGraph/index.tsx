@@ -25,13 +25,12 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
 
   return (
     <div className={styles.stepDataWrapper}>
-      <div className={styles.stepData}>
-        <div>{`${date.startDate} ~ ${date.endDate}`}</div>
-        <div className={styles.totalStep}>총 {totalStep.toLocaleString() ?? 0} 걸음</div>
+      <div className={styles.totalStep}>
+        <span>걸음 수</span> 총 {totalStep.toLocaleString() ?? 0} 걸음
       </div>
       {isThereUserData && (
         <div className={styles.stepDataGraph}>
-          <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 10 }}>
+          <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 10 }} width={1080}>
             <VictoryAxis
               {...GRAPH_STYLE.axis}
               {...(graphType === 'dayGraph' && GRAPH_STYLE.dayGraphAxis)}

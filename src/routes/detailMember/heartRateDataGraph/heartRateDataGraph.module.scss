@@ -1,0 +1,14 @@
+@use '/src/styles/constants/colors';
+
+.heartRateWrapper {
+  margin: 20px 0 40px;
+}
+
+.dataAverage {
+  font-size: 2rem;
+
+  span {
+    margin-left: 25px;
+    color: colors.$GRAPH_TEXT;
+  }
+}

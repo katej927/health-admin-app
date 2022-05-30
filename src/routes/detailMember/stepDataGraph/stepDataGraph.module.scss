@@ -1,6 +1,9 @@
+@use '/src/styles/constants/colors';
+
 .stepDataWrapper {
   display: flex;
   flex-direction: column;
+  margin: 40px 0 20px;
 }
 
 .stepData {
@@ -9,12 +12,12 @@
   // justify-content: space-around;
 }
 
-.stepDataGraph {
-  width: 100%;
-  height: 500px;
-}
-
 .totalStep {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  // font-weight: 700;
+
+  span {
+    margin-left: 25px;
+    color: colors.$GRAPH_TEXT;
+  }
 }

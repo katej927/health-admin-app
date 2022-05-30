@@ -1,7 +1,10 @@
+import WhiteSection from 'components/whiteSection';
+import HeartRateDataGraph from 'routes/detailMember/heartRateDataGraph';
 import StepDataGraph from 'routes/detailMember/stepDataGraph';
 
+import styles from './detailMember.module.scss';
+
 const DetailMember = () => {
-  // 리코일로 수정.
   const {
     id: selectedID,
     username,
@@ -11,12 +14,13 @@ const DetailMember = () => {
     username: '',
     crt_ymdt: '',
   };
-
   return (
-    <div>
-      <StepDataGraph selectedID={selectedID} />
-      {/* 심박수 그래프 */}
-    </div>
+    <WhiteSection>
+      <div className={styles.graphWrapper}>
+        <HeartRateDataGraph />
+        <StepDataGraph selectedID={selectedID} />
+      </div>
+    </WhiteSection>
   );
 };
 
