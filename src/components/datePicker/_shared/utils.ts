@@ -70,7 +70,10 @@ export const onClickQuickBtn = (
       endDate: dayjs(fixedToday).format('YYYY-MM-DD'),
     });
   if (name === '전체')
-    setInquiryPeriod({ startDate: registrationDate, endDate: dayjs(fixedToday).format('YYYY-MM-DD') });
+    setInquiryPeriod({
+      startDate: dayjs(registrationDate).format('YYYY-MM-DD'),
+      endDate: dayjs(fixedToday).format('YYYY-MM-DD'),
+    });
 };
 
 export const updatePeriod = (
@@ -99,4 +102,12 @@ export const updatePeriod = (
       setIsOpenCalendar(false);
     }
   } else if (startDate && endDate) setInquiryPeriod({ startDate: date.format('YYYY-MM-DD'), endDate: '' });
+};
+
+export const convertToColorDate = (date: Dayjs, assignedDay: Dayjs, startDate: string, endDate: string) => {
+  const isOtherMonth = assignedDay.format('MM') !== date.format('MM');
+  const isSelectedDate = date.isSame(dayjs(startDate), 'date') || date.isSame(dayjs(endDate), 'date');
+  const betweenDate = dayjs(date).isBetween(startDate, endDate, 'day', '()');
+
+  return { isOtherMonth, isSelectedDate, betweenDate };
 };
