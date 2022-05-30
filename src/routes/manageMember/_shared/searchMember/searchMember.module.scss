@@ -32,8 +32,12 @@
       line-height: 3.5rem;
       color: colors.$GREY_800;
       background-color: colors.$WHITE;
-      border: 1px solid colors.$GREY_100;
+      border: 0.1rem solid colors.$GREY_100;
       border-radius: 10px;
+
+      &:hover {
+        border: 0.1rem solid colors.$ACTIVATED_BTN;
+      }
     }
   }
 
