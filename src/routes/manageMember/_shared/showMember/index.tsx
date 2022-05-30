@@ -48,7 +48,7 @@ const ShowMember = () => {
                 <td>{member.crt_ymdt}</td>
                 <td>{member.username}</td>
                 <td>
-                  <Link to='detailMember'>
+                  <Link to='/detailMember'>
                     <button type='button' onClick={() => setSelectMember(member)}>
                       상세보기
                     </button>
