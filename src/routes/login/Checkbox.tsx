@@ -3,8 +3,8 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { Dispatch } from 'react';
 
 interface IProps {
-  isChecked: boolean;
-  setIsChecked: Dispatch<React.SetStateAction<boolean>>;
+  checkValue: boolean;
+  setCheckValue: Dispatch<React.SetStateAction<boolean>>;
 }
 
 const tickVariants = {
@@ -18,19 +18,18 @@ const boxVariants = {
   unchecked: { fill: '#ddd' },
 };
 
-// export const Checkbox = ({ isChecked }: IProps) => {
-export const Checkbox = ({ isChecked, setIsChecked }: IProps) => {
+export const Checkbox = ({ checkValue, setCheckValue }: IProps) => {
   const pathLength = useMotionValue(0);
   const opacity = useTransform(pathLength, [0.05, 0.15], [0, 1]);
 
   return (
     <motion.svg
       initial={false}
-      animate={isChecked ? 'checked' : 'unchecked'}
+      animate={checkValue ? 'checked' : 'unchecked'}
       width='20'
       height='20'
       viewBox='0 0 440 440'
-      onClick={() => setIsChecked((pre) => !pre)}
+      onClick={() => setCheckValue((pre) => !pre)}
     >
       <motion.path
         d='M 72 136 C 72 100.654 100.654 72 136 72 L 304 72 C 339.346 72 368 100.654 368 136 L 368 304 C 368 339.346 339.346 368 304 368 L 136 368 C 100.654 368 72 339.346 72 304 Z'
@@ -49,7 +48,7 @@ export const Checkbox = ({ isChecked, setIsChecked }: IProps) => {
         strokeLinejoin='round'
         variants={tickVariants}
         style={{ pathLength, opacity }}
-        custom={isChecked}
+        custom={checkValue}
       />
     </motion.svg>
   );

@@ -39,6 +39,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-use": "^17.3.2",
+    "react-use-cookie": "^1.4.0",
     "recoil": "^0.7.3-alpha.2",
     "store": "^2.0.12",
     "victory": "^36.4.0",
