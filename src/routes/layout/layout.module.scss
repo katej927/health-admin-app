@@ -2,15 +2,19 @@
 
 .layoutWrapper {
   display: flex;
-  justify-content: center;
   width: 100vw;
   height: 100vh;
   background-color: colors.$BG_G;
-}
 
-.mainWrapper {
-  flex: 1;
-  height: 100vh;
-  padding: 6rem 4rem 4rem;
-  overflow: auto;
+  &:nth-child(1) {
+    // flex: 2 1 0;
+  }
+
+  .mainWrapper {
+    flex: 1 0 0;
+    min-width: 1030px;
+    height: 100vh;
+    padding: 6rem 4rem 4rem;
+    overflow: auto;
+  }
 }

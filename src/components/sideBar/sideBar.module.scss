@@ -3,7 +3,8 @@
 @use '/src/styles/mixins/flexbox';
 
 .sideBarWrapper {
-  width: 320px;
+  flex: 0;
+  min-width: 320px;
   height: 100%;
   padding: 6rem 4rem;
   background-color: colors.$WHITE;

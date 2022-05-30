@@ -2,12 +2,13 @@
 
 .heartRate {
   display: flex;
+  flex-wrap: wrap-reverse;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 
   .dataAverage {
-    margin-right: 3rem;
+    margin: 2rem 3rem 0 0;
     font-size: 2rem;
     font-weight: 700;
     color: colors.$GRAPH_TEXT_GRAY;
