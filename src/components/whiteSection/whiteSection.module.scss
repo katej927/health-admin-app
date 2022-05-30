@@ -1,0 +1,10 @@
+@use '/src/styles/constants/colors';
+
+.whiteBoxWrapper {
+  width: 100%;
+  min-width: fit-content;
+  padding: 4rem;
+  background-color: colors.$WHITE;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px 0 #0000000a;
+}

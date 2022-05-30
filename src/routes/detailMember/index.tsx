@@ -2,10 +2,13 @@ import { NavLink } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { selectMemberState } from 'states/selectMember';
 import cx from 'classnames';
+import HeartRateDataGraph from 'routes/detailMember/heartRateDataGraph';
+import StepDataGraph from 'routes/detailMember/stepDataGraph';
 import styles from './detailMember.module.scss';
 
 const DetailMember = () => {
   const selectMember = useRecoilValue(selectMemberState);
+  const { id } = selectMember;
 
   return (
     <section>
@@ -43,6 +46,14 @@ const DetailMember = () => {
           </tbody>
         </table>
       </main>
+      <div className={styles.graphWrapper}>
+        {id !== 0 && (
+          <>
+            <HeartRateDataGraph selectedID={id} />
+            <StepDataGraph selectedID={id} />
+          </>
+        )}
+      </div>
     </section>
   );
 };

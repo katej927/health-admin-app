@@ -77,7 +77,6 @@
 | dayjs | 날짜 관련 | 1.11.2 |
 | framer-motion | 애니메이션 관련 | 6.3.3 |
 | react-datepicker | 날짜 관련 | 4.4.1 |
-| react-icons | 아이콘 관련 | 4.3.1 |
 | react-use | 리액트 편의 | 17.3.2 |
 | store | localStorage 편의 | 2.0.12 |
 | victory | 차트 라이브러리 | 36.4.0 |
@@ -119,3 +118,4 @@
     - 선택한 기간이 2일 이상일 때, 일 단위로 심박수 표시
 
 <br />
+
