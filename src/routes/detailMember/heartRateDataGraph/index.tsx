@@ -8,11 +8,11 @@ import GRAPH_STYLE from './GRAPH_STYLE';
 import { DatePicker } from 'components';
 import WhiteSection from 'components/whiteSection';
 import { useRecoilValue } from 'recoil';
-import { inquiryPeriodState } from 'states';
+import { inquiryPeriodHeartState } from 'states';
 
 const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
   const userId = selectedID;
-  const date = useRecoilValue(inquiryPeriodState);
+  const date = useRecoilValue(inquiryPeriodHeartState);
   const rawJson = heartRateData.find((el) => el.id === userId);
   const userHeartRateData = rawJson?.heartRateData ?? [];
   const array: IHeartRate[] = [];
@@ -52,7 +52,7 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
     <WhiteSection>
       <div className={styles.heartRateWrapper}>
         <div className={styles.heartRate}>
-          <DatePicker page='회원 상세 정보' />
+          <DatePicker page='회원 상세 정보' state={inquiryPeriodHeartState} />
           <div className={styles.dataAverage}>
             <span>심박수</span> 평균 {!isNaN(Number(averageHeartBeat)) ? Math.floor(averageHeartBeat) : 0} bpm
           </div>

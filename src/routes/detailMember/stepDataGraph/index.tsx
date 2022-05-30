@@ -12,12 +12,12 @@ import WhiteSection from 'components/whiteSection';
 import rawData from '../../../data/step_data/step_data.json';
 import { DatePicker } from 'components';
 import { useRecoilValue } from 'recoil';
-import { inquiryPeriodState } from 'states';
+import { inquiryPeriodStepState } from 'states';
 
 dayjs.extend(isBetween);
 
 const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
-  const date = useRecoilValue(inquiryPeriodState);
+  const date = useRecoilValue(inquiryPeriodStepState);
   const { stepData: userData } = rawData.filter((data: IStepData) => data.id === selectedID)[0];
   const graphType: GraphType = date.startDate === date.endDate ? 'dayGraph' : 'weeklyGraph';
   const { graphData, totalStep } = formatGraphData(userData, date);
@@ -26,7 +26,7 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
     <WhiteSection>
       <div className={styles.stepDataWrapper}>
         <div className={styles.stepData}>
-          <DatePicker page='회원 상세 정보' />
+          <DatePicker page='회원 상세 정보' state={inquiryPeriodStepState} />
           <div className={styles.totalStep}>
             <span>걸음 수</span> 총 {totalStep.toLocaleString() ?? 0} 걸음
           </div>
