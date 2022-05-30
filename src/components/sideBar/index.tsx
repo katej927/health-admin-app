@@ -18,7 +18,7 @@ const SideBar = () => {
       <section>
         <div className={styles.userInfo}>
           <UserInfoIcon />
-          <div>{loginUser.isLoggedIn && loginUser.payload.name}님</div>
+          <div className={styles.userName}>{loginUser.isLoggedIn && loginUser.payload.name} 님</div>
         </div>
         <div className={styles.box}>
           <ul>
