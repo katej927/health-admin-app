@@ -12,5 +12,5 @@ export const inquiryPeriodState = atom<IInquiryPeriodState>({
 
 export const todayState = atom({
   key: '#todayState',
-  default: '2022-04-01',
+  default: '2022-04-19',
 });
