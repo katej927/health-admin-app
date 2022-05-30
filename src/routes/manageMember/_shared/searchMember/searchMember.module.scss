@@ -5,6 +5,7 @@
 .searchForm {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
 
   .inputWrapper {
@@ -16,23 +17,20 @@
     align-items: center;
     justify-content: center;
     margin-right: 1rem;
+    font-size: sizes.$REGULAR;
+    font-weight: sizes.$SEMIBOLD;
+    color: colors.$GREY_800;
+  }
 
-    > p {
-      margin-right: 1rem;
-      font-size: sizes.$REGULAR;
-      font-weight: sizes.$SEMIBOLD;
-      color: colors.$GREY_800;
-    }
-
-    > input {
-      width: 10rem;
-      padding: 0 1.5rem;
-      font-size: 1.2rem;
-      line-height: 2.5;
-      background-color: colors.$WHITE;
-      border: 1px sizes.$MEDIUM colors.$GREY_100;
-      border-radius: 10px;
-    }
+  >input {
+    width: 10rem;
+    padding: 0 1.5rem;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    color: colors.$GREY_800;
+    background-color: colors.$WHITE;
+    border: 1px solid colors.$GREY_100;
+    border-radius: 10px;
   }
 
   .btnWrapper {
@@ -41,5 +39,6 @@
 
   .submitBtn {
     @include visual.btnActive;
+    margin-left: 0.5rem;
   }
 }

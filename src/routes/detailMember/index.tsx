@@ -13,8 +13,10 @@ const DetailMember = () => {
 
   return (
     <section>
-      <article className={styles.titleWrapper}>
-        <h2>회원 상세 정보</h2>
+      <div className={styles.headerWrapper}>
+        <article className={styles.titleWrapper}>
+          <h2>회원 상세 정보</h2>
+        </article>
         <nav className={styles.navWrapper}>
           <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
             홈
@@ -28,7 +30,8 @@ const DetailMember = () => {
             회원 상세
           </NavLink>
         </nav>
-      </article>
+      </div>
+
       <div className={styles.tableWrapper}>
         <WhiteSection>
           <table>

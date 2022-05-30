@@ -4,7 +4,7 @@
 .memberWrapper {
   display: flex;
   flex-direction: column;
-  // padding: 3rem 0;
+  padding: 4rem 0;
 }
 
 .titleWrapper {
@@ -37,4 +37,20 @@
       color: colors.$PRIMARY;
     }
   }
+}
+
+.linkWrapper {
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.link {
+  margin-right: 0.5rem;
+  color: colors.$GREY_800;
+}
+
+.activeLink {
+  margin-left: 0.5rem;
+  color: colors.$PRIMARY;
 }
