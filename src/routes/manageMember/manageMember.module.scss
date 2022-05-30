@@ -1,7 +1,9 @@
+@use 'src/styles/constants/colors';
+
 .memberWrapper {
   display: flex;
   flex-direction: column;
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 
 .titleWrapper {
@@ -12,10 +14,27 @@
   .title {
     font-size: 2.6rem;
     font-weight: 700;
-    color: #3a474e;
+    color: colors.$GREY_800;
   }
 
   .route {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    font-weight: 700;
   }
+}
+
+.linkWrapper {
+  display: flex;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.link {
+  margin-right: 0.5rem;
+  color: colors.$GREY_800;
+}
+
+.activeLink {
+  margin-left: 0.5rem;
+  color: colors.$PRIMARY;
 }
