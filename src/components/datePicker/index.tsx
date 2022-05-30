@@ -46,8 +46,6 @@ const DatePicker = ({ isSubmit, page }: Props) => {
   const onClick3TypesOfQuickBtn = (e: SyntheticEvent<EventTarget>) =>
     onClickQuickBtn(e, setInquiryPeriod, fixedToday, registrationDate);
 
-  console.log('inquiryPeriod', inquiryPeriod);
-
   return (
     <fieldset className={styles.wrapper}>
       <div className={styles.optionsWrapper}>
