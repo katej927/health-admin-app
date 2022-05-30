@@ -1,11 +1,16 @@
 @use 'src/styles/constants/colors';
 
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .navWrapper {
   display: flex;
-  justify-content: flex-end;
   margin-top: 2rem;
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 700;
 
   a {
     color: colors.$GREY_800;
@@ -26,8 +31,8 @@
 
   h2 {
     margin-bottom: 3rem;
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 2.6rem;
+    font-weight: 700;
     color: colors.$GREY_800;
   }
 }

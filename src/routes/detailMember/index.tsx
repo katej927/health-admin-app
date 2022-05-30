@@ -13,22 +13,25 @@ const DetailMember = () => {
 
   return (
     <section>
-      <nav className={styles.navWrapper}>
-        <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-          홈
-        </NavLink>
-        <p className={styles.menu}>&gt;</p>
-        <NavLink to='/manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-          회원 관리
-        </NavLink>
-        <p className={styles.menu}>&gt;</p>
-        <NavLink to='/detailMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-          회원 상세
-        </NavLink>
-      </nav>
-      <article className={styles.titleWrapper}>
-        <h2>회원 상세 정보</h2>
-      </article>
+      <div className={styles.headerWrapper}>
+        <article className={styles.titleWrapper}>
+          <h2>회원 상세 정보</h2>
+        </article>
+        <nav className={styles.navWrapper}>
+          <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+            홈
+          </NavLink>
+          <p className={styles.menu}>&gt;</p>
+          <NavLink to='/manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+            회원 관리
+          </NavLink>
+          <p className={styles.menu}>&gt;</p>
+          <NavLink to='/detailMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+            회원 상세
+          </NavLink>
+        </nav>
+      </div>
+
       <div className={styles.tableWrapper}>
         <WhiteSection>
           <table>
