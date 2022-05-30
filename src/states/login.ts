@@ -1,22 +1,18 @@
+import store from 'store';
 import { atom } from 'recoil';
 
-interface ILoginState {
-  isLoggedIn: boolean;
-  payload: {
-    id: number | null;
-  };
-}
+import { ILoginState } from 'types/admin';
+import { LOGIN_DB_KEY } from '../constant/key';
 
-const LOGIN_ID = 'loginId';
-
-const currentId = localStorage.getItem(LOGIN_ID);
+const admin: ILoginState = store.get(LOGIN_DB_KEY);
 
 export const loginState = atom<ILoginState>({
   key: '#loginState',
   default: {
-    isLoggedIn: Boolean(currentId),
+    isLoggedIn: admin !== undefined,
     payload: {
-      id: currentId ? Number(currentId) : null,
+      id: admin?.payload.id ?? null,
+      name: admin?.payload.name ?? '',
     },
   },
 });

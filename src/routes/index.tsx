@@ -1,12 +1,12 @@
+import { useRecoilValue } from 'recoil';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
-import Dashboard from './dashboard';
-import Layout from './layout';
 import Login from './login';
+import Layout from './layout';
+import Dashboard from './dashboard';
 import ManageMember from './manageMember';
 import DetailMember from './detailMember';
 import { loginState } from 'states/login';
-import { useRecoilValue } from 'recoil';
 
 const App = () => {
   const { isLoggedIn } = useRecoilValue(loginState);
