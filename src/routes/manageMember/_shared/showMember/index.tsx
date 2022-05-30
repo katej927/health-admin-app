@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { selectMemberState } from 'states/selectMember';
 
-const ManageMember = () => {
+const ShowMember = () => {
   const header = ['회원번호', '가입일', '로그인ID', '상세'];
   // const members = getMemberData(검색조건);
   const members = [
@@ -62,4 +62,4 @@ const ManageMember = () => {
     </div>
   );
 };
-export default ManageMember;
+export default ShowMember;

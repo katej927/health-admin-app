@@ -54,9 +54,9 @@ const SearchMember = () => {
 
   return (
     <div className={styles.searchWrapper}>
-      <h1>회원 검색</h1>
       <form className={styles.searchForm} onSubmit={onSubmitForm}>
         <div className={styles.inputWrapper}>
+          <h1>회원 검색</h1>
           <p>로그인 ID</p>
           <input
             name='username'
