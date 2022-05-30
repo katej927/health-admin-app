@@ -1,12 +1,8 @@
 import { useState } from 'react';
-import { IMember } from 'types/member';
 import data from '../../../../data/member_data.json';
-
-interface IData {
-  id: string | number;
-  username: string;
-  crt_ymdt: string;
-}
+import styles from './searchMember.module.scss';
+import { useSetRecoilState } from 'recoil';
+import { searchMemberList } from '../../../../states/searchMemberList';
 
 interface IKeywordObj {
   [key: string]: string | number;
@@ -17,9 +13,11 @@ const SearchMember = () => {
     id: '전체',
   });
 
+  const setMemberListState = useSetRecoilState(searchMemberList);
+
+  // 선미님꺼 컴포넌트 import하면 삭제할것
   const date = { startDate: '2022-02-23 11:00:29', endDate: '2022-02-27 11:00:29' };
 
-  const [filteredData, setFilteredData] = useState(data);
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setSearchKeyword({ ...searchKeyword, [name]: value });
@@ -35,41 +33,30 @@ const SearchMember = () => {
     if (value === '') setSearchKeyword({ ...searchKeyword, [name]: '전체' });
   };
 
-  // const onSubmitForm = () => {
-  //   const keyArr = Object.keys(searchKeyword);
-  //   let result = data;
-  //   // eslint-disable-next-line no-plusplus
-  //   for (let i = 0; i < keyArr.length; i++) {
-  //     const key = keyArr[i];
-  //     if (searchKeyword[key] === '전체') {
-  //       result = result;
-  //     } else if (result.length > 0) {
-  //       result = result.filter((el: IKeywordObj) => el[key] == searchKeyword[key]);
-  //     }
-  //   }
-  //   console.log(result);
-
-  //   // return result;
-  // };
-
   const onSubmitForm = () => {
-    let filtered = data;
+    let filteredArr = data;
     if (searchKeyword.username !== '전체') {
-      filtered = data.filter((el) => el.username === searchKeyword.username);
+      filteredArr = data.filter((el) => el.username === searchKeyword.username);
     }
 
-    if (filtered.length !== 0 && searchKeyword.id !== '전체') {
-      filtered = filtered.filter((el) => el.id === Number(searchKeyword.id));
+    if (filteredArr.length !== 0 && searchKeyword.id !== '전체') {
+      filteredArr = filteredArr.filter((el) => el.id === Number(searchKeyword.id));
     }
+
+    if (filteredArr.length !== 0) {
+      filteredArr = filteredArr.filter(
+        (el) => new Date(el.crt_ymdt) > new Date(date.startDate) && new Date(el.crt_ymdt) < new Date(date.endDate)
+      );
+    }
+
+    setMemberListState(filteredArr);
   };
 
   return (
-    <div>
+    <div className={styles.searchWrapper}>
       <h1>회원 검색</h1>
-      <form
-      // onSubmit={onSubmitForm}
-      >
-        <div>
+      <form className={styles.searchForm} onSubmit={onSubmitForm}>
+        <div className={styles.inputWrapper}>
           <p>로그인 ID</p>
           <input
             name='username'
@@ -79,7 +66,7 @@ const SearchMember = () => {
             value={searchKeyword.username}
           />
         </div>
-        <div>
+        <div className={styles.inputWrapper}>
           <p>회원 번호</p>
           <input
             name='id'
@@ -89,7 +76,7 @@ const SearchMember = () => {
             value={searchKeyword.id}
           />
         </div>
-        <button onClick={onSubmitForm} type='button'>
+        <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
           검색
         </button>
       </form>

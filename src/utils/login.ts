@@ -1,10 +1,8 @@
-import store from 'store';
-
 import { IAdmin } from 'types/admin';
-import { ADMIN_LIST_DB_KEY } from '../constant/key';
+import data from 'data/admin_data.json';
 
 const findAdmin = (name: string): IAdmin => {
-  const adminList: IAdmin[] = store.get(ADMIN_LIST_DB_KEY);
+  const adminList: IAdmin[] = data as IAdmin[];
   const admin = adminList.filter((dbAdmin) => dbAdmin.name === name);
   return admin.length === 0 ? ({ message: '유저가 존재하지 않습니다.' } as IAdmin) : admin[0];
 };

@@ -1,62 +1,83 @@
-import { MainLogo } from 'assets/svgs';
 import { ChangeEvent, useState } from 'react';
 
-import { useLogin } from '../../hooks/useLogin';
-import styles from './login.module.scss';
 import { Checkbox } from './Checkbox';
+import { MainLogo } from 'assets/svgs';
+import Popup from 'components/popup';
+import { cx } from 'styles';
+import styles from './login.module.scss';
+import { useLogin } from '../../hooks/useLogin';
 
 const Login = () => {
   const onLogin = useLogin();
+  const [checkValue, setCheckValue] = useState(false);
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [popupMessage, setPopupMessage] = useState<string>('');
+  const [popupOpen, setPopupOpen] = useState<boolean>(false);
 
-  const onFailHandler = (message: string) => {
-    // TODO: 여기서 로그인 실패 했을 때, 처리 하면 될 것 같아요!
-    // TODO: 실패 내역은 메세지로 출력됩니다. 상세 내역은 PR 확인!
-    console.log(message);
+  const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const {
+      currentTarget: { value },
+    } = e;
+    setUsername(value);
   };
 
-  // 변수
-  const [checkValue, setCheckValue] = useState(false);
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const {
+      currentTarget: { value },
+    } = e;
+    setPassword(value);
+  };
 
-  const handleCheckbox = (e: ChangeEvent<HTMLInputElement>) => {
+  const onFailHandler = (message: string) => {
+    setPopupMessage(message);
+    setPopupOpen(true);
+  };
+
+  const handleCheckbox = () => {
     setCheckValue((pre) => !pre);
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onLogin(username, password, onFailHandler);
   };
 
   return (
     <div className={styles.loginWrapper}>
+      <Popup message={popupMessage} open={popupOpen} setOpen={setPopupOpen} status='error' />
       <header className={styles.header}>
         <MainLogo />
       </header>
       <main className={styles.mainWrapper}>
         <section className={styles.contentWrapper}>
           <h1 className={styles.loginTitle}>로그인</h1>
-          <form className={styles.loginContent}>
+          <form onSubmit={handleSubmit} className={styles.loginContent}>
             <fieldset className={styles.inputWrapper}>
               <label htmlFor='email'>아이디</label>
               <input
                 type='text'
                 id='email'
                 placeholder='아이디를 입력해주세요'
-                // value={loginId}
-                // onChange={handleEmailChange}
-                //   onFocus={handleEmailFocus}
-                //   onBlur={handleEmailFocus}
+                value={username}
+                onChange={handleUsernameChange}
                 autoCapitalize='off'
                 autoCorrect='off'
+                autoComplete='off'
                 spellCheck='false'
               />
             </fieldset>
             <fieldset className={styles.inputWrapper}>
               <label htmlFor='password'>비밀번호</label>
               <input
-                type='text'
+                type='password'
                 id='password'
                 placeholder='비밀번호를 입력해주세요'
-                // value={password}
-                //   onChange={handleEmailChange}
-                //   onFocus={handleEmailFocus}
-                //   onBlur={handleEmailFocus}
+                value={password}
+                onChange={handlePasswordChange}
                 autoCapitalize='off'
                 autoCorrect='off'
+                autoComplete='off'
                 spellCheck='false'
               />
             </fieldset>
@@ -65,8 +86,8 @@ const Login = () => {
               <label htmlFor='rememberInfo'>아이디 저장하기</label>
               <input type='checkbox' id='rememberInfo' onChange={handleCheckbox} checked={checkValue} />
             </fieldset>
-            <button type='submit' className={styles.loginButton} onClick={() => onLogin('solchan', '1', onFailHandler)}>
-              로그인하기
+            <button type='submit' className={cx(styles.loginButton, { [styles.buttonValid]: username && password })}>
+              로그인
             </button>
           </form>
         </section>
