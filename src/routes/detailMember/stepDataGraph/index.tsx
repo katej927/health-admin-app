@@ -24,11 +24,11 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
 
   return (
     <WhiteSection>
-      <div className={styles.stepDataWrapper}>
+      <>
         <div className={styles.stepData}>
-          <div className={styles.totalStep}>
+          <h3 className={styles.totalStep}>
             <span>걸음 수</span> 총 {totalStep.toLocaleString() ?? 0} 걸음
-          </div>
+          </h3>
           <DatePicker page='회원 상세 정보' state={inquiryPeriodStepState} />{' '}
         </div>
         <div className={styles.stepDataGraph}>
@@ -42,7 +42,7 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
             <VictoryBar data={graphData} {...GRAPH_STYLE.bar} {...GRAPH_STYLE[`${graphType}Bar`]} />
           </VictoryChart>
         </div>
-      </div>
+      </>
     </WhiteSection>
   );
 };

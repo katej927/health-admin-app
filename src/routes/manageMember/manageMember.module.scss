@@ -1,12 +1,6 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/constants/sizes';
 
-.memberWrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 4rem 0;
-}
-
 .titleWrapper {
   display: flex;
   align-items: center;

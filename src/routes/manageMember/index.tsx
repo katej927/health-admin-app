@@ -7,7 +7,7 @@ import styles from './manageMember.module.scss';
 
 const ManageMember = () => {
   return (
-    <div className={styles.memberWrapper}>
+    <>
       <div className={styles.titleWrapper}>
         <h2>회원 관리</h2>
         <nav className={styles.navWrapper}>
@@ -22,7 +22,7 @@ const ManageMember = () => {
       </div>
       <SearchMember />
       <ShowMember />
-    </div>
+    </>
   );
 };
 

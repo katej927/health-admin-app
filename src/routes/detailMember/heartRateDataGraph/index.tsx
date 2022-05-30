@@ -50,7 +50,7 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
 
   return (
     <WhiteSection>
-      <div className={styles.heartRateWrapper}>
+      <>
         <div className={styles.heartRate}>
           <h3 className={styles.dataAverage}>
             <span>심박수</span> 평균 {!isNaN(Number(averageHeartBeat)) ? Math.floor(averageHeartBeat) : 0} bpm
@@ -74,7 +74,7 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
             style={GRAPH_STYLE.styleAxisX}
           />
         </VictoryChart>
-      </div>
+      </>
     </WhiteSection>
   );
 };

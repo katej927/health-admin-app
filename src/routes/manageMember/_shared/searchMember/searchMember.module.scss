@@ -2,55 +2,51 @@
 @use 'src/styles/constants/sizes';
 @use 'src/styles/mixins/visual';
 
-.searchWrapper {
-  margin-bottom: 1rem;
-
-  > h1 {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-}
-
 .searchForm {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-}
 
-.inputWrapper {
-  display: flex;
-}
-
-.inputSubWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-
-  > p {
-    margin-right: 1rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: colors.$GREY_800;
+  .inputWrapper {
+    display: flex;
   }
 
-  > input {
-    width: 10rem;
-    padding: 0 1.5rem;
-    font-size: 1.6rem;
-    line-height: 3rem;
-    color: colors.$GREY_800;
-    background-color: colors.$WHITE;
-    border: 1px solid colors.$GREY_100;
-    border-radius: 10px;
+  .inputSubWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+
+    > p {
+      margin-right: 1rem;
+      font-size: sizes.$REGULAR;
+      font-weight: sizes.$SEMIBOLD;
+      color: colors.$GREY_800;
+    }
+
+    > input {
+      width: 10rem;
+      padding: 0 1.5rem;
+      font-size: 1.6rem;
+      line-height: 3.5rem;
+      color: colors.$GREY_800;
+      background-color: colors.$WHITE;
+      border: 1px solid colors.$GREY_100;
+      border-radius: 10px;
+
+      &::placeholder {
+        color: colors.$RED; // 왜안바껴
+      }
+    }
   }
-}
 
-.btnWrapper {
-  display: flex;
-}
+  .btnWrapper {
+    display: flex;
 
-.submitBtn {
-  @include visual.btnActive;
-  margin-left: 0.5rem;
+    .submitBtn {
+      @include visual.btnActive;
+      margin-left: 0.5rem;
+    }
+  }
 }

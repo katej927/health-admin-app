@@ -81,11 +81,9 @@ const SearchMember = () => {
       </div>
       <div className={styles.btnWrapper}>
         <DatePicker isSubmit={isSubmit} page='회원 관리' state={inquiryPeriodMemberState} />
-        <div>
-          <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
-            검색
-          </button>
-        </div>
+        <button className={styles.submitBtn} onClick={onSubmitForm} type='button'>
+          검색
+        </button>
       </div>
     </form>
   );

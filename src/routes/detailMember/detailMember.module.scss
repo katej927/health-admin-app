@@ -1,17 +1,11 @@
 @use 'src/styles/constants/colors';
 @use '/src/styles/constants/sizes';
 
-.headerWrapper {
+.titleWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.navWrapper {
-  display: flex;
-  margin-top: 2rem;
-  font-size: 1.3rem;
-  font-weight: 700;
+  margin: 20px 0;
 
   h2 {
     font-size: sizes.$LARGE;
@@ -36,44 +30,37 @@
     .isActive {
       color: colors.$PRIMARY;
     }
+  }
+}
 
-    h2 {
-      margin-bottom: 3rem;
-      font-size: 2.6rem;
-      font-weight: 700;
+.tableWrapper {
+  margin-bottom: 4rem;
+
+  table {
+    width: 100%;
+    font-size: 1.4rem;
+
+    th {
+      padding: 1rem 0;
+      color: colors.$GREY_300;
+      border-top: 1px solid colors.$GREY_50;
+      border-bottom: 1px solid colors.$GREY_50;
+    }
+
+    td {
+      padding: 1rem 0;
+      font-weight: 800;
       color: colors.$GREY_800;
+      text-align: center;
     }
   }
+}
 
-  .tableWrapper {
+.graphWrapper {
+  display: flex;
+  flex-direction: column;
+
+  > :first-child {
     margin-bottom: 4rem;
-
-    table {
-      width: 100%;
-      font-size: 1.4rem;
-
-      th {
-        padding: 1rem 0;
-        color: colors.$GREY_300;
-        border-top: 1px solid colors.$GREY_50;
-        border-bottom: 1px solid colors.$GREY_50;
-      }
-
-      td {
-        padding: 1rem 0;
-        font-weight: 800;
-        color: colors.$GREY_800;
-        text-align: center;
-      }
-    }
-  }
-
-  .graphWrapper {
-    display: flex;
-    flex-direction: column;
-
-    > :first-child {
-      margin-bottom: 4rem;
-    }
   }
 }

@@ -1,46 +1,18 @@
-@mixin hidden {
-  position: absolute !important;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden !important;
-  clip: rect(0 0 0 0);
-  clip-path: inset(100%);
-  white-space: nowrap;
-  border: 0;
-}
-
-@mixin mobileHidden {
-  @media screen and (max-width: 999px) {
-    display: none !important;
-  }
-}
-
-@mixin desktopHidden {
-  @media screen and (min-width: 1000px) {
-    display: none !important;
-  }
-}
-
-@mixin noScrollbar() {
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+@use '/src/styles/constants/colors';
 
 @mixin btnActive {
   padding: 0 1.5rem;
   font-size: 1.2rem;
   line-height: 2.5;
-  color: #3a474e;
-  border: 1px solid #d1d8dc;
+  color: colors.$GREY_800;
+  white-space: nowrap;
+  border: 1px solid colors.$GREY_100;
   border-radius: 1rem;
   transition: all ease 0.2s;
 
   &:hover {
-    color: #ffffff;
-    background-color: #8593ff;
-    border-color: #8593ff;
+    color: colors.$WHITE;
+    background-color: colors.$ACTIVATED_BTN;
+    border-color: colors.$ACTIVATED_BTN;
   }
 }
