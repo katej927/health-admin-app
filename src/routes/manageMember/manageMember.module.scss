@@ -1,11 +1,21 @@
 .memberWrapper {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding: 3rem 0;
+}
 
-  > p {
-    font-size: 26px;
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  .title {
+    font-size: 2.6rem;
     font-weight: 700;
     color: #3a474e;
+  }
+
+  .route {
+    font-size: 1.4rem;
   }
 }
