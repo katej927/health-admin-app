@@ -26,10 +26,10 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
     <WhiteSection>
       <div className={styles.stepDataWrapper}>
         <div className={styles.stepData}>
-          <DatePicker page='회원 상세 정보' state={inquiryPeriodStepState} />
           <div className={styles.totalStep}>
             <span>걸음 수</span> 총 {totalStep.toLocaleString() ?? 0} 걸음
           </div>
+          <DatePicker page='회원 상세 정보' state={inquiryPeriodStepState} />{' '}
         </div>
         <div className={styles.stepDataGraph}>
           <VictoryChart theme={VictoryTheme.grayscale} domainPadding={{ x: 10 }} width={900}>

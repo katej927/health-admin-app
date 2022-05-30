@@ -1,7 +1,7 @@
 const GRAPH_STYLE = {
   animate: {
-    duration: 1000,
-    onLoad: { duration: 500 },
+    duration: 1500,
+    onLoad: { duration: 800 },
   },
 
   styleAxisY: {

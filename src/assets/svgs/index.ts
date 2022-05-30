@@ -16,3 +16,5 @@ export { ReactComponent as CircleInfoIcon } from './circle_info.svg';
 export { ReactComponent as CircleExclamtionIcon } from './circle_exclamation.svg';
 export { ReactComponent as HidePasswordIcon } from './hide_password.svg';
 export { ReactComponent as ShowPasswordIcon } from './show_password.svg';
+export { ReactComponent as LogoutIcon } from './logout.svg';
+export { ReactComponent as UserInfoIcon } from './user_image.svg';

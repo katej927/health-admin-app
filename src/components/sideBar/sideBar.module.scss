@@ -10,6 +10,16 @@
   padding: 6rem 4rem;
   box-shadow: 0.4rem 0 1rem 0 #0000000a;
 
+  .userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 130px;
+    margin: 20px 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
   > img {
     width: 13rem;
   }
@@ -35,6 +45,20 @@
 
       svg {
         fill: colors.$GREY_800;
+      }
+    }
+
+    .logoutContainer {
+      position: absolute;
+      bottom: 5rem;
+      display: flex;
+      justify-content: space-between;
+      width: 80px;
+      margin-left: 20px;
+
+      .logout {
+        font-size: 1.5rem;
+        color: colors.$GREY_300;
       }
     }
 
