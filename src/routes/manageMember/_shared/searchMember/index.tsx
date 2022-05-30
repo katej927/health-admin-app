@@ -45,7 +45,7 @@ const SearchMember = () => {
 
     if (filteredArr.length !== 0) {
       filteredArr = filteredArr.filter(
-        (el) => new Date(el.crt_ymdt) > new Date(date.startDate) && new Date(el.crt_ymdt) < new Date(date.endDate)
+        (el) => new Date(el.crt_ymdt) >= new Date(date.startDate) && new Date(el.crt_ymdt) <= new Date(date.endDate)
       );
     }
 
