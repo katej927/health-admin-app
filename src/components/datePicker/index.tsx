@@ -52,7 +52,10 @@ const DatePicker = ({ isSubmit, page, state }: Props) => {
       <div className={styles.optionsWrapper}>
         <button
           type='button'
-          className={cn(styles.dateInputWrapper, { [styles.invalidated]: isSubmit && (!startDate || !endDate) })}
+          className={cn(styles.dateInputWrapper, {
+            [styles.active]: isOpenCalendar,
+            [styles.invalidated]: isSubmit && (!startDate || !endDate),
+          })}
           onClick={onClickDateRange}
         >
           {[startDate, endDate].map((date, idx) => {
