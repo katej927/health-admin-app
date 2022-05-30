@@ -1,0 +1,11 @@
+.memberWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+
+  > p {
+    font-size: 26px;
+    font-weight: 700;
+    color: #3a474e;
+  }
+}
