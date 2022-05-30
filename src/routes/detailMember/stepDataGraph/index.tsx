@@ -9,7 +9,7 @@ import GRAPH_STYLE from './GRAPH_STYLE';
 import styles from './stepDataGraph.module.scss';
 import WhiteSection from 'components/whiteSection';
 
-import stepData from '../../../data/step_data/step_data.json';
+import rawData from '../../../data/step_data/step_data.json';
 
 dayjs.extend(isBetween);
 
@@ -19,8 +19,9 @@ const StepDataGraph = ({ selectedID }: { selectedID: number }) => {
     // endDate: '2022-04-19',
     endDate: '2022-02-26',
   };
+  console.log({ selectedID });
 
-  const { stepData: userData } = stepData.filter((data: IStepData) => data.id === selectedID)[0];
+  const { stepData: userData } = rawData.filter((data: IStepData) => data.id === selectedID)[0];
   const graphType: GraphType = date.startDate === date.endDate ? 'dayGraph' : 'weeklyGraph';
   const { graphData, totalStep } = formatGraphData(userData, date);
 

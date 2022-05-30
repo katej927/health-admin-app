@@ -8,6 +8,7 @@ import styles from './detailMember.module.scss';
 const DetailMember = () => {
   const [selectMember, _] = useRecoilState(selectMemberState);
   const { id } = selectMember;
+  console.log({ id });
 
   return (
     <section>
