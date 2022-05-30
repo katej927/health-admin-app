@@ -1,3 +1,132 @@
-.wrapper {
-  background-color: red;
+@use 'src/styles/mixins/flexbox';
+@use 'src/styles/constants/colors';
+
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  width: 1024px;
+  height: 100vh;
+
+  .header {
+    width: 100%;
+    padding-top: 38px;
+
+    svg {
+      width: 100px;
+      height: 25px;
+    }
+  }
+
+  .mainWrapper {
+    @include flexbox.flexbox(center, center);
+    width: 100%;
+    height: 100%;
+
+    .contentWrapper {
+      @include flexbox.flexbox(center, center);
+      flex-direction: column;
+      max-width: 428px;
+      padding: 56px 54px;
+      margin-top: 40px;
+      background-color: colors.$BG_G;
+      border-radius: 20px;
+
+      .loginButton {
+        width: 100%;
+        height: 60px;
+        font-size: 18px;
+        font-weight: bold;
+        color: colors.$BUTTON_COLOR;
+        background-color: colors.$BUTTON_OPACITY;
+        border: none;
+        border-radius: 50px;
+        transition: 0.2s;
+
+        &.buttonValid {
+          color: colors.$GREY_50;
+          background-color: colors.$BUTTON;
+          opacity: 1;
+        }
+
+        &.buttonDisabled {
+          cursor: default;
+        }
+      }
+
+      .loginTitle {
+        margin-bottom: 42px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .inputWrapper {
+        position: relative;
+        width: 320px;
+        margin-bottom: 10px;
+
+        label {
+          display: block;
+          align-self: flex-start;
+          padding-bottom: 16px;
+          font-size: 12px;
+          font-weight: bold;
+          color: colors.$GREY_300;
+        }
+
+        input {
+          width: 100%;
+          height: 40px;
+          padding: 12px 20px;
+          font-size: 14px;
+          font-weight: bold;
+          color: colors.$GREY_800;
+          background-color: colors.$WHITE;
+          border: 1px solid colors.$GREY_100;
+          border-radius: 10px;
+        }
+
+        input::placeholder {
+          color: colors.$PLACEHOLDER_TEXT;
+        }
+
+        button {
+          position: absolute;
+          right: 20px;
+          bottom: 12px;
+          height: 19px;
+        }
+      }
+
+      .alertMessage {
+        margin-bottom: 22px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #007aff;
+      }
+
+      .blind {
+        display: none;
+      }
+
+      .checkWrapper {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        margin-bottom: 32px;
+        font-size: 14px;
+        font-weight: normal;
+        color: colors.$GREY_800;
+
+        input[type='checkbox'] {
+          display: none;
+        }
+
+        label {
+          display: inline-block;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
 }
