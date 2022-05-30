@@ -15,34 +15,35 @@ const SideBar = () => {
   const onLogout = useLogout();
   return (
     <aside className={styles.sideBarWrapper}>
-      <section>
-        <div className={styles.userInfo}>
-          <UserInfoIcon />
-          <div className={styles.userName}>{loginUser.isLoggedIn && loginUser.payload.name} 님</div>
+      <div className={styles.userInfo}>
+        <UserInfoIcon />
+        <div className={styles.userName}>
+          <p>{loginUser.isLoggedIn && loginUser.payload.name} 님</p>
+          <p>MOADATA Company</p>
         </div>
-        <div className={styles.box}>
-          <ul>
-            <li>
-              <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-                <FaHome />
-                백오피스 홈
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
-                <BsPersonFill />
-                회원 관리
-              </NavLink>
-            </li>
-          </ul>
-          <div className={styles.logoutContainer}>
-            <LogoutIcon />
-            <button type='button' className={styles.logout} onClick={onLogout}>
-              로그아웃
-            </button>
-          </div>
-        </div>
-      </section>
+      </div>
+      <div className={styles.box}>
+        <ul>
+          <li>
+            <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+              <FaHome />
+              백오피스 홈
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
+              <BsPersonFill />
+              회원 관리
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+      <div className={styles.logoutContainer}>
+        <button type='button' className={styles.logout} onClick={onLogout}>
+          <LogoutIcon />
+          로그아웃
+        </button>
+      </div>
     </aside>
   );
 };

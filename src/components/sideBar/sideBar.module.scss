@@ -1,31 +1,43 @@
-@use 'src/styles/constants/colors';
-@use 'src/styles/mixins/flexbox';
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
+@use '/src/styles/mixins/flexbox';
 
 .sideBarWrapper {
-  @include flexbox.flexbox('between', 'stretch');
-  flex-direction: column;
-  width: 32rem;
-  min-width: 30rem;
-  height: 100vh;
+  width: 320px;
+  height: 100%;
   padding: 6rem 4rem;
-  box-shadow: 0.4rem 0 1rem 0 #0000000a;
+  background-color: colors.$WHITE;
+  box-shadow: colors.$SHADOW;
+
+  svg {
+    position: relative;
+    top: -1px;
+  }
 
   .userInfo {
     display: flex;
     align-items: center;
     width: 100%;
-    margin: 20px 0;
+    height: 90px;
+    margin-bottom: 20px;
     font-size: 2rem;
     font-weight: 700;
-    text-transform: uppercase;
-  }
+    border-bottom: 1px solid colors.$GREY_50;
 
-  .userName {
-    margin-left: 15px;
-  }
+    .userName {
+      margin: 1px 0 0 15px;
+      line-height: 1.2;
 
-  > img {
-    width: 13rem;
+      p:first-of-type {
+        color: colors.$GREY_800;
+        text-transform: uppercase;
+      }
+
+      p:last-of-type {
+        font-size: sizes.$SMALL;
+        color: colors.$GREY_100;
+      }
+    }
   }
 
   .underLine {
@@ -41,28 +53,14 @@
       gap: 1.2rem;
       height: 6rem;
       padding: 2rem;
-      font-size: 1.7rem;
-      font-weight: 700;
+      font-size: sizes.$REGULAR;
+      font-weight: sizes.$BOLD;
       color: colors.$GREY_800;
-      border-radius: 1rem;
+      border-radius: sizes.$BORDER_RADIUS;
       transition: 200ms;
 
       svg {
         fill: colors.$GREY_800;
-      }
-    }
-
-    .logoutContainer {
-      position: absolute;
-      bottom: 5rem;
-      display: flex;
-      justify-content: space-between;
-      width: 80px;
-      margin-left: 20px;
-
-      .logout {
-        font-size: 1.5rem;
-        color: colors.$GREY_300;
       }
     }
 
@@ -72,6 +70,35 @@
 
       svg {
         fill: colors.$PRIMARY;
+      }
+    }
+  }
+
+  .logoutContainer {
+    position: absolute;
+    bottom: 5rem;
+
+    .logout {
+      display: flex;
+      gap: 1.2rem;
+      height: 6rem;
+      padding: 2rem;
+      font-size: sizes.$REGULAR;
+      font-weight: sizes.$BOLD;
+      color: colors.$GREY_300;
+      border-radius: 1rem;
+      transition: 200ms;
+
+      svg {
+        fill: colors.$GREY_300;
+      }
+
+      &:hover {
+        color: colors.$ACTIVATED_BTN;
+
+        svg {
+          fill: colors.$ACTIVATED_BTN;
+        }
       }
     }
   }

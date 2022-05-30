@@ -1,34 +1,35 @@
 @use 'src/styles/constants/colors';
-
-.navWrapper {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 2rem;
-  font-size: 1.3rem;
-  font-weight: 800;
-
-  a {
-    color: colors.$GREY_800;
-  }
-
-  p {
-    margin: 0 0.5rem;
-    color: colors.$GREY_800;
-  }
-
-  .isActive {
-    color: colors.$PRIMARY;
-  }
-}
+@use '/src/styles/constants/sizes';
 
 .titleWrapper {
-  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
 
   h2 {
-    margin-bottom: 3rem;
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: sizes.$LARGE;
+    font-weight: sizes.$BOLD;
     color: colors.$GREY_800;
+  }
+
+  .navWrapper {
+    display: flex;
+    justify-content: flex-end;
+    font-size: sizes.$SMALL;
+
+    a {
+      color: colors.$GREY_800;
+    }
+
+    p {
+      margin: 0 0.5rem;
+      color: colors.$GREY_800;
+    }
+
+    .isActive {
+      color: colors.$PRIMARY;
+    }
   }
 }
 

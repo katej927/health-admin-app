@@ -52,9 +52,9 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
     <WhiteSection>
       <div className={styles.heartRateWrapper}>
         <div className={styles.heartRate}>
-          <div className={styles.dataAverage}>
+          <h3 className={styles.dataAverage}>
             <span>심박수</span> 평균 {!isNaN(Number(averageHeartBeat)) ? Math.floor(averageHeartBeat) : 0} bpm
-          </div>
+          </h3>
           <DatePicker page='회원 상세 정보' state={inquiryPeriodHeartState} />
         </div>
         <VictoryChart minDomain={{ y: 50 }} maxDomain={{ y: 160 }} width={900}>

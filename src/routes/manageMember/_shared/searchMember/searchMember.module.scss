@@ -1,52 +1,45 @@
-@use 'src/styles/constants/colors';
-@use 'src/styles/constants/sizes';
-@use 'src/styles/mixins/visual';
-
-.searchWrapper {
-  margin-bottom: 1rem;
-
-  > h1 {
-    font-size: 2rem;
-    font-weight: 700;
-  }
-}
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
+@use '/src/styles/mixins/visual';
 
 .searchForm {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-}
 
-.inputWrapper {
-  display: flex;
-}
+  .inputWrapper {
+    display: flex;
+  }
 
-.inputSubWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-
-  > p {
+  .inputSubWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 1rem;
-    font-size: 1.4rem;
-    font-weight: 700;
+
+    > p {
+      margin-right: 1rem;
+      font-size: sizes.$REGULAR;
+      font-weight: sizes.$SEMIBOLD;
+      color: colors.$GREY_800;
+    }
+
+    > input {
+      width: 10rem;
+      padding: 0 1.5rem;
+      font-size: 1.2rem;
+      line-height: 2.5;
+      background-color: colors.$WHITE;
+      border: 1px sizes.$MEDIUM colors.$GREY_100;
+      border-radius: 10px;
+    }
   }
 
-  > input {
-    width: 10rem;
-    padding: 0 1.5rem;
-    font-size: 1.2rem;
-    line-height: 2.5;
-    background-color: colors.$WHITE;
-    border: 1px sizes.$MEDIUM colors.$GREY_100;
-    border-radius: 10px;
+  .btnWrapper {
+    display: flex;
   }
-}
 
-.btnWrapper {
-  display: flex;
-}
-
-.submitBtn {
-  @include visual.btnActive;
+  .submitBtn {
+    @include visual.btnActive;
+  }
 }
