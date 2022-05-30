@@ -7,7 +7,7 @@ import styles from './detailMember.module.scss';
 
 const DetailMember = () => {
   const [selectMember, _] = useRecoilState(selectMemberState);
-  const { selectedID } = selectMember;
+  const { id } = selectMember;
 
   return (
     <section>
@@ -39,9 +39,9 @@ const DetailMember = () => {
         </div>
       </main>
       <div className={styles.graphWrapper}>
-      <HeartRateDataGraph selectedID={selectedID} />
-      <StepDataGraph selectedID={selectedID} />
-    </div>
+        <HeartRateDataGraph selectedID={id} />
+        <StepDataGraph selectedID={id} />
+      </div>
     </section>
   );
 };

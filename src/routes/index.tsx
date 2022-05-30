@@ -7,12 +7,10 @@ import Dashboard from './dashboard';
 import ManageMember from './manageMember';
 import DetailMember from './detailMember';
 import { loginState } from 'states/login';
-import { useRecoilValue } from 'recoil';
-
 
 const App = () => {
   const { isLoggedIn } = useRecoilValue(loginState);
-  
+
   return (
     <Routes>
       <Route path='login' element={!isLoggedIn ? <Login /> : <Navigate to='/' />} />
