@@ -21,31 +21,26 @@
     
     ```
     git clone <https://github.com/wanted-pre-onboarding-FE-01/moa-health-admin.git>
-    
     ```
     
 2. 해당 프로젝트 폴더로 이동
     
     ```
     cd moa-health-admin
-    
     ```
     
 3. 필요 package들 설치
     
     ```
     yarn intall
-    
     ```
     
 4. 프로젝트 실행
     
     ```
     yarn start
-    
     ```
     
-
 <br />
 
 # 📁 폴더 구조
