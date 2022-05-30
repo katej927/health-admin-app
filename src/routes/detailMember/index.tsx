@@ -5,6 +5,7 @@ import cx from 'classnames';
 import HeartRateDataGraph from 'routes/detailMember/heartRateDataGraph';
 import StepDataGraph from 'routes/detailMember/stepDataGraph';
 import styles from './detailMember.module.scss';
+import WhiteSection from 'components/whiteSection';
 
 const DetailMember = () => {
   const selectMember = useRecoilValue(selectMemberState);
@@ -28,24 +29,26 @@ const DetailMember = () => {
       <article className={styles.titleWrapper}>
         <h2>회원 상세 정보</h2>
       </article>
-      <main className={styles.mainWrapper}>
-        <table>
-          <thead>
-            <tr>
-              <th>회원번호</th>
-              <th>가입일</th>
-              <th>로그인ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{selectMember.id}</td>
-              <td>{selectMember.username}</td>
-              <td>{selectMember.crt_ymdt}</td>
-            </tr>
-          </tbody>
-        </table>
-      </main>
+      <div className={styles.tableWrapper}>
+        <WhiteSection>
+          <table>
+            <thead>
+              <tr>
+                <th>회원번호</th>
+                <th>가입일</th>
+                <th>로그인ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{selectMember.id}</td>
+                <td>{selectMember.username}</td>
+                <td>{selectMember.crt_ymdt}</td>
+              </tr>
+            </tbody>
+          </table>
+        </WhiteSection>
+      </div>
       <div className={styles.graphWrapper}>
         {id !== 0 && (
           <>

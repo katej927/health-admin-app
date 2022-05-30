@@ -13,7 +13,6 @@
 
     .dateInputWrapper {
       @include flexbox.flexbox('center', 'center');
-      margin-right: 1.5rem;
       background-color: colors.$WHITE;
       border: 0.1rem solid colors.$GREY_100;
       border-radius: sizes.$BORDER_RADIUS;
@@ -25,7 +24,7 @@
 
       .dateInput {
         font-size: 1.6rem;
-        line-height: 3.45rem;
+        line-height: 3rem;
         color: colors.$GREY_800;
         text-align: center;
         cursor: pointer;
@@ -42,19 +41,14 @@
 
     .btn {
       @include visual.btnActive;
-      // padding: 0.5rem 1rem;
       margin-left: 0.5rem;
-
-      // color: colors.$GREY_800;
-      // background-color: colors.$WHITE;
-      // border: 0.1rem solid colors.$GREY_100;
-      // border-radius: sizes.$BORDER_RADIUS;
     }
   }
 
   .monthsWrapper {
     @include flexbox.flexbox('evenly', 'center');
     position: absolute;
+    right: 0;
     z-index: 100;
     width: 66rem;
     height: 38rem;

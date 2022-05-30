@@ -52,15 +52,15 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
     <WhiteSection>
       <div className={styles.heartRateWrapper}>
         <div className={styles.heartRate}>
-          <DatePicker page='회원 상세 정보' state={inquiryPeriodHeartState} />
           <div className={styles.dataAverage}>
             <span>심박수</span> 평균 {!isNaN(Number(averageHeartBeat)) ? Math.floor(averageHeartBeat) : 0} bpm
           </div>
+          <DatePicker page='회원 상세 정보' state={inquiryPeriodHeartState} />
         </div>
         <VictoryChart minDomain={{ y: 50 }} maxDomain={{ y: 160 }} width={900}>
           <VictoryLine
             style={{
-              data: { stroke: '#c43a31' },
+              data: { stroke: '#4FADF7' },
             }}
             sortOrder='descending'
             data={data}
@@ -70,7 +70,7 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
           <VictoryAxis
             tickFormat={(tick) => setTickFormat(tick)}
             fixLabelOverlap
-            tickLabelComponent={<VictoryLabel renderInPortal dx={30} />}
+            tickLabelComponent={<VictoryLabel renderInPortal />}
             style={GRAPH_STYLE.styleAxisX}
           />
         </VictoryChart>
