@@ -73,7 +73,7 @@ const Month = ({ assignedDay, onMonthBtnClick, isCurrentMonth, setIsOpenCalendar
         </thead>
         <tbody className={styles.allDatesOfAMonth}>
           {convertedDate.map((eachWeek: Dayjs[], idx: number) => (
-            <tr key={`week-${idx + 1}st`}>
+            <tr key={`week-${idx + 1}`}>
               {eachWeek.map((date, index) => {
                 return (
                   <td key={`date-${index + 1}`} className={styles.day}>
