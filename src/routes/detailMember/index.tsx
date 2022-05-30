@@ -35,8 +35,8 @@ const DetailMember = () => {
             <thead>
               <tr>
                 <th>회원번호</th>
-                <th>가입일</th>
                 <th>로그인ID</th>
+                <th>가입일</th>
               </tr>
             </thead>
             <tbody>
