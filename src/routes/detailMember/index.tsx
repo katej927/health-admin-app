@@ -1,13 +1,42 @@
+import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { selectMemberState } from 'states/selectMember';
+import styles from './detailMember.module.scss';
 
 const DetailMember = () => {
-  const [selectMember, setSelectMember] = useRecoilState(selectMemberState);
-  console.log('도희님', selectMember);
+  const [selectMember, _] = useRecoilState(selectMemberState);
+
   return (
-    <div>
-      <p>넘겨받은데이터 출력</p>
-    </div>
+    <section>
+      <nav className={styles.navWrapper}>
+        <Link to='/' className={styles.menu}>
+          홈
+        </Link>
+        <p className={styles.menu}> &gt; </p>
+        <Link to='/manageMember' className={styles.menu}>
+          회원 관리
+        </Link>
+        <p className={styles.menu}> &gt; 회원 상세</p>
+      </nav>
+      <article className={styles.titleWrapper}>
+        <h2>회원 상세 정보</h2>
+      </article>
+      <main className={styles.mainWrapper}>
+        <div className={styles.inputWrapper}>
+          <label htmlFor='loginId'>로그인 ID</label>
+          <input type='text' value={selectMember.id} id='loginId' name='loginId' disabled />
+        </div>
+        <div className={styles.inputWrapper}>
+          <label htmlFor='memberNum'>회원 번호</label>
+          <input type='text' value={selectMember.username} id='memberNum' name='memberNum' disabled />
+        </div>
+        <div className={styles.inputWrapper}>
+          <label htmlFor='joinDate'>가입 일시</label>
+          <input type='text' value={selectMember.crt_ymdt} id='joinDate' name='joinDate' disabled />
+        </div>
+      </main>
+    </section>
   );
 };
+
 export default DetailMember;
