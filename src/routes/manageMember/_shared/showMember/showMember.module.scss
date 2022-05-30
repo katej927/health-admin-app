@@ -1,0 +1,70 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
+
+.boxWrapper {
+  padding: 4rem 4rem 3rem;
+  background-color: colors.$WHITE;
+  border-radius: 2rem;
+
+  p {
+    margin-bottom: 3rem;
+    font-size: sizes.$REGULAR;
+    color: colors.$GREY_800;
+  }
+
+  .tableWrapper {
+    max-height: 650px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 0.625rem;
+      height: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: colors.$GREY_100;
+      border-radius: 0.625rem;
+    }
+
+    table {
+      width: 100%;
+      white-space: nowrap;
+      border-collapse: collapse;
+
+      tr {
+        th,
+        td {
+          width: 25%;
+          font-size: sizes.$SMALL;
+          line-height: 3.3;
+          text-align: center;
+          border-bottom: 1px solid colors.$GREY_50;
+        }
+
+        th {
+          color: colors.$GREY_300;
+          border-top: 1px solid colors.$GREY_50;
+        }
+
+        td {
+          color: colors.$GREY_800;
+
+          button {
+            padding: 0.7rem 1rem;
+            font-size: sizes.$SMALL;
+            color: colors.$GREY_800;
+            border: 1px solid colors.$GREY_100;
+            border-radius: 1rem;
+            transition: all ease 0.2s;
+
+            &:hover {
+              color: colors.$WHITE;
+              background-color: colors.$ACTIVATED_BTN;
+            }
+          }
+        }
+      }
+    }
+  }
+}
