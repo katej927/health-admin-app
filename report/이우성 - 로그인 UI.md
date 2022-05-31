@@ -3,7 +3,7 @@
 ## 로그인 UI 개발
 
 ### 1. 실행화면 
-<center>
+<center class="half">
  <img src="https://user-images.githubusercontent.com/42796944/171108561-03e16201-71fa-4e51-a4f5-21f8c65329c1.png" style="display: inline-block; width: 250px; height: 300px;"> 
  <img src="https://user-images.githubusercontent.com/42796944/171108653-8bc93f2d-1ef5-4ce6-9e41-54e2fba79a79.png" style="display: inline-block; width: 250px; height: 300px;">
 </center>
