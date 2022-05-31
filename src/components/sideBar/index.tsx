@@ -15,10 +15,13 @@ const SideBar = () => {
   const onLogout = useLogout();
   return (
     <aside className={styles.sideBarWrapper}>
-      <section>
+      <div className={styles.upperWrapper}>
         <div className={styles.userInfo}>
           <UserInfoIcon />
-          <div className={styles.userName}>{loginUser.isLoggedIn && loginUser.payload.name} 님</div>
+          <div className={styles.userName}>
+            <p>{loginUser.isLoggedIn && loginUser.payload.name} 님</p>
+            <p>MOADATA Company</p>
+          </div>
         </div>
         <div className={styles.box}>
           <ul>
@@ -35,14 +38,12 @@ const SideBar = () => {
               </NavLink>
             </li>
           </ul>
-          <div className={styles.logoutContainer}>
-            <LogoutIcon />
-            <button type='button' className={styles.logout} onClick={onLogout}>
-              로그아웃
-            </button>
-          </div>
         </div>
-      </section>
+      </div>
+      <button type='button' className={styles.logout} onClick={onLogout}>
+        <LogoutIcon />
+        로그아웃
+      </button>
     </aside>
   );
 };

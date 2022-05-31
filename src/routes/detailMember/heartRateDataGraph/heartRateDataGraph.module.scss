@@ -1,20 +1,21 @@
 @use 'src/styles/constants/colors';
 
-.heartRateWrapper {
+.heartRate {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
   .dataAverage {
     font-size: 2rem;
     font-weight: 700;
     color: colors.$GRAPH_TEXT_GRAY;
+    white-space: nowrap;
 
     span {
+      margin-right: 0.5rem;
       color: colors.$PRIMARY;
     }
-  }
-
-  .heartRate {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
   }
 }

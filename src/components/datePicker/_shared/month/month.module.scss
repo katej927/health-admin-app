@@ -35,8 +35,19 @@
         right: 0;
       }
 
-      .arrow {
+      .arrowLeft,
+      .arrowRight {
+        position: relative;
+        top: 1.2px;
         width: 2.4rem;
+      }
+
+      .arrowLeft {
+        left: -1px;
+      }
+
+      .arrowRight {
+        left: 1px;
       }
     }
 

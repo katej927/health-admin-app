@@ -1,45 +1,40 @@
 @use 'src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
 
-.headerWrapper {
+.titleWrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.navWrapper {
-  display: flex;
-  margin-top: 2rem;
-  font-size: 1.3rem;
-  font-weight: 700;
-
-  a {
-    color: colors.$GREY_800;
-  }
-
-  p {
-    margin: 0 0.5rem;
-    color: colors.$GREY_800;
-  }
-
-  .isActive {
-    color: colors.$PRIMARY;
-  }
-}
-
-.titleWrapper {
-  margin-top: 4rem;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 
   h2 {
-    margin-bottom: 3rem;
-    font-size: 2.6rem;
-    font-weight: 700;
+    font-size: sizes.$LARGE;
+    font-weight: sizes.$BOLD;
     color: colors.$GREY_800;
+  }
+
+  .navWrapper {
+    display: flex;
+    justify-content: flex-end;
+    font-size: sizes.$SMALL;
+
+    a {
+      color: colors.$GREY_800;
+    }
+
+    p {
+      margin: 0 0.5rem;
+      color: colors.$GREY_800;
+    }
+
+    .isActive {
+      color: colors.$PRIMARY;
+    }
   }
 }
 
 .tableWrapper {
-  margin-bottom: 4rem;
-
   table {
     width: 100%;
     font-size: 1.4rem;
@@ -65,6 +60,6 @@
   flex-direction: column;
 
   > :first-child {
-    margin-bottom: 4rem;
+    margin: 2rem 0 0;
   }
 }

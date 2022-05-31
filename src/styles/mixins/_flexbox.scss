@@ -6,14 +6,18 @@ $FLEX_MAP: (
   'end': flex-end,
   'start': flex-start,
   'stretch': stretch,
+  'row': row,
+  'col': column,
 );
 
 @function _getFlexValue($key) {
   @return map-get($FLEX_MAP, $key);
 }
 
-@mixin flexbox($jc: center, $ai: center) {
+@mixin flexbox($jc: center, $ai: center, $fd: row, $gap: 0) {
   display: flex;
+  flex-direction: _getFlexValue($fd);
+  gap: $gap;
   align-items: _getFlexValue($ai);
   justify-content: _getFlexValue($jc);
 }

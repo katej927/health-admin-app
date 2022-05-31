@@ -1,15 +1,18 @@
-@use 'src/styles/constants/colors';
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
 
 .layoutWrapper {
   display: flex;
-  justify-content: center;
   width: 100vw;
-}
+  overflow: scroll;
 
-.mainWrapper {
-  flex-grow: 1;
-  height: 100vh;
-  padding: 0 4rem 4rem;
-  overflow: auto;
-  background-color: colors.$BG_G;
+  .mainWrapper {
+    @include flexbox.columnFlexbox;
+    flex-grow: 1;
+    min-width: 1080px;
+    min-height: 100vh;
+    padding: 6rem 4rem 4rem;
+    overflow: hidden;
+    background-color: colors.$BG_G;
+  }
 }

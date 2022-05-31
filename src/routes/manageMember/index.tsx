@@ -1,26 +1,28 @@
+import { NavLink } from 'react-router-dom';
+import cx from 'classnames';
+
 import SearchMember from './_shared/searchMember';
 import ShowMember from './_shared/showMember';
 import styles from './manageMember.module.scss';
-import { NavLink } from 'react-router-dom';
 
 const ManageMember = () => {
   return (
-    <div className={styles.memberWrapper}>
+    <>
       <div className={styles.titleWrapper}>
-        <p className={styles.title}>회원 관리</p>
-        <div className={styles.linkWrapper}>
-          <NavLink className={styles.link} to='/'>
+        <h2>회원 관리</h2>
+        <nav className={styles.navWrapper}>
+          <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
             홈
           </NavLink>
-          <p> &gt; </p>
-          <NavLink className={styles.activeLink} to='/manageMember'>
+          <p className={styles.menu}>&gt;</p>
+          <NavLink to='/manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
             회원 관리
           </NavLink>
-        </div>
+        </nav>
       </div>
       <SearchMember />
       <ShowMember />
-    </div>
+    </>
   );
 };
 

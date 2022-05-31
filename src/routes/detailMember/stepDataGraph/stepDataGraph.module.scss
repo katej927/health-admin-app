@@ -1,24 +1,22 @@
 @use 'src/styles/constants/colors';
 
-.stepDataWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.totalStep {
-  font-size: 2rem;
-  font-weight: 700;
-  color: colors.$GRAPH_TEXT_GRAY;
-
-  span {
-    color: colors.$PRIMARY;
-  }
-}
-
 .stepData {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+
+  .totalStep {
+    margin-right: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: colors.$GRAPH_TEXT_GRAY;
+    white-space: nowrap;
+
+    span {
+      margin-right: 0.5rem;
+      color: colors.$PRIMARY;
+    }
+  }
 }

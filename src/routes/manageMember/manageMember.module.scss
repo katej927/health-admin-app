@@ -1,40 +1,35 @@
-@use 'src/styles/constants/colors';
-
-.memberWrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 4rem 0;
-}
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
 
 .titleWrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  padding: 0 0 40px;
+  margin-bottom: 20px;
 
-  .title {
-    font-size: 2.6rem;
-    font-weight: 700;
+  h2 {
+    font-size: sizes.$LARGE;
+    font-weight: sizes.$BOLD;
     color: colors.$GREY_800;
   }
 
-  .route {
-    font-size: 1.3rem;
-    font-weight: 700;
+  .navWrapper {
+    display: flex;
+    justify-content: flex-end;
+    font-size: sizes.$SMALL;
+
+    a {
+      color: colors.$GREY_800;
+    }
+
+    p {
+      margin: 0 0.5rem;
+      color: colors.$GREY_800;
+    }
+
+    .isActive {
+      color: colors.$PRIMARY;
+    }
   }
-}
-
-.linkWrapper {
-  display: flex;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.link {
-  margin-right: 0.5rem;
-  color: colors.$GREY_800;
-}
-
-.activeLink {
-  margin-left: 0.5rem;
-  color: colors.$PRIMARY;
 }
