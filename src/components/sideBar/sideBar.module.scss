@@ -3,18 +3,14 @@
 @use '/src/styles/mixins/flexbox';
 
 .sideBarWrapper {
-  @include flexbox.flexbox(between, around, col);
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 320px;
-  min-width: 320px;
-  max-width: 320px;
-  min-height: 100vh;
-  padding: 6rem 40px;
-  box-shadow: colors.$SHADOW;
-
-  svg {
-    position: relative;
-    top: -1px;
-  }
+  height: 100vh;
+  padding: 60px 40px;
 
   .upperWrapper {
     .userInfo {
@@ -23,44 +19,42 @@
       width: 100%;
       padding-bottom: 40px;
       margin-bottom: 20px;
-      font-size: 2rem;
-      font-weight: 700;
+      font-size: sizes.$MEDIUM;
       border-bottom: 1px solid colors.$GREY_50;
 
       .userName {
         margin: 1px 0 0 15px;
         line-height: 1.2;
+        text-transform: uppercase;
 
         p:first-of-type {
+          font-weight: 500;
           color: colors.$GREY_800;
-          text-transform: uppercase;
-          letter-spacing: sizes.$LETTER_SPACING;
         }
 
         p:last-of-type {
-          font-size: sizes.$SMALL;
-          color: colors.$GREY_100;
+          font-size: 12px;
+          color: colors.$GREY_300;
+          letter-spacing: sizes.$LETTER_SPACING;
         }
       }
     }
 
     .underLine {
-      margin: 5.5rem 0;
-      border-bottom: 0.1rem solid colors.$GREY_50;
+      margin: 55px 0;
+      border-bottom: 1px solid colors.$GREY_50;
     }
 
     .box {
-      @include flexbox.columnFlexbox(1.3rem);
+      @include flexbox.columnFlexbox(13px);
 
       a {
         @include flexbox.flexbox(start, center);
-        gap: 1.2rem;
-        height: 6rem;
-        padding: 2rem;
+        gap: 10px;
+        padding: 20px;
         font-size: sizes.$REGULAR;
-        font-weight: sizes.$BOLD;
+        line-height: 20px;
         color: colors.$GREY_800;
-        letter-spacing: sizes.$LETTER_SPACING;
         border-radius: sizes.$BORDER_RADIUS;
         transition: 200ms;
 
@@ -82,14 +76,12 @@
 
   .logout {
     display: flex;
-    gap: 1.2rem;
-    height: 6rem;
-    padding: 2rem;
-    font-size: sizes.$REGULAR;
-    font-weight: sizes.$BOLD;
+    gap: 10px;
+    height: 60px;
+    padding: 20px;
+    font-size: sizes.$SMALL;
     color: colors.$GREY_300;
-    letter-spacing: sizes.$LETTER_SPACING;
-    border-radius: 1rem;
+    border-radius: 10px;
     transition: 200ms;
 
     svg {
