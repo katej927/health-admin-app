@@ -171,3 +171,69 @@ const rememberIdHandler = (rememberId: string, isRemember: boolean) => {
 
 <br />
 
+
+### 조회 기간 컴포넌트
+<details>
+  <summary>펼치기</summary>
+
+- No Library
+
+    - 직접 만든 date-range-picker
+
+    - 이유: 최대한 기획된 디자인과 기능에 맞추기 위하여
+- 날짜 및 시간 format : `YY-MM-DD HH:MM:SS` (요구 사항 형식)
+- 오늘 날짜는 `2022-04-19`로 고정
+    
+    이유: 데이터 확인이 가장 좋은 날짜. (데이터들의 날짜가 22년 2~4월에 몰려있음)
+    
+- 3개의 퀵버튼(`오늘`, `1주일`, `전체`) 구현
+
+    - `전체` 의 시작일 기준:
+
+        - 회원 관리 페이지 - 회원들 중 가장 오래된 가입일
+        - 그래프 - 선택된 회원의 가입일
+- 페이지별 재사용
+    - 회원 관리 페이지, 그래프 2개(심박 수, 걸음 수)
+    - 개별적인 날짜 조회 가능 (컴포넌트별 state 모두 분리)
+- UI와 기능의 파일 분리
+- 동작 원리
+
+    - `validation check`
+
+        검색 버튼을 눌렀을 때 시작/종료일 중 선택되지 않은 것이 있다면 error 표출 (border 색상 : red)
+        
+    - 날짜 선택
+        
+        시작일 선택 후, 종료일을 시작일 이전 날짜로 선택 시: 시작일을 업데이트
+        
+        시작일 선택 후, 종료일을 시작일 이후 날짜로 선택 시: 시작/종료일 업데이트
+        
+    - 정확한 날짜 표출
+        - 표출되는 날짜에는 해당 날짜의 `연/월/일` 정보 보유 (단순 숫자 노출 x)
+        - 코드 (한 달의 주차 별 날짜 배열 산출 방법)
+            
+```tsx
+export const converteDate = (assignedDay: Dayjs) => {
+  const firstWeek = assignedDay.startOf('month').week();
+
+  const dates: Dayjs[] = Array.from(
+    { length: assignedDay.daysInMonth() + assignedDay.startOf('month').day() },
+    (v, index) => assignedDay.startOf('year').week(firstWeek).startOf('week').add(index, 'day')
+  );
+
+  const init: Dayjs[][] = [];
+
+  let rowIdx = -1;
+  return dates.reduce((acc, cur, i) => {
+    if (!(i % 7)) {
+      acc.push([cur]);
+      rowIdx += 1;
+    } else {
+      acc[rowIdx].push(cur);
+    }
+    return acc;
+  }, init);
+};
+```
+  </details>
+
