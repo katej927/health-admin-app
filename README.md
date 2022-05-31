@@ -246,43 +246,11 @@
   - 미입력된 요소가 있다면 버튼의 스타일이 활성화되지 않으며 버튼을 누르더라도 요소 하단에 경고 메세지만 표시하고 로그인 요청을 보내지 않는다.
 
 
-```tsx
-// login/index.tsx
-
-const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (username === '') {
-      setUsernameAlert(true);
-    }
-    if (password === '') {
-      setPasswordAlert(true);
-    }
-    if (password === '' || username === '') {
-      return;
-    }
-    onLogin(username, password, checkValue, onFailHandler, rememberIdHandler);
-  };
-```
-
-
 - 아이디 저장하기
 
   - 아이디 저장하기를 체크하면 로그인 로직을 통해 로그인이 성공했을 때 쿠키에 해당 아이디를 저장하고 다른 아이디로 새로 로그인할 경우 쿠키 값을 갱신한다.
-  - 아이디에 저장하기 해제한다면 저장되어 있는 쿠키를 만료시킨다.
+  - 아이디 저장하기를 해제한다면 저장되어 있는 쿠키를 만료시킨다.
 
-```tsx
-// login/index.tsx
-
-const rememberIdHandler = (rememberId: string, isRemember: boolean) => {
-    if (isRemember) {
-      setCookie('usernameCookie', rememberId, {
-        days: 7,
-      });
-    } else {
-      setCookie('usernameCookie', '', { days: 0 });
-    }
-  };
-```
 <br>
 
 ### 회원 관리
