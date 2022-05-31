@@ -77,9 +77,9 @@
   .logout {
     display: flex;
     gap: 10px;
-    height: 60px;
     padding: 20px;
     font-size: sizes.$SMALL;
+    line-height: 18px;
     color: colors.$GREY_300;
     border-radius: 10px;
     transition: 200ms;
