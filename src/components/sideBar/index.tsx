@@ -1,11 +1,9 @@
 import cx from 'classnames';
 import store from 'store';
-import { FaHome } from 'react-icons/fa';
-import { BsPersonFill } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 import { LOGIN_DB_KEY } from 'constant/key';
 import { ILoginState } from 'types/admin';
-import { LogoutIcon, UserInfoIcon } from 'assets/svgs';
+import { LogoutIcon, UserInfoIcon, FaHome, BsPersonFill } from 'assets/svgs';
 
 import styles from './sideBar.module.scss';
 import { useLogout } from 'hooks/useLogout';
