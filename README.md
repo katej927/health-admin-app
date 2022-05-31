@@ -380,6 +380,8 @@ const [, setSelectMember] = useRecoilState(selectMemberState);
 ### 조회 기간 컴포넌트
 <details>
   <summary>펼치기</summary>
+    
+https://user-images.githubusercontent.com/69146527/171102893-05149745-c2e8-4383-941e-f893eb60d659.mov
 
 - No Library
 
