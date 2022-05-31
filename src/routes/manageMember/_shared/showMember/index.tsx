@@ -8,10 +8,12 @@ import WhiteSection from 'components/whiteSection';
 import styles from './showMember.module.scss';
 
 const ShowMember = () => {
-  const header = ['회원번호', '가입일', '로그인ID', '상세'];
   const originMembers = useRecoilValue(searchMemberList);
-  const [, setSelectMember] = useRecoilState(selectMemberState);
   const members = originMembers as IMember[];
+
+  const [, setSelectMember] = useRecoilState(selectMemberState);
+
+  const header = ['회원번호', '가입일', '로그인ID', '상세'];
 
   return (
     <WhiteSection>
