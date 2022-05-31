@@ -48,7 +48,139 @@
 <details>
 <summary>펼치기</summary>
 
-(TODO :: 추후에 추가)
+📦src <br />
+ ┣ 📂assets <br />
+ ┃ ┗ 📂svgs <br />
+ ┃ ┃ ┣ 📜circle_check.svg <br />
+ ┃ ┃ ┣ 📜circle_exclamation.svg <br />
+ ┃ ┃ ┣ 📜circle_info.svg <br />
+ ┃ ┃ ┣ 📜hide_password.svg <br />
+ ┃ ┃ ┣ 📜house_user_solid.svg <br />
+ ┃ ┃ ┣ 📜icon-arrow-down.svg <br />
+ ┃ ┃ ┣ 📜icon-arrow-left.svg <br />
+ ┃ ┃ ┣ 📜icon-arrow-right.svg <br />
+ ┃ ┃ ┣ 📜index.ts <br />
+ ┃ ┃ ┣ 📜logout.svg <br />
+ ┃ ┃ ┣ 📜show_password.svg <br />
+ ┃ ┃ ┣ 📜triangle_exclamation.svg <br />
+ ┃ ┃ ┣ 📜user_image.svg <br />
+ ┃ ┃ ┗ 📜user_solid.svg <br />
+ ┣ 📂components <br />
+ ┃ ┣ 📂datePicker <br />
+ ┃ ┃ ┣ 📂_shared <br />
+ ┃ ┃ ┃ ┣ 📂month <br />
+ ┃ ┃ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┃ ┃ ┗ 📜month.module.scss <br />
+ ┃ ┃ ┃ ┣ 📜constants.ts <br />
+ ┃ ┃ ┃ ┣ 📜index.ts <br />
+ ┃ ┃ ┃ ┣ 📜types.d.ts <br />
+ ┃ ┃ ┃ ┗ 📜utils.ts <br />
+ ┃ ┃ ┣ 📜datePicker.module.scss <br />
+ ┃ ┃ ┗ 📜index.tsx <br />
+ ┃ ┣ 📂popup <br />
+ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┗ 📜popup.module.scss <br />
+ ┃ ┣ 📂sideBar <br />
+ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┗ 📜sideBar.module.scss <br />
+ ┃ ┣ 📂whiteSection <br />
+ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┗ 📜whiteSection.module.scss <br />
+ ┃ ┗ 📜index.ts <br />
+ ┣ 📂constant <br />
+ ┃ ┗ 📜key.ts <br />
+ ┣ 📂data <br />
+ ┃ ┣ 📂heartrate_data <br />
+ ┃ ┃ ┣ 📜heartrate_136_0226_유령회원1번.json <br />
+ ┃ ┃ ┣ 📜heartrate_136_0308_유령회원1번.json <br />
+ ┃ ┃ ┣ 📜heartrate_136_0419_유령회원1번.json <br />
+ ┃ ┃ ┣ 📜heartrate_328_0416_유령회원2번.json <br />
+ ┃ ┃ ┣ 📜heartrate_328_0419_유령회원2번.json <br />
+ ┃ ┃ ┣ 📜heartrate_328_0420_유령회원2번.json <br />
+ ┃ ┃ ┣ 📜heartrate_380_0417_유령회원3번.json <br />
+ ┃ ┃ ┣ 📜heartrate_380_0418_유령회원3번.json <br />
+ ┃ ┃ ┣ 📜heartrate_380_0419_유령회원3번.json <br />
+ ┃ ┃ ┗ 📜heartrate_data_total.json <br />
+ ┃ ┣ 📂step_data <br />
+ ┃ ┃ ┣ 📜member_data.json <br />
+ ┃ ┃ ┣ 📜step_136_0226_유령회원1번.json <br />
+ ┃ ┃ ┣ 📜step_136_0308_유령회원1번.json <br />
+ ┃ ┃ ┣ 📜step_136_0419_유령회원1번.json <br />
+ ┃ ┃ ┣ 📜step_328_0416_유령회원2번.json <br />
+ ┃ ┃ ┣ 📜step_328_0419_유령회원2번.json <br />
+ ┃ ┃ ┣ 📜step_328_0420_유령회원2번.json <br />
+ ┃ ┃ ┣ 📜step_380_0417_유령회원3번.json <br />
+ ┃ ┃ ┣ 📜step_380_0418_유령회원3번.json <br />
+ ┃ ┃ ┣ 📜step_380_0419_유령회원3번.json <br />
+ ┃ ┃ ┗ 📜step_data.json <br />
+ ┃ ┣ 📜admin_data.json <br />
+ ┃ ┗ 📜member_data.json <br />
+ ┣ 📂hooks <br />
+ ┃ ┣ 📜useLogin.ts <br />
+ ┃ ┗ 📜useLogout.ts <br />
+ ┣ 📂routes <br />
+ ┃ ┣ 📂dashboard <br />
+ ┃ ┃ ┣ 📜dashboard.module.scss <br />
+ ┃ ┃ ┗ 📜index.tsx <br />
+ ┃ ┣ 📂detailMember <br />
+ ┃ ┃ ┣ 📂heartRateDataGraph <br />
+ ┃ ┃ ┃ ┣ 📜GRAPH_STYLE.ts <br />
+ ┃ ┃ ┃ ┣ 📜heartRateDataGraph.module.scss <br />
+ ┃ ┃ ┃ ┗ 📜index.tsx <br />
+ ┃ ┃ ┣ 📂stepDataGraph <br />
+ ┃ ┃ ┃ ┣ 📜GRAPH_STYLE.ts <br />
+ ┃ ┃ ┃ ┣ 📜formatGraphData.ts <br />
+ ┃ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┃ ┣ 📜stepDataGraph.module.scss <br />
+ ┃ ┃ ┃ ┗ 📜type.d.ts <br />
+ ┃ ┃ ┣ 📜detailMember.module.scss <br />
+ ┃ ┃ ┗ 📜index.tsx <br />
+ ┃ ┣ 📂layout <br />
+ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┗ 📜layout.module.scss <br />
+ ┃ ┣ 📂login <br />
+ ┃ ┃ ┣ 📜Checkbox.tsx <br />
+ ┃ ┃ ┣ 📜StoreID.tsx <br />
+ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┗ 📜login.module.scss <br />
+ ┃ ┣ 📂manageMember <br />
+ ┃ ┃ ┣ 📂_shared <br />
+ ┃ ┃ ┃ ┣ 📂searchMember <br />
+ ┃ ┃ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┃ ┃ ┗ 📜searchMember.module.scss <br />
+ ┃ ┃ ┃ ┗ 📂showMember <br />
+ ┃ ┃ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┃ ┃ ┗ 📜showMember.module.scss <br />
+ ┃ ┃ ┣ 📜index.tsx <br />
+ ┃ ┃ ┗ 📜manageMember.module.scss <br />
+ ┃ ┗ 📜index.tsx <br />
+ ┣ 📂states <br />
+ ┃ ┣ 📜index.ts <br />
+ ┃ ┣ 📜inquiryPeriod.ts <br />
+ ┃ ┣ 📜login.ts <br />
+ ┃ ┣ 📜searchMemberList.ts <br />
+ ┃ ┗ 📜selectMember.ts <br />
+ ┣ 📂styles <br />
+ ┃ ┣ 📂base <br />
+ ┃ ┃ ┣ 📜_fonts.scss <br />
+ ┃ ┃ ┣ 📜_more.scss <br />
+ ┃ ┃ ┗ 📜_reset.scss <br />
+ ┃ ┣ 📂constants <br />
+ ┃ ┃ ┣ 📜_colors.scss <br />
+ ┃ ┃ ┗ 📜_sizes.scss <br />
+ ┃ ┣ 📂mixins <br />
+ ┃ ┃ ┣ 📜_flexbox.scss <br />
+ ┃ ┃ ┗ 📜_visual.scss <br />
+ ┃ ┣ 📜index.js <br />
+ ┃ ┗ 📜index.scss <br />
+ ┣ 📂types <br />
+ ┃ ┣ 📜admin.d.ts <br />
+ ┃ ┗ 📜heartRate.d.ts <br />
+ ┣ 📂utils <br />
+ ┃ ┣ 📜getDatesFromStartToLast.ts <br />
+ ┃ ┗ 📜login.ts <br />
+ ┣ 📜declaration.d.ts <br />
+ ┗ 📜index.tsx <br />
 
 </details>
 
@@ -155,6 +287,79 @@ const rememberIdHandler = (rememberId: string, isRemember: boolean) => {
 
 ### 회원 관리
 블라블라 작성하기
+
+
+<br />
+
+### 회원 관리 테이블
+<details>
+  <summary>펼치기</summary>
+
+  - 검색 조건에 따른 검색 결과를 Table 태그를 사용해 출력
+  
+```tsx
+const originMembers = useRecoilValue(searchMemberList);
+const members = originMembers as IMember[];
+
+...중략...
+
+<p>전체 총 {members.length}명의 회원이 검색되었습니다.</p>
+<div className={styles.tableWrapper}>
+  <table>
+    <thead>
+      <tr>
+        {header.map((headerName, index) => {
+          const key = `${headerName}-${index}`;
+          return <th key={key}>{headerName}</th>;
+        })}
+      </tr>
+    </thead>
+    <tbody>
+      {members.map((member, index) => {
+        const key = `${member}-${index}`;
+        return (
+          <tr key={key}>
+            <td>{member.id}</td>
+            <td>{member.crt_ymdt}</td>
+            <td>{member.username}</td>
+            <td>
+              <Link to='/detailMember'>
+                <button type='button' onClick={() => setSelectMember(member)}>
+                  상세보기
+                </button>
+              </Link>
+            </td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>
+```
+
+  - 특정 회원의 `상세보기` 버튼을 클릭하면 해당 회원의 정보를 Recoil에 담은 후 해당 회원의 상세 정보 페이지로 이동
+
+```tsx
+export interface IMember {
+  id: number;
+  username: string;
+  crt_ymdt: string;
+}
+
+export const selectMemberState = atom<IMember>({
+  key: '#selectMemberState',
+  default: {
+    id: 0,
+    username: '',
+    crt_ymdt: '',
+  },
+});
+```
+```tsx
+const [, setSelectMember] = useRecoilState(selectMemberState);
+```
+
+</details>
 
 <br />
 
