@@ -3,10 +3,10 @@
 ## 로그인 UI 개발
 
 ### 1. 실행화면 
-<figure style="text-align: center">
+<center>
  <img src="https://user-images.githubusercontent.com/42796944/171108561-03e16201-71fa-4e51-a4f5-21f8c65329c1.png" style="display: inline-block; width: 250px; height: 300px;"> 
  <img src="https://user-images.githubusercontent.com/42796944/171108653-8bc93f2d-1ef5-4ce6-9e41-54e2fba79a79.png" style="display: inline-block; width: 250px; height: 300px;">
-</figure>
+</center>
 
 ### 2. 기능 구현
 
@@ -97,9 +97,9 @@
 - 미입력된 요소가 있다면 로그인 버튼의 스타일이 활성화되지 않는다.
 - 미입력된 요소가 있다면 버튼을 누르더라도 로그인 요청을 보내지 않는다.(로그인 실패에 해당하지만 팝업 요소를 띄우지 않습니다.)
 
-<p style="text-align:center;">
+<center style="text-align:center;">
     <img src="https://user-images.githubusercontent.com/42796944/171116969-769cb009-bdd4-434e-9f5d-6a763f4ae8ba.gif" style="width:250px; height: 300px;"/>
-</p>
+</center>
 
 <br>
 
@@ -108,7 +108,7 @@
 - 다른 아이디로 새로 로그인 할 경우 쿠키에 저장된 아이디가 있다면 쿠키값을 갱신한다.
 - 아이디 저장하기를 해제한다면 저장되어 있는 쿠키를 만료시킨다.
 
-<p style="text-align:center;">
+<center style="text-align:center;">
     <img src="https://user-images.githubusercontent.com/42796944/171116918-1abf305e-ece7-4e22-b681-5d8cb53ebea1.gif" style="text-align:center;"/>
-</p>
+</center>
 
