@@ -19,6 +19,11 @@
       border: 1px solid colors.$ACTIVATED_BTN;
     }
 
+    &.invalidated {
+      border: 1px solid colors.$RED;
+      border-radius: sizes.$BORDER_RADIUS;
+    }
+
     .dateInputWrapper {
       @include flexbox.flexbox('center', 'center');
 
@@ -47,6 +52,7 @@
 
       &.invalidated {
         border: 1px solid colors.$RED;
+        border-radius: sizes.$BORDER_RADIUS;
       }
     }
   }

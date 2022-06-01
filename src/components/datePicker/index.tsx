@@ -49,12 +49,11 @@ const DatePicker = ({ isSubmit, page, state }: Props) => {
 
   return (
     <fieldset className={styles.wrapper}>
-      <div className={styles.optionsWrapper}>
+      <div className={cn(styles.optionsWrapper, { [styles.invalidated]: isSubmit && (!startDate || !endDate) })}>
         <button
           type='button'
           className={cn(styles.dateInputWrapper, {
             [styles.active]: isOpenCalendar,
-            [styles.invalidated]: isSubmit && (!startDate || !endDate),
           })}
           onClick={onClickDateRange}
         >
