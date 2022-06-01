@@ -8,14 +8,14 @@
   width: 100%;
 
   .totalStep {
-    margin-right: 3rem;
-    font-size: 2rem;
-    font-weight: 700;
+    margin-right: 30px;
+    font-size: 20px;
+    font-weight: 500;
     color: colors.$GRAPH_TEXT_GRAY;
     white-space: nowrap;
 
     span {
-      margin-right: 0.5rem;
+      margin-right: 5px;
       color: colors.$PRIMARY;
     }
   }

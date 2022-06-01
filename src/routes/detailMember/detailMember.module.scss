@@ -24,7 +24,7 @@
     }
 
     p {
-      margin: 0 0.5rem;
+      margin: 0 5px;
       color: colors.$GREY_800;
     }
 
@@ -37,18 +37,18 @@
 .tableWrapper {
   table {
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 14px;
 
     th {
-      padding: 1rem 0;
+      padding: 10px 0;
       color: colors.$GREY_300;
       border-top: 1px solid colors.$GREY_50;
       border-bottom: 1px solid colors.$GREY_50;
     }
 
     td {
-      padding: 1rem 0;
-      font-weight: 800;
+      width: 33.3%;
+      padding: 10px 0;
       color: colors.$GREY_800;
       text-align: center;
     }
@@ -60,6 +60,6 @@
   flex-direction: column;
 
   > :first-child {
-    margin: 2rem 0 0;
+    margin: 20px 0 0;
   }
 }

@@ -4,26 +4,26 @@
 
 .wrapper {
   position: absolute;
-  top: 3rem;
-  margin: 1rem;
+  top: 30px;
+  margin: 10px;
 
   &.left {
-    left: 3rem;
+    right: 330px;
   }
 
   &.right {
-    right: 3rem;
+    right: 30px;
   }
 
   .calendarHead {
     @include flexbox.flexbox(center, center);
     position: relative;
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
 
     .arrowBtn {
       position: absolute;
-      width: 3rem;
-      height: 3rem;
+      width: 30px;
+      height: 30px;
       background-color: colors.$GREY_100;
       border-radius: 50%;
 
@@ -39,7 +39,7 @@
       .arrowRight {
         position: relative;
         top: 1.2px;
-        width: 2.4rem;
+        width: 24px;
       }
 
       .arrowLeft {
@@ -52,32 +52,32 @@
     }
 
     .monthOfCalendar {
-      font-size: 1.4rem;
+      font-size: 14px;
       color: colors.$GREY_300;
     }
   }
 
   .weekdaysRow {
-    margin-top: 0.1rem;
+    margin-top: 1px;
 
     .weekday {
-      width: 3rem;
-      height: 3rem;
-      margin: 0.5rem;
+      width: 30px;
+      height: 30px;
+      margin: 5px;
       color: colors.$GREY_300;
     }
   }
 
   .allDatesOfAMonth {
-    margin: 0.4rem;
+    margin: 4px;
     text-align: center;
 
     .day {
       .dateBtn {
         @include flexbox.flexbox(center, center);
-        width: 3rem;
-        height: 3rem;
-        margin: 0.5rem;
+        width: 30px;
+        height: 30px;
+        margin: 5px;
         color: colors.$GREY_800;
         border-radius: 50%;
 

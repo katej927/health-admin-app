@@ -15,28 +15,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1.5rem;
+    margin-right: 15px;
     white-space: nowrap;
 
     > p {
-      margin-right: 1rem;
+      margin-right: 10px;
       font-size: sizes.$REGULAR;
-      font-weight: sizes.$SEMIBOLD;
       color: colors.$GREY_800;
     }
 
     > input {
-      width: 10rem;
-      padding: 0 1.5rem;
-      font-size: 1.6rem;
-      line-height: 3.5rem;
+      width: 100px;
+      padding: 0 15px;
+      font-size: 16px;
+      line-height: 35px;
       color: colors.$GREY_800;
       background-color: colors.$WHITE;
-      border: 0.1rem solid colors.$GREY_100;
-      border-radius: 10px;
+      border: 1px solid colors.$GREY_100;
+      border-radius: sizes.$BORDER_RADIUS;
 
       &:hover {
-        border: 0.1rem solid colors.$ACTIVATED_BTN;
+        border: 1px solid colors.$ACTIVATED_BTN;
       }
     }
   }
@@ -46,7 +45,7 @@
 
     .submitBtn {
       @include visual.btnActive;
-      margin-left: 0.5rem;
+      margin-left: 5px;
       color: colors.$WHITE;
       background-color: colors.$ACTIVATED_BTN;
       border-color: colors.$ACTIVATED_BTN;
