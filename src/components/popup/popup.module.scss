@@ -73,11 +73,15 @@
 
   &.error {
     .tagContainer {
-      background-color: colors.$ERROR;
+      background-color: colors.$RED;
+    }
+
+    .messageContainer {
+      color: colors.$RED;
     }
 
     svg {
-      fill: colors.$ERROR;
+      fill: colors.$RED;
     }
   }
 
