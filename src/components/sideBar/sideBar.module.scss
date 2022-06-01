@@ -3,14 +3,13 @@
 @use '/src/styles/mixins/flexbox';
 
 .sideBarWrapper {
-  position: absolute;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flexbox.flexbox(between, around, col);
   width: 320px;
-  height: 100vh;
+  min-width: 320px;
+  max-width: 320px;
+  min-height: 100vh;
   padding: 60px 40px;
+  box-shadow: colors.$SHADOW;
 
   .upperWrapper {
     .userInfo {
@@ -30,10 +29,13 @@
         p:first-of-type {
           font-weight: 500;
           color: colors.$GREY_800;
+          text-transform: uppercase;
+          // letter-spacing: sizes.$LETTER_SPACING;
         }
 
         p:last-of-type {
           font-size: 12px;
+          color: colors.$GREY_100;
           color: colors.$GREY_300;
           letter-spacing: sizes.$LETTER_SPACING;
         }
@@ -55,6 +57,7 @@
         font-size: sizes.$REGULAR;
         line-height: 20px;
         color: colors.$GREY_800;
+        letter-spacing: sizes.$LETTER_SPACING;
         border-radius: sizes.$BORDER_RADIUS;
         transition: 200ms;
 
@@ -78,7 +81,6 @@
     display: flex;
     gap: 5px;
     font-size: sizes.$SMALL;
-    line-height: 18px;
     color: colors.$GREY_300;
     transition: 200ms;
 
