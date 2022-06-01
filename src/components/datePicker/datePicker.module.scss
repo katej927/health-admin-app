@@ -9,54 +9,79 @@
 
   .optionsWrapper {
     @include flexbox.flexbox('center', 'center');
-    width: fit-content;
+    // width: fit-content;
+    background-color: colors.$WHITE;
+    border: 1px solid colors.$GREY_100;
+    border-radius: sizes.$BORDER_RADIUS;
+
+    &:hover,
+    &.active {
+      border: 1px solid colors.$ACTIVATED_BTN;
+    }
 
     .dateInputWrapper {
       @include flexbox.flexbox('center', 'center');
-      background-color: colors.$WHITE;
-      border: 0.1rem solid colors.$GREY_100;
-      border-radius: sizes.$BORDER_RADIUS;
-
-      &:hover,
-      &.active {
-        border: 0.1rem solid colors.$ACTIVATED_BTN;
-      }
 
       .dateInput {
+        width: 150px;
         font-size: sizes.$REGULAR;
-        line-height: 3.5rem;
+        line-height: 35px;
         color: colors.$GREY_800;
         text-align: center;
         cursor: pointer;
       }
 
+      .calendarIcon {
+        position: relative;
+        top: -1px;
+        height: 15px;
+        margin-left: 10px;
+        fill: colors.$GREY_100;
+      }
+
       .arrowDown {
-        width: 2.4rem;
+        width: 24px;
+        margin-right: 5px;
+        fill: colors.$GREY_800;
       }
 
       &.invalidated {
-        border: 0.1rem solid colors.$RED;
+        border: 1px solid colors.$RED;
       }
-    }
-
-    .btn {
-      @include visual.btnActive;
-      margin-left: 0.5rem;
     }
   }
 
   .monthsWrapper {
-    @include flexbox.flexbox('evenly', 'center');
     position: absolute;
     right: 0;
     z-index: 100;
-    width: 66rem;
-    height: 38rem;
-    padding: 3rem;
-    margin-top: 1rem;
+    display: flex;
+    width: 760px;
+    height: 380px;
+    padding: 30px;
+    margin-top: 10px;
     font-size: sizes.$SMALL;
     background-color: colors.$WHITE;
     border-radius: sizes.$BORDER_RADIUS;
     box-shadow: colors.$SHADOW;
+
+    .monthsCalendar {
+      @include flexbox.flexbox('evenly', 'center');
+    }
+
+    .monthsButton {
+      display: flex;
+      flex-direction: column;
+
+      .btn {
+        @include visual.btnActive;
+        margin-top: 10px;
+        font-size: sizes.$SMALL;
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+    }
   }
 }
