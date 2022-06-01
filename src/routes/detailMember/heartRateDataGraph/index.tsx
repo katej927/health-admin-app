@@ -13,8 +13,8 @@ import { inquiryPeriodHeartState } from 'states';
 const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
   const userId = selectedID;
   const date = useRecoilValue(inquiryPeriodHeartState);
-  const rawJson = heartRateData.find((el) => el.id === userId);
-  const userHeartRateData = rawJson?.heartRateData ?? [];
+  const rawData = heartRateData.find((el) => el.id === userId);
+  const userHeartRateData = rawData?.heartRateData ?? [];
   const array: IHeartRate[] = [];
 
   const selectedDateArray = getDatesFromStartToLast(date.startDate, date.endDate).map((dateEl) =>
@@ -40,7 +40,7 @@ const HeartRateDataGraph = ({ selectedID }: { selectedID: number }) => {
   const setTickFormat = (tick: string) => {
     const datesArray = getDatesFromStartToLast(date.startDate, date.endDate);
     if (array.length > 0) {
-      if (datesArray.length > 3) {
+      if (datesArray.length >= 2) {
         return tick.substr(0, 10);
       }
       return tick.substr(10, 6);
