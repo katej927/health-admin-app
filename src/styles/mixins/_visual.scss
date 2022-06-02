@@ -2,13 +2,13 @@
 @use '/src/styles/constants/sizes';
 
 @mixin btnActive {
-  padding: 0 2rem;
+  padding: 0 20px;
   font-size: sizes.$REGULAR;
-  line-height: 3.5rem;
+  line-height: 35px;
   color: colors.$GREY_800;
   white-space: nowrap;
   border: 1px solid colors.$GREY_100;
-  border-radius: 1rem;
+  border-radius: sizes.$BORDER_RADIUS;
   transition: all ease 0.2s;
 
   &:hover {

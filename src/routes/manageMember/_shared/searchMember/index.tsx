@@ -59,9 +59,10 @@ const SearchMember = () => {
     <form className={styles.searchForm} onSubmit={onSubmitForm}>
       <div className={styles.inputWrapper}>
         <div className={styles.inputSubWrapper}>
-          <p>로그인 ID</p>
+          <label htmlFor='memberloginid'>로그인 ID</label>
           <input
             name='username'
+            id='memberloginid'
             onBlur={setDefaultInputValue}
             onFocus={resetInputValue}
             onChange={onInputChange}
@@ -69,9 +70,10 @@ const SearchMember = () => {
           />
         </div>
         <div className={styles.inputSubWrapper}>
-          <p>회원 번호</p>
+          <label htmlFor='memberid'>회원 번호</label>
           <input
             name='id'
+            id='memberid'
             onBlur={setDefaultInputValue}
             onFocus={resetInputValue}
             onChange={onInputChange}

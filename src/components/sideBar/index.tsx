@@ -26,13 +26,13 @@ const SideBar = () => {
             <li>
               <NavLink to='/' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
                 <FaHome />
-                백오피스 홈
+                <p>백오피스 홈</p>
               </NavLink>
             </li>
             <li>
               <NavLink to='manageMember' className={({ isActive }) => cx({ [styles.isActive]: isActive })}>
                 <BsPersonFill />
-                회원 관리
+                <p>회원 관리</p>
               </NavLink>
             </li>
           </ul>
@@ -40,7 +40,7 @@ const SideBar = () => {
       </div>
       <button type='button' className={styles.logout} onClick={onLogout}>
         <LogoutIcon />
-        로그아웃
+        <p>로그아웃</p>
       </button>
     </aside>
   );

@@ -11,3 +11,4 @@ export { ReactComponent as LogoutIcon } from './logout.svg';
 export { ReactComponent as UserInfoIcon } from './user_image.svg';
 export { ReactComponent as BsPersonFill } from './user_solid.svg';
 export { ReactComponent as FaHome } from './house_user_solid.svg';
+export { ReactComponent as CalendarIcon } from './calendar.svg';

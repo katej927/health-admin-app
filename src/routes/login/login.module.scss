@@ -17,21 +17,20 @@
     .contentWrapper {
       @include flexbox.flexbox(center, center);
       flex-direction: column;
-      max-width: 42.8rem;
-      padding: 5.6rem 5.4rem;
-      margin-top: 4rem;
+      max-width: 428px;
+      padding: 56px 54px;
+      margin-top: 40px;
       background-color: colors.$BG_G;
       border-radius: sizes.$BORDER_RADIUS;
 
       .loginButton {
         width: 100%;
-        height: 6rem;
+        height: 60px;
         font-size: sizes.$MEDIUM;
-        font-weight: sizes.$BOLD;
         color: colors.$GREY_300;
         background-color: colors.$GREY_50;
         border: none;
-        border-radius: 5rem;
+        border-radius: sizes.$BORDER_RADIUS;
         transition: 0.2s;
 
         &.buttonValid {
@@ -46,31 +45,28 @@
       }
 
       .loginTitle {
-        margin-bottom: 1rem;
+        margin-bottom: 10px;
         font-size: sizes.$MEDIUM;
-        font-weight: sizes.$BOLD;
       }
 
       .inputWrapper {
         position: relative;
         width: 320px;
-        margin: 3rem 0 1rem;
+        margin: 30px 0 10px;
 
         label {
           display: block;
           align-self: flex-start;
-          padding-bottom: 1.6rem;
+          padding-bottom: 16px;
           font-size: sizes.$REGULAR;
-          font-weight: sizes.$SEMIBOLD;
           color: colors.$GREY_300;
         }
 
         input {
           width: 100%;
-          padding: 0 2rem;
+          padding: 0 20px;
           font-size: sizes.$REGULAR;
-          font-weight: bold;
-          line-height: 5rem;
+          line-height: 50px;
           color: colors.$GREY_800;
           background-color: colors.$WHITE;
           border: 1px solid colors.$GREY_100;
@@ -83,16 +79,16 @@
 
         button {
           position: absolute;
-          right: 2rem;
-          bottom: 1.2rem;
-          line-height: 1.9rem;
+          right: 20px;
+          bottom: 12px;
+          line-height: 19px;
         }
       }
 
       .alertMessage {
-        margin: 0 0 2rem 0.3rem;
+        margin: 0 0 20px 2px;
         font-size: sizes.$SMALL;
-        color: colors.$PRIMARY;
+        color: colors.$RED;
       }
 
       .blind {
@@ -102,16 +98,10 @@
       .checkWrapper {
         display: flex;
         align-items: center;
-        margin: 3rem 0;
+        margin: 30px 0;
         font-size: sizes.$SMALL;
-        font-weight: normal;
-        line-height: 3.2rem;
+        line-height: 32px;
         color: colors.$GREY_800;
-
-        svg {
-          position: relative;
-          top: -0.1rem;
-        }
 
         input[type='checkbox'] {
           display: none;
@@ -119,7 +109,7 @@
 
         label {
           display: inline-block;
-          margin-left: 0.8rem;
+          margin-left: 8px;
         }
       }
     }

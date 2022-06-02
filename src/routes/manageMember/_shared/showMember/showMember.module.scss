@@ -1,9 +1,10 @@
-@use 'src/styles/constants/colors';
-@use 'src/styles/constants/sizes';
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
+@use '/src/styles/mixins/visual';
 
 .wrapper {
   p {
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
     font-size: sizes.$REGULAR;
     color: colors.$GREY_800;
     letter-spacing: sizes.$LETTER_SPACING;
@@ -15,13 +16,13 @@
 
     &::-webkit-scrollbar {
       display: block;
-      width: 0.625rem;
+      width: 10px;
       height: 0;
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: colors.$GREY_100;
-      border-radius: 0.625rem;
+      border-radius: sizes.$BORDER_RADIUS;
     }
 
     table {
@@ -48,18 +49,19 @@
           color: colors.$GREY_800;
 
           button {
-            padding: 0.7rem 1rem;
+            @include visual.btnActive;
+            padding: 0 18px;
             font-size: sizes.$SMALL;
-            color: colors.$GREY_800;
-            border: 1px solid colors.$GREY_100;
-            border-radius: 1rem;
-            transition: all ease 0.2s;
 
             &:hover {
               color: colors.$WHITE;
               background-color: colors.$ACTIVATED_BTN;
             }
           }
+        }
+
+        &:hover td {
+          background-color: colors.$BG_G;
         }
       }
     }

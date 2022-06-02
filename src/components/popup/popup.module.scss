@@ -1,26 +1,26 @@
-@use 'src/styles/constants/colors';
-@use 'src/styles/mixins/flexbox';
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
 
 .wrapper {
   @include flexbox.flexbox(start, center);
   position: fixed;
-  min-width: 17.5rem;
-  padding: 0.75rem 0.95rem;
-  border-radius: 0.3rem;
-  box-shadow: rgba(99, 99, 99, 20%) 0 0.125rem 0.5rem 0;
+  min-width: 175px;
+  padding: 7.5px 9.5px;
+  border-radius: 2px;
+  box-shadow: rgba(99, 99, 99, 20%) 0 1.25px 5px 0;
 
   .tagContainer {
     position: absolute;
-    left: 0.125rem;
-    width: 0.15rem;
+    left: 1.25px;
+    width: 1.5px;
     height: 70%;
-    border-radius: 0.2rem;
+    border-radius: 2px;
   }
 
   svg {
-    width: 1.3rem;
-    height: 1.3rem;
-    margin-right: 0.5rem;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
   }
 
   .messageContainer {
@@ -28,39 +28,37 @@
     flex-direction: column;
 
     span {
-      font-size: 0.6rem;
-      font-weight: 600;
+      font-size: 6px;
     }
 
     .subMessage {
-      font-size: 0.5rem;
-      font-weight: 500;
+      font-size: 5px;
       color: colors.$SUB_MESSAGE;
     }
 
     span + span {
-      margin-top: 0.188rem;
+      margin-top: 1.88px;
     }
   }
 
   &.topRight {
-    top: 2.2rem;
-    right: 2.2rem;
+    top: 22px;
+    right: 22px;
   }
 
   &.topLeft {
-    top: 2.2rem;
-    left: 2.2rem;
+    top: 22px;
+    left: 22px;
   }
 
   &.bottomRight {
-    right: 2.2rem;
-    bottom: 2.2rem;
+    right: 22px;
+    bottom: 22px;
   }
 
   &.bottomLeft {
-    bottom: 2.2rem;
-    left: 2.2rem;
+    bottom: 22px;
+    left: 22px;
   }
 
   &.success {
@@ -75,11 +73,15 @@
 
   &.error {
     .tagContainer {
-      background-color: colors.$ERROR;
+      background-color: colors.$RED;
+    }
+
+    .messageContainer {
+      color: colors.$RED;
     }
 
     svg {
-      fill: colors.$ERROR;
+      fill: colors.$RED;
     }
   }
 

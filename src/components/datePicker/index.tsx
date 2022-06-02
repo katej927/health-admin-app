@@ -5,9 +5,10 @@ import dayjs from 'dayjs';
 import { useClickAway } from 'react-use';
 
 import { BTN_OPTIONS, Month, TPage, findRegistrationDate, dateInputValue, onClickQuickBtn, TStates } from './_shared';
-import { ArrowDown } from 'assets/svgs';
+import { ArrowDown, CalendarIcon } from 'assets/svgs';
 import styles from './datePicker.module.scss';
 import cn from 'classnames';
+import { getActiveBtn } from 'utils/getActiveBtn';
 
 interface Props {
   isSubmit?: boolean;
@@ -49,15 +50,16 @@ const DatePicker = ({ isSubmit, page, state }: Props) => {
 
   return (
     <fieldset className={styles.wrapper}>
-      <div className={styles.optionsWrapper}>
+      <p className={styles.label}>날짜</p>
+      <div className={cn(styles.optionsWrapper, { [styles.invalidated]: isSubmit && (!startDate || !endDate) })}>
         <button
           type='button'
           className={cn(styles.dateInputWrapper, {
             [styles.active]: isOpenCalendar,
-            [styles.invalidated]: isSubmit && (!startDate || !endDate),
           })}
           onClick={onClickDateRange}
         >
+          <CalendarIcon className={styles.calendarIcon} />
           {[startDate, endDate].map((date, idx) => {
             return (
               <input
@@ -75,31 +77,39 @@ const DatePicker = ({ isSubmit, page, state }: Props) => {
           })}
           <ArrowDown className={styles.arrowDown} />
         </button>
-        {BTN_OPTIONS.map((option) => (
-          <button
-            key={option}
-            type='button'
-            className={styles.btn}
-            onClick={onClick3TypesOfQuickBtn}
-            data-name={option}
-          >
-            {option}
-          </button>
-        ))}
       </div>
       {isOpenCalendar && (
         <div className={styles.monthsWrapper} ref={ref}>
-          {MONTHS.map((month, idx) => (
-            <Month
-              key={`monthCalendar-${idx + 1}`}
-              assignedDay={month.assignedDay}
-              onMonthBtnClick={onMonthBtnClick}
-              isCurrentMonth={month.isCurrentMonth}
-              setIsOpenCalendar={setIsOpenCalendar}
-              inquiryPeriod={inquiryPeriod}
-              setInquiryPeriod={setInquiryPeriod}
-            />
-          ))}
+          <div className={styles.monthsCalendar}>
+            {MONTHS.map((month, idx) => (
+              <Month
+                key={`monthCalendar-${idx + 1}`}
+                assignedDay={month.assignedDay}
+                onMonthBtnClick={onMonthBtnClick}
+                isCurrentMonth={month.isCurrentMonth}
+                setIsOpenCalendar={setIsOpenCalendar}
+                inquiryPeriod={inquiryPeriod}
+                setInquiryPeriod={setInquiryPeriod}
+              />
+            ))}
+          </div>
+          <div className={styles.monthsButton}>
+            {BTN_OPTIONS.map((option, index) => {
+              const active = getActiveBtn(option, fixedToday, registrationDate, startDate, endDate);
+              return (
+                <button
+                  key={option}
+                  type='button'
+                  className={cn(styles.btn, { [styles.clickedButton]: active })}
+                  onClick={onClick3TypesOfQuickBtn}
+                  data-name={option}
+                  value={index}
+                >
+                  {option}
+                </button>
+              );
+            })}
+          </div>
         </div>
       )}
     </fieldset>
