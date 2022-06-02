@@ -40,7 +40,12 @@
     ```
     yarn start
     ```
+5. 로그인 아이디, 비밀번호
     
+    ```
+    "name": "wooseong",
+    "password": "1"
+    ```
 <br />
 
 # 📁 폴더 구조
@@ -48,139 +53,141 @@
 <details>
 <summary>펼치기</summary>
 
-📦src <br />
- ┣ 📂assets <br />
- ┃ ┗ 📂svgs <br />
- ┃ ┃ ┣ 📜circle_check.svg <br />
- ┃ ┃ ┣ 📜circle_exclamation.svg <br />
- ┃ ┃ ┣ 📜circle_info.svg <br />
- ┃ ┃ ┣ 📜hide_password.svg <br />
- ┃ ┃ ┣ 📜house_user_solid.svg <br />
- ┃ ┃ ┣ 📜icon-arrow-down.svg <br />
- ┃ ┃ ┣ 📜icon-arrow-left.svg <br />
- ┃ ┃ ┣ 📜icon-arrow-right.svg <br />
- ┃ ┃ ┣ 📜index.ts <br />
- ┃ ┃ ┣ 📜logout.svg <br />
- ┃ ┃ ┣ 📜show_password.svg <br />
- ┃ ┃ ┣ 📜triangle_exclamation.svg <br />
- ┃ ┃ ┣ 📜user_image.svg <br />
- ┃ ┃ ┗ 📜user_solid.svg <br />
- ┣ 📂components <br />
- ┃ ┣ 📂datePicker <br />
- ┃ ┃ ┣ 📂_shared <br />
- ┃ ┃ ┃ ┣ 📂month <br />
- ┃ ┃ ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┃ ┃ ┗ 📜month.module.scss <br />
- ┃ ┃ ┃ ┣ 📜constants.ts <br />
- ┃ ┃ ┃ ┣ 📜index.ts <br />
- ┃ ┃ ┃ ┣ 📜types.d.ts <br />
- ┃ ┃ ┃ ┗ 📜utils.ts <br />
- ┃ ┃ ┣ 📜datePicker.module.scss <br />
- ┃ ┃ ┗ 📜index.tsx <br />
- ┃ ┣ 📂popup <br />
- ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┗ 📜popup.module.scss <br />
- ┃ ┣ 📂sideBar <br />
- ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┗ 📜sideBar.module.scss <br />
- ┃ ┣ 📂whiteSection <br />
- ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┗ 📜whiteSection.module.scss <br />
- ┃ ┗ 📜index.ts <br />
- ┣ 📂constant <br />
- ┃ ┗ 📜key.ts <br />
- ┣ 📂data <br />
- ┃ ┣ 📂heartrate_data <br />
- ┃ ┃ ┣ 📜heartrate_136_0226_유령회원1번.json <br />
- ┃ ┃ ┣ 📜heartrate_136_0308_유령회원1번.json <br />
- ┃ ┃ ┣ 📜heartrate_136_0419_유령회원1번.json <br />
- ┃ ┃ ┣ 📜heartrate_328_0416_유령회원2번.json <br />
- ┃ ┃ ┣ 📜heartrate_328_0419_유령회원2번.json <br />
- ┃ ┃ ┣ 📜heartrate_328_0420_유령회원2번.json <br />
- ┃ ┃ ┣ 📜heartrate_380_0417_유령회원3번.json <br />
- ┃ ┃ ┣ 📜heartrate_380_0418_유령회원3번.json <br />
- ┃ ┃ ┣ 📜heartrate_380_0419_유령회원3번.json <br />
- ┃ ┃ ┗ 📜heartrate_data_total.json <br />
- ┃ ┣ 📂step_data <br />
- ┃ ┃ ┣ 📜member_data.json <br />
- ┃ ┃ ┣ 📜step_136_0226_유령회원1번.json <br />
- ┃ ┃ ┣ 📜step_136_0308_유령회원1번.json <br />
- ┃ ┃ ┣ 📜step_136_0419_유령회원1번.json <br />
- ┃ ┃ ┣ 📜step_328_0416_유령회원2번.json <br />
- ┃ ┃ ┣ 📜step_328_0419_유령회원2번.json <br />
- ┃ ┃ ┣ 📜step_328_0420_유령회원2번.json <br />
- ┃ ┃ ┣ 📜step_380_0417_유령회원3번.json <br />
- ┃ ┃ ┣ 📜step_380_0418_유령회원3번.json <br />
- ┃ ┃ ┣ 📜step_380_0419_유령회원3번.json <br />
- ┃ ┃ ┗ 📜step_data.json <br />
- ┃ ┣ 📜admin_data.json <br />
- ┃ ┗ 📜member_data.json <br />
- ┣ 📂hooks <br />
- ┃ ┣ 📜useLogin.ts <br />
- ┃ ┗ 📜useLogout.ts <br />
- ┣ 📂routes <br />
- ┃ ┣ 📂dashboard <br />
- ┃ ┃ ┣ 📜dashboard.module.scss <br />
- ┃ ┃ ┗ 📜index.tsx <br />
- ┃ ┣ 📂detailMember <br />
- ┃ ┃ ┣ 📂heartRateDataGraph <br />
- ┃ ┃ ┃ ┣ 📜GRAPH_STYLE.ts <br />
- ┃ ┃ ┃ ┣ 📜heartRateDataGraph.module.scss <br />
- ┃ ┃ ┃ ┗ 📜index.tsx <br />
- ┃ ┃ ┣ 📂stepDataGraph <br />
- ┃ ┃ ┃ ┣ 📜GRAPH_STYLE.ts <br />
- ┃ ┃ ┃ ┣ 📜formatGraphData.ts <br />
- ┃ ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┃ ┣ 📜stepDataGraph.module.scss <br />
- ┃ ┃ ┃ ┗ 📜type.d.ts <br />
- ┃ ┃ ┣ 📜detailMember.module.scss <br />
- ┃ ┃ ┗ 📜index.tsx <br />
- ┃ ┣ 📂layout <br />
- ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┗ 📜layout.module.scss <br />
- ┃ ┣ 📂login <br />
- ┃ ┃ ┣ 📜Checkbox.tsx <br />
- ┃ ┃ ┣ 📜StoreID.tsx <br />
- ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┗ 📜login.module.scss <br />
- ┃ ┣ 📂manageMember <br />
- ┃ ┃ ┣ 📂_shared <br />
- ┃ ┃ ┃ ┣ 📂searchMember <br />
- ┃ ┃ ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┃ ┃ ┗ 📜searchMember.module.scss <br />
- ┃ ┃ ┃ ┗ 📂showMember <br />
- ┃ ┃ ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┃ ┃ ┗ 📜showMember.module.scss <br />
- ┃ ┃ ┣ 📜index.tsx <br />
- ┃ ┃ ┗ 📜manageMember.module.scss <br />
- ┃ ┗ 📜index.tsx <br />
- ┣ 📂states <br />
- ┃ ┣ 📜index.ts <br />
- ┃ ┣ 📜inquiryPeriod.ts <br />
- ┃ ┣ 📜login.ts <br />
- ┃ ┣ 📜searchMemberList.ts <br />
- ┃ ┗ 📜selectMember.ts <br />
- ┣ 📂styles <br />
- ┃ ┣ 📂base <br />
- ┃ ┃ ┣ 📜_fonts.scss <br />
- ┃ ┃ ┣ 📜_more.scss <br />
- ┃ ┃ ┗ 📜_reset.scss <br />
- ┃ ┣ 📂constants <br />
- ┃ ┃ ┣ 📜_colors.scss <br />
- ┃ ┃ ┗ 📜_sizes.scss <br />
- ┃ ┣ 📂mixins <br />
- ┃ ┃ ┣ 📜_flexbox.scss <br />
- ┃ ┃ ┗ 📜_visual.scss <br />
- ┃ ┣ 📜index.js <br />
- ┃ ┗ 📜index.scss <br />
- ┣ 📂types <br />
- ┃ ┣ 📜admin.d.ts <br />
- ┃ ┗ 📜heartRate.d.ts <br />
- ┣ 📂utils <br />
- ┃ ┣ 📜getDatesFromStartToLast.ts <br />
- ┃ ┗ 📜login.ts <br />
- ┣ 📜declaration.d.ts <br />
- ┗ 📜index.tsx <br />
+📦src<br />
+ ┣ 📂assets<br />
+ ┃ ┗ 📂svgs<br />
+ ┃ ┃ ┣ 📜calendar.svg<br />
+ ┃ ┃ ┣ 📜circle_check.svg<br />
+ ┃ ┃ ┣ 📜circle_exclamation.svg<br />
+ ┃ ┃ ┣ 📜circle_info.svg<br />
+ ┃ ┃ ┣ 📜hide_password.svg<br />
+ ┃ ┃ ┣ 📜house_user_solid.svg<br />
+ ┃ ┃ ┣ 📜icon-arrow-down.svg<br />
+ ┃ ┃ ┣ 📜icon-arrow-left.svg<br />
+ ┃ ┃ ┣ 📜icon-arrow-right.svg<br />
+ ┃ ┃ ┣ 📜index.ts<br />
+ ┃ ┃ ┣ 📜logout.svg<br />
+ ┃ ┃ ┣ 📜show_password.svg<br />
+ ┃ ┃ ┣ 📜triangle_exclamation.svg<br />
+ ┃ ┃ ┣ 📜user_image.svg<br />
+ ┃ ┃ ┗ 📜user_solid.svg<br />
+ ┣ 📂components<br />
+ ┃ ┣ 📂datePicker<br />
+ ┃ ┃ ┣ 📂_shared<br />
+ ┃ ┃ ┃ ┣ 📂month<br />
+ ┃ ┃ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┃ ┃ ┗ 📜month.module.scss<br />
+ ┃ ┃ ┃ ┣ 📜constants.ts<br />
+ ┃ ┃ ┃ ┣ 📜index.ts<br />
+ ┃ ┃ ┃ ┣ 📜types.d.ts<br />
+ ┃ ┃ ┃ ┗ 📜utils.ts<br />
+ ┃ ┃ ┣ 📜datePicker.module.scss<br />
+ ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┣ 📂popup<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜popup.module.scss<br />
+ ┃ ┣ 📂sideBar<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜sideBar.module.scss<br />
+ ┃ ┣ 📂whiteSection<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜whiteSection.module.scss<br />
+ ┃ ┗ 📜index.ts<br />
+ ┣ 📂constant<br />
+ ┃ ┗ 📜key.ts<br />
+ ┣ 📂data<br />
+ ┃ ┣ 📂heartrate_data<br />
+ ┃ ┃ ┣ 📜heartrate_136_0226_유령회원1번.json<br />
+ ┃ ┃ ┣ 📜heartrate_136_0308_유령회원1번.json<br />
+ ┃ ┃ ┣ 📜heartrate_136_0419_유령회원1번.json<br />
+ ┃ ┃ ┣ 📜heartrate_328_0416_유령회원2번.json<br />
+ ┃ ┃ ┣ 📜heartrate_328_0419_유령회원2번.json<br />
+ ┃ ┃ ┣ 📜heartrate_328_0420_유령회원2번.json<br />
+ ┃ ┃ ┣ 📜heartrate_380_0417_유령회원3번.json<br />
+ ┃ ┃ ┣ 📜heartrate_380_0418_유령회원3번.json<br />
+ ┃ ┃ ┣ 📜heartrate_380_0419_유령회원3번.json<br />
+ ┃ ┃ ┗ 📜heartrate_data_total.json<br />
+ ┃ ┣ 📂step_data<br />
+ ┃ ┃ ┣ 📜member_data.json<br />
+ ┃ ┃ ┣ 📜step_136_0226_유령회원1번.json<br />
+ ┃ ┃ ┣ 📜step_136_0308_유령회원1번.json<br />
+ ┃ ┃ ┣ 📜step_136_0419_유령회원1번.json<br />
+ ┃ ┃ ┣ 📜step_328_0416_유령회원2번.json<br />
+ ┃ ┃ ┣ 📜step_328_0419_유령회원2번.json<br />
+ ┃ ┃ ┣ 📜step_328_0420_유령회원2번.json<br />
+ ┃ ┃ ┣ 📜step_380_0417_유령회원3번.json<br />
+ ┃ ┃ ┣ 📜step_380_0418_유령회원3번.json<br />
+ ┃ ┃ ┣ 📜step_380_0419_유령회원3번.json<br />
+ ┃ ┃ ┗ 📜step_data.json<br />
+ ┃ ┣ 📜admin_data.json<br />
+ ┃ ┗ 📜member_data.json<br />
+ ┣ 📂hooks<br />
+ ┃ ┣ 📜useLogin.ts<br />
+ ┃ ┗ 📜useLogout.ts<br />
+ ┣ 📂routes<br />
+ ┃ ┣ 📂dashboard<br />
+ ┃ ┃ ┣ 📜dashboard.module.scss<br />
+ ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┣ 📂detailMember<br />
+ ┃ ┃ ┣ 📂heartRateDataGraph<br />
+ ┃ ┃ ┃ ┣ 📜GRAPH_STYLE.ts<br />
+ ┃ ┃ ┃ ┣ 📜heartRateDataGraph.module.scss<br />
+ ┃ ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┃ ┣ 📂stepDataGraph<br />
+ ┃ ┃ ┃ ┣ 📜GRAPH_STYLE.ts<br />
+ ┃ ┃ ┃ ┣ 📜formatGraphData.ts<br />
+ ┃ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┃ ┣ 📜stepDataGraph.module.scss<br />
+ ┃ ┃ ┃ ┗ 📜type.d.ts<br />
+ ┃ ┃ ┣ 📜detailMember.module.scss<br />
+ ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┣ 📂layout<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜layout.module.scss<br />
+ ┃ ┣ 📂login<br />
+ ┃ ┃ ┣ 📜Checkbox.tsx<br />
+ ┃ ┃ ┣ 📜StoreID.tsx<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜login.module.scss<br />
+ ┃ ┣ 📂manageMember<br />
+ ┃ ┃ ┣ 📂_shared<br />
+ ┃ ┃ ┃ ┣ 📂searchMember<br />
+ ┃ ┃ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┃ ┃ ┗ 📜searchMember.module.scss<br />
+ ┃ ┃ ┃ ┗ 📂showMember<br />
+ ┃ ┃ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┃ ┃ ┗ 📜showMember.module.scss<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜manageMember.module.scss<br />
+ ┃ ┗ 📜index.tsx<br />
+ ┣ 📂states<br />
+ ┃ ┣ 📜index.ts<br />
+ ┃ ┣ 📜inquiryPeriod.ts<br />
+ ┃ ┣ 📜login.ts<br />
+ ┃ ┣ 📜searchMemberList.ts<br />
+ ┃ ┗ 📜selectMember.ts<br />
+ ┣ 📂styles<br />
+ ┃ ┣ 📂base<br />
+ ┃ ┃ ┣ 📜_fonts.scss<br />
+ ┃ ┃ ┣ 📜_more.scss<br />
+ ┃ ┃ ┗ 📜_reset.scss<br />
+ ┃ ┣ 📂constants<br />
+ ┃ ┃ ┣ 📜_colors.scss<br />
+ ┃ ┃ ┗ 📜_sizes.scss<br />
+ ┃ ┣ 📂mixins<br />
+ ┃ ┃ ┣ 📜_flexbox.scss<br />
+ ┃ ┃ ┗ 📜_visual.scss<br />
+ ┃ ┣ 📜index.js<br />
+ ┃ ┗ 📜index.scss<br />
+ ┣ 📂types<br />
+ ┃ ┣ 📜admin.d.ts<br />
+ ┃ ┗ 📜heartRate.d.ts<br />
+ ┣ 📂utils<br />
+ ┃ ┣ 📜getActiveBtn.ts<br />
+ ┃ ┣ 📜getDatesFromStartToLast.ts<br />
+ ┃ ┗ 📜login.ts<br />
+ ┣ 📜declaration.d.ts<br />
+ ┗ 📜index.tsx<br />
 
 </details>
 
@@ -218,7 +225,8 @@
 ### 로그인
 
 **로그인 유틸**
-
+<details>
+  <summary>펼치기</summary>
 로그인 로그아웃을 간단하게 훅스를 사용하는 방식으로 사용할 수 있도록 훅을 작성하여 사용
 
 - 로그인 훅스 (useLogin)
@@ -233,11 +241,13 @@
     - 로그인 정보를 로컬스토리지에서 저장하기 때문에 로컬 스토리에서 데이터를 제거
     - 이후, 로그인 상태를 변경하여 페에지가 로그인 페이지로 전환됨
         - 상태가 비로그인 상태이기 때문
+</details>
 
 <br />
 
 **로그인 UI**
-
+<details>
+  <summary>펼치기</summary>
 로그인 UI 및 관련된 기능을 구현  
 
 - validation
@@ -250,6 +260,7 @@
 
   - 아이디 저장하기를 체크하면 로그인 로직을 통해 로그인이 성공했을 때 쿠키에 해당 아이디를 저장하고 다른 아이디로 새로 로그인할 경우 쿠키 값을 갱신한다.
   - 아이디 저장하기를 해제한다면 저장되어 있는 쿠키를 만료시킨다.
+</details>
 
 <br>
 
@@ -332,6 +343,9 @@ const [, setSelectMember] = useRecoilState(selectMemberState);
 <br />
 
 ### 회원 상세 정보
+
+<details>
+  <summary>펼치기</summary>
 - 회원 정보 테이블
     - '회원 관리'페이지에서 관리자가 선택한 회원 정보 출력
 
@@ -341,6 +355,8 @@ const [, setSelectMember] = useRecoilState(selectMemberState);
     - date picker로 선택된 날짜(startData,endDate) 값을 받아 해당되는 날짜의 심박수를 그래프로 표시
     - 선택한 기간이 하루일 때, 10분 단위로 심박수 표시
     - 선택한 기간이 2일 이상일 때, 일 단위로 심박수 표시
+</details>
+
 
 <br />
 
