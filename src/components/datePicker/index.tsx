@@ -8,6 +8,7 @@ import { BTN_OPTIONS, Month, TPage, findRegistrationDate, dateInputValue, onClic
 import { ArrowDown, CalendarIcon } from 'assets/svgs';
 import styles from './datePicker.module.scss';
 import cn from 'classnames';
+import { getActiveBtn } from 'utils/getActiveBtn';
 
 interface Props {
   isSubmit?: boolean;
@@ -49,6 +50,7 @@ const DatePicker = ({ isSubmit, page, state }: Props) => {
 
   return (
     <fieldset className={styles.wrapper}>
+      <p className={styles.label}>날짜</p>
       <div className={cn(styles.optionsWrapper, { [styles.invalidated]: isSubmit && (!startDate || !endDate) })}>
         <button
           type='button'
@@ -92,17 +94,21 @@ const DatePicker = ({ isSubmit, page, state }: Props) => {
             ))}
           </div>
           <div className={styles.monthsButton}>
-            {BTN_OPTIONS.map((option) => (
-              <button
-                key={option}
-                type='button'
-                className={styles.btn}
-                onClick={onClick3TypesOfQuickBtn}
-                data-name={option}
-              >
-                {option}
-              </button>
-            ))}
+            {BTN_OPTIONS.map((option, index) => {
+              const active = getActiveBtn(option, fixedToday, registrationDate, startDate, endDate);
+              return (
+                <button
+                  key={option}
+                  type='button'
+                  className={cn(styles.btn, { [styles.clickedButton]: active })}
+                  onClick={onClick3TypesOfQuickBtn}
+                  data-name={option}
+                  value={index}
+                >
+                  {option}
+                </button>
+              );
+            })}
           </div>
         </div>
       )}

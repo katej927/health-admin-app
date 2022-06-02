@@ -5,11 +5,19 @@
 
 .wrapper {
   position: relative;
+  display: flex;
+  align-items: center;
   width: max-content;
 
+  .label {
+    margin-right: 8px;
+    font-size: 16px;
+    color: colors.$GREY_800;
+  }
+
   .optionsWrapper {
+    position: relative;
     @include flexbox.flexbox('center', 'center');
-    // width: fit-content;
     background-color: colors.$WHITE;
     border: 1px solid colors.$GREY_100;
     border-radius: sizes.$BORDER_RADIUS;
@@ -59,10 +67,11 @@
 
   .monthsWrapper {
     position: absolute;
+    top: 35px;
     right: 0;
     z-index: 100;
     display: flex;
-    width: 760px;
+    width: 780px;
     height: 380px;
     padding: 30px;
     margin-top: 10px;
@@ -78,15 +87,25 @@
     .monthsButton {
       display: flex;
       flex-direction: column;
+      padding-right: 28px;
+      border-right: 1px solid #d1d8dc;
 
       .btn {
-        @include visual.btnActive;
+        padding: 0 10px;
         margin-top: 10px;
         font-size: sizes.$SMALL;
+        line-height: 35px;
+        color: colors.$GREY_800;
+        white-space: nowrap;
+        transition: all ease 0.2s;
 
         &:first-of-type {
           margin-top: 0;
         }
+      }
+
+      .clickedButton {
+        color: colors.$PRIMARY;
       }
     }
   }
